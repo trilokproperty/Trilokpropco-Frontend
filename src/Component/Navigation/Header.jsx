@@ -14,8 +14,8 @@ const Header = ({ isDefault = true }) => {
     <ul
       tabIndex={0}
       className={`menu menu-sm dropdown-content ${
-        isDefault ? "bg-base-100 text-black" : "bg-white text-black border"
-      } rounded-box z-10 mt-3 w-52 p-2 shadow ml-10`}
+        isDefault ? "bg-white text-black" : "bg-white text-black border"
+      } rounded-box mt-3 w-52 p-2 shadow ml-10`}
     >
       <li>
         <Link to="/properties">Property</Link>
@@ -86,7 +86,7 @@ const Header = ({ isDefault = true }) => {
   };
 
   return (
-    <div>
+    <div >
       <div className={`nav-section navbar`}
     style={isDefault? {
       background: 'rgba( 255, 255, 255, 0.25 )',

@@ -3,6 +3,7 @@ import "leaflet/dist/leaflet.css";
 import { Link } from "react-router-dom";
 import { FaRupeeSign, FaMapMarkerAlt } from "react-icons/fa"; 
 import { IconContext } from "react-icons";
+import 'leaflet/dist/leaflet.css';
 
 
 // Utility function to extract latitude and longitude from the URL

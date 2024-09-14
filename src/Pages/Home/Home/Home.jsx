@@ -80,7 +80,7 @@ const Home = () => {
         height: '900px', 
       }}
     >
-      <Header />
+      <Header/>
       
       <div className="flex flex-col lg:flex-row justify-center align-middle items-center lg:gap-14 relative">
         {/* Custom Navigation Buttons */}
@@ -101,7 +101,7 @@ const Home = () => {
           </>
         )}
 
-        <div className="lg:w-[40%] md:w-2/3 px-10 md:px-0 lg:px-0 mb-8 lg:mb-0 lg:ml-16 ml-0">
+        <div className="lg:w-[40%] md:w-2/3 px-10 md:px-0 lg:px-0 mb-8 lg:mb-0 lg:ml-16 ml-0 ">
           <div className="bg-transparent px-0">
             <h1 className="Bebas-Neue text-3xl md:text-5xl lg:text-7xl  text-white"
             style={{
