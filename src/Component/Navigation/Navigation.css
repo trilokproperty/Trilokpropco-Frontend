@@ -1,0 +1,64 @@
+/* Default Navbar Styles */
+.nav-section {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+  }
+  
+ 
+  
+  /* For Medium Screens */
+  @media (max-width: 1024px) {
+    .nav-section {
+      padding: 5px 6px;
+      margin-bottom: 10px;
+    }
+    .logo {
+      width: 60%;
+    }
+    .badge{
+        height: 10px;
+        padding: 4px;
+        font-size: 5px;
+    }
+  }
+  
+  /* For Small Screens */
+  @media (max-width: 600px) {
+    .nav-section {
+      padding: 4px 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .logo {
+      width: 120%;
+    }
+    .menu-icon{
+        font-size: 16px;
+    }
+    .badge{
+        height: 10px;
+        padding: 4px;
+        font-size: 5px;
+    }
+    .navbar-end, .navbar-start{
+      
+      font-size: 8px;
+    }
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    display: none;
+  }
+  
+  /* Show Dropdown Menu on Hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
