@@ -103,7 +103,7 @@ const Header = ({ isDefault = true }) => {
     }}
     >
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown z-10">
           <div tabIndex={0} role="button" className={`btn btn-ghost lg:hidden text-[22px] menu-icon ${isDefault ? "text-white" : "text-black"}`}>
             <IoMenu />
           </div>
