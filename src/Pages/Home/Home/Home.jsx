@@ -167,7 +167,7 @@ const Home = () => {
             {properties.map((property, index) => (
               <SwiperSlide
                 key={`${property.id}-${index}`}
-                className="flex items-center justify-center gap-5"
+                className="flex items-center justify-center gap-5 md:mx-0 mx-4"
                 onClick={() => onClickHandler(index)}
               >
                 {({ isActive }) => (
