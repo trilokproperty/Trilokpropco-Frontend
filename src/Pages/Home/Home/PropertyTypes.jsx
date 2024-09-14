@@ -52,16 +52,16 @@ const PropertyTypes = () => {
             slidesPerView: 1,
           },
           350: {
-            slidesPerView: 1.6,
-          },
-          430: {
-            slidesPerView: 1.8,
-          },
-          490: {
             slidesPerView: 2,
           },
-          550: {
+          430: {
+            slidesPerView: 2,
+          },
+          490: {
             slidesPerView: 2.2,
+          },
+          550: {
+            slidesPerView: 2.3,
           },
 
           640: {
