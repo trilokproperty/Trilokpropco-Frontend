@@ -157,8 +157,16 @@ body {
 @media (max-width: 650px) {
     .search-bar{
         background-size: cover;
-        width: 469px;
-        height:73px ;
+        width: 90%;
+        height:60px ;
+    }
+    .option{
+        width: 100px;
+        height: 25px;
+        padding: 4px;
+    }
+    .search{
+        height: 25px;
     }
     .slide-btn{
         top:70%;
@@ -171,12 +179,17 @@ body {
 @media (max-width: 450px) {
     .search-bar{
         background-size: cover;
-        width: 332px;
+        width: 90%;
         flex-wrap: wrap;
-        height:51px ;
+        height:60px ;
     }
     .option{
-        width: 60px;
+        width: 100px;
+        height: 20px;
+        padding: 0 2px;
+    }
+    .search{
+        height: 20px;
     }
     .slide-btn{
         top:70%;
