@@ -312,7 +312,7 @@ const DetailProperty = () => {
 
 
   return (
-    <div className="mb-20 overflow-hidden">
+    <div className="overflow-hidden">
       <Header isDefault={false} />
       <Helmet>
                 <meta charSet="utf-8" />
@@ -675,7 +675,7 @@ const DetailProperty = () => {
             {
               amenities?.map((amenity) =>
               (
-                <div className="border text-center w-[200px] h-[200px] flex items-center justify-center flex-col relative overflow-hidden rounded-3xl gap-4" key={amenity._id}>
+                <div className="border text-center md:w-[200px] md:h-[200px] md:p-0 p-2 flex items-center justify-center flex-col relative overflow-hidden rounded-3xl gap-4" key={amenity._id}>
         <img src={amenity?.logo} alt={amenity?.name} />
         <img src={amenity?.logo} alt={amenity?.name}  className="absolute right-0 bottom-0 rotate-[-50deg] opacity-10"/>
         <p className="detailedProperty text-black text-[14px]">{amenity?.name}</p>
@@ -745,7 +745,7 @@ const DetailProperty = () => {
         </div>
 
         {/* Form right side  */}
-        <div className="lg:w-[35%] my-10 relative mx-10 lg:mx-0">
+        <div className="lg:w-[35%] my-10 relative mx-5 lg:mx-0">
           <form
             onSubmit={handleSubmit}
             className="shadow-xl p-10 rounded-[30px] w-full  bg-white "
@@ -859,13 +859,13 @@ const DetailProperty = () => {
           <h2 className="bg-black text-white text-4xl text-medium text-center p-2 rounded-t-3xl">EMI Calculator</h2>
           <div className="p-3 px-12 pt-12 mb-4">
             <label>Loan Amount</label>
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center ">
             <MdOutlineCurrencyRupee className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
             <input
               type="number"
               value={loanAmount}
               onChange={(e) => setLoanAmount(Number(e.target.value))}
-              className="input !rounded-l-none w-full"
+              className="input !rounded-l-none w-full text-black"
             />
             </div>
 
@@ -878,7 +878,7 @@ const DetailProperty = () => {
               type="number"
               value={interestRate}
               onChange={(e) => setInterestRate(Number(e.target.value))}
-              className="input !rounded-l-none w-full"
+              className="input !rounded-l-none w-full text-black"
             />
             </div>
           </div>
@@ -890,11 +890,11 @@ const DetailProperty = () => {
               type="number"
               value={loanTenure}
               onChange={(e) => setLoanTenure(Number(e.target.value))}
-              className="input !rounded-l-none w-full"
+              className="input !rounded-l-none w-full text-black"
             />
             <select
               value={tenureType}
-              onChange={(e) => setTenureType(e.target.value)}className="select md:ml-2 bg-[#046307] text-white md:text-xl text-[12px]"
+              onChange={(e) => setTenureType(e.target.value)}className="select md:ml-2 bg-[#046307] text-white md:text-xl text-[12px] text-black"
             >
               <option value="years">Years</option>
               <option value="months">Months</option>
