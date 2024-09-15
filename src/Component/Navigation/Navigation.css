@@ -10,7 +10,7 @@
     margin-bottom: 90px;
     position: sticky !important; /* or sticky */
     
-    z-index: 1000;
+    z-index: 100;
   }
   
  
