@@ -4,6 +4,7 @@ import { IoGitCompareOutline, IoMenu } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import CompareDrawer from "../CompareDrawer/CompareDrawer";
 import { Link } from "react-router-dom";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const Header = ({ isDefault = true }) => {
   const [compareCount, setCompareCount] = useState();
@@ -36,7 +37,7 @@ const Header = ({ isDefault = true }) => {
   );
 
   const menuLiLarge = (
-    <ul className={`menu menu-horizontal px-1 ${isDefault ? "text-white" : "text-black"}`}>
+    <ul className={`menu menu-horizontal px-1 ${isDefault ? "text-white" : "text-black list-card-text"}`}>
       <li>
         <Link to="/properties">Property</Link>
       </li>
@@ -104,7 +105,7 @@ const Header = ({ isDefault = true }) => {
     >
       <div className="navbar-start">
         <div className="dropdown z-10">
-          <div tabIndex={0} role="button" className={`btn btn-ghost lg:hidden text-[22px] menu-icon ${isDefault ? "text-white" : "text-black"}`}>
+          <div tabIndex={0} role="button" className={`btn btn-ghost lg:hidden text-[22px] menu-icon ${isDefault ? "text-white" : "text-black list-card-text"}`}>
             <IoMenu />
           </div>
           {menuLiMobile}
@@ -128,22 +129,24 @@ const Header = ({ isDefault = true }) => {
       <div className="flex items-center md:gap-4 gap-3 navbar-end">
         <div
           onClick={toggleDrawer}
-          className={`indicator border rounded-full p-1 lg:p-2 md:mr-3 cursor-pointer ${isDefault ? "text-white border-white" : "text-black border-black"} text-xl`}
+          className={`indicator border rounded-full p-1 lg:p-2 md:mr-3 cursor-pointer ${isDefault ? "text-white border-white" : "text-black border-black header-text"} text-xl`}
         >
-          <span className="indicator-item badge bg-[#046307] text-white border-0">
+          <span className="indicator-item badge bg-[#046307] text-white border-0 ">
             {compareCount || 0}
           </span>
           <IoGitCompareOutline />
         </div>
 
         <Link to="/favourite">
-          <div className={`indicator border rounded-full p-1 lg:p-2 ${isDefault ? "text-white border-white" : "text-black border-black"} text-xl lg:mr-0 mr-5`}>
+          <div className={`indicator border rounded-full p-1 lg:p-2 ${isDefault ? "text-white border-white" : "text-black border-black header-text"} text-xl lg:mr-0 mr-5`}>
             <span className="indicator-item badge bg-[#046307] text-white border-0">
               {favCount || 0}
             </span>
             <FaRegHeart />
           </div>
         </Link>
+
+        <DarkModeToggle />
       </div>
     </div>
 

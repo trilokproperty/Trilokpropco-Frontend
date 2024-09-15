@@ -16,7 +16,7 @@ const TestimonialCard = (testimonial) => {
         <div className="border-[#c6c6c67d] border-[1px] p-3 pb-8 shadow-md rounded-lg">
             <h1 className="text-5xl text-[#1829412d] text-end flex justify-end w-full"><IoMdQuote/>
             </h1>
-            <p className="text-[#301212] mb-6 text-[14px]">{truncateText((testimonial?.testimonial?.details), 19)} <span>more..</span></p>
+            <p className="testimonial-text text-[#301212] mb-6 text-[14px]">{truncateText((testimonial?.testimonial?.details), 19)} <span>more..</span></p>
             
             <hr />
             <div className="mt-4">

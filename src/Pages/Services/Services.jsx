@@ -52,7 +52,7 @@ const Services = () => {
       </div>
 
       <div>
-        <p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[#046307] pb-4">
+        <p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[#046307] pb-4 list-card-text">
           Trilok Propco deal with luxury residential complex in Kolkata, mainly
           with fresh properties both under construction as well as ready to move
           properties. We search property according to your requirements, giving
@@ -71,7 +71,7 @@ const Services = () => {
             {services?.map((item) => (
               <div
                 key={item._id}
-                className="relative flex flex-col items-center justify-center rounded-lg border border-transparent bg-white gap-5 p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105"
+                className="relative flex flex-col items-center justify-center rounded-lg border border-transparent bg-white gap-5 p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 "
                 style={{
                   borderImage: "linear-gradient(45deg, #C19554, #E7C578) 1",
                 }}

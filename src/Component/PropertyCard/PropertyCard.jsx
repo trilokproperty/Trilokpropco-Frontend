@@ -170,16 +170,16 @@ const PropertyCard = ({ property }) => {
          
             </div>
             </Link>
-            <div className="mt-6 text-black">
+            <div className="mt-6 text-black property-detail">
             <Link to={`/property/${property?._id}`}>
                 <h3 className="text-[26px] font-semibold !mb-0">₹ {property?.priceRange}</h3></Link>
                 <h4 className="text-[20px] font-medium !mt-0">{property?.name}</h4>
                 <p className="text-[#9a9a9a] flex items-center gap-2"><SlLocationPin /><span>{curentLocation?.name}</span></p>
-                <p className="flex items-center justify-between text-[15px]">
-                    <span className="text-[#000] flex items-center gap-2">
+                <p className="flex items-center justify-between text-[15px] config-text text-[#000]">
+                    <span className=" flex items-center gap-2">
                     <FcDataConfiguration/> {property?.configuration}
                     </span>
-                    <span className="text-[#000] flex items-center gap-2">
+                    <span className=" flex items-center gap-2">
                     <img src={curentStatus?.image} alt={curentStatus?.status} className="w-[24px] h-[24px] font-bold"/> <span className="font-bold">{curentStatus?.status}</span>
                     </span>
                 </p>

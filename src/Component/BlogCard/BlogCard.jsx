@@ -32,7 +32,7 @@ const BlogCard = (blog) => {
         />
         <p
           className="bg-white px-3 top-0 left-8
-         absolute p-1 flex justify-center items-center flex-col gap-0 rounded-b-lg"
+         absolute p-1 flex justify-center items-center flex-col gap-0 rounded-b-lg text-black"
         >
           <span className="mb-[-10px] font-bold">{day}</span>
           <span className="font-2xl">{month.toString()}</span>
@@ -40,7 +40,7 @@ const BlogCard = (blog) => {
       </div>
       <div className="md:w-[340px]">
         <div>
-        <h3 className="md:text-2xl text-[20px] font-medium text-black mb-2">{blog?.blog?.title}</h3>
+        <h3 className="md:text-2xl text-[20px] font-medium blog-title text-black mb-2">{blog?.blog?.title}</h3>
             <p>{truncateText(stripHtmlTags(blog?.blog?.description), 10)}</p>
       </div>
       <Link to={`/blog/${blog?.blog?._id}`} > <div className="text-3xl bg-black text-white w-12 h-12 flex justify-center items-center rounded-full mt-8 ml-auto">

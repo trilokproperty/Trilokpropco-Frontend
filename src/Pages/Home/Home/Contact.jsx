@@ -88,14 +88,14 @@ const Contact = () => {
   return (
     <div className="my-10 md:flex justify-center w-full mx-auto items-center lg:px-10 gap-5 lg:gap-10 px-5">
       <ToastContainer />
-      <div className="md:w-1/2">
-        <h2 className="lg:text-6xl text-4xl font-semibold text-black">
+      <div className="md:w-1/2 contact-text">
+        <h2 className="lg:text-6xl text-4xl font-semibold text-black contact-text">
           We help to buy and sell your properties.
         </h2>
         <div className="flex gap-3 items-center mt-8">
           <TbHomeSearch className="text-6xl font-semibold text-[#046307] md:text-8xl" />
           <div>
-            <h5 className="md:text-3xl text-2xl font-semibold text-black">
+            <h5 className="md:text-3xl text-2xl font-semibold text-black contact-text">
               Looking for the new home?
             </h5>
             <p>
@@ -108,7 +108,7 @@ const Contact = () => {
         <div className="flex gap-3 items-center mt-5">
           <MdOutlineAddHomeWork className="text-6xl font-semibold text-[#046307] md:text-8xl" />
           <div>
-            <h5 className="md:text-3xl text-2xl font-semibold text-black">
+            <h5 className="md:text-3xl text-2xl font-semibold contact-text text-black">
               Want to sell your home?
             </h5>
             <p>
@@ -131,8 +131,8 @@ const Contact = () => {
               onClick={() => handleOptionClick("sale")}
               className={`w-fit py-3 px-6 rounded-full ${
                 selectedOption === "sale"
-                  ? "bg-[#046307] text-white"
-                  : "bg-transparent border border-[#ffffff] text-[#ffffff]"
+                  ? "!bg-[#046307] !text-white"
+                  : "bg-transparent border !border-[#ffffff] !text-[#ffffff]"
               }`}
             >
               Sale
@@ -142,8 +142,8 @@ const Contact = () => {
               onClick={() => handleOptionClick("buy")}
               className={`w-fit py-3 px-6 rounded-full ${
                 selectedOption === "buy"
-                  ? "bg-[#046307] text-white"
-                  : "bg-transparent border border-[#ffffff] text-[#ffffff]"
+                  ? "!bg-[#046307] !text-white"
+                  : "bg-transparent border !border-[#ffffff] !text-[#ffffff]"
               }`}
             >
               Buy

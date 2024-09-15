@@ -104,7 +104,7 @@ const PropertyTypes = () => {
             />
             </div>
             <h6 className="text-xl mt-5">{type.type}</h6>
-            <p className="bg-[#EBEEF2] w-[104px] text-center p-[2px] rounded-full drop-shadow-md mt-2">{typeCounts[type._id] || 0} Listing</p>
+            <p className="bg-[#EBEEF2] w-[104px] text-black text-center p-[2px] rounded-full drop-shadow-md mt-2">{typeCounts[type._id] || 0} Listing</p>
             </div>
           </SwiperSlide>
         ))}

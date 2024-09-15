@@ -30,7 +30,7 @@ const Footer = () => {
        <div className="md:flex md:gap-3 md:px-5 justify-center md:h-[400px] md:py-0 py-10 px-10 items-center">
        <div className="md:w-[30%] w-full">
           <img src={footers?.image} alt="" className="w-[105px] h-[53px]"/>
-          <p>{footers?.description}</p>
+          <p className="text-[#454545]">{footers?.description}</p>
           <h6 className="text-xl font-semibold mt-4 text-black">Follow us</h6>
 
            <div className="flex gap-2">
@@ -52,10 +52,10 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
         <p className="text-[#1B5638] font-[400] flex items-center mb-4"><span className="flex gap-[-10px]"><GoDotFill /><AiFillCaretRight /></span> How It Work</p>
         </Link>
 
-        <Link to="/about"><p>About</p></Link>
-        <Link to="#"><p>Career</p></Link>
-        <Link to="/contact"><p>Contact Us</p></Link>
-        <Link to="#"><p>FAQ's</p></Link>
+        <Link to="/about" className="text-[#454545]"><p>About</p></Link>
+        <Link to="#" className="text-[#454545]"><p>Career</p></Link>
+        <Link to="/contact" className="text-[#454545]"><p>Contact Us</p></Link>
+        <Link to="#" className="text-[#454545]"><p>FAQ's</p></Link>
         
         </div>
         </div>
@@ -64,11 +64,11 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
         <h6 className="text-xl font-semibold text-black mb-6">Support & Summary</h6>
 
         <div className="flex gap-3 flex-col">
-        <Link to="#"><p>Helping Center</p></Link>
-        <Link to="#"><p>Privacy & Policy</p></Link>
-        <Link to="#"><p>Buy or Rent</p></Link>
-        <Link to="/properties"><p>Properties</p></Link>
-        <Link to="/blog"><p>Blogs</p></Link>
+        <Link to="#"  className="text-[#454545]"><p>Helping Center</p></Link>
+        <Link to="#"  className="text-[#454545]"><p>Privacy & Policy</p></Link>
+        <Link to="#"  className="text-[#454545]"><p>Buy or Rent</p></Link>
+        <Link to="/properties"  className="text-[#454545]"><p>Properties</p></Link>
+        <Link to="/blog"  className="text-[#454545]"><p>Blogs</p></Link>
         </div>
         </div>
 
@@ -81,7 +81,7 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
         <div className="md:ml-2">
         <p className="text-[18px] text-black font-semibold">E-mail </p>
         <a href="">
-        <p>{footers?.email}</p></a>
+        <p className="text-[#454545]">{footers?.email}</p></a>
         </div>
         </div>
         
@@ -90,7 +90,7 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
         <div className="md:ml-2">
         <p className="text-[18px] text-black font-semibold">Contact</p>
         <a href="">
-        <p>{footers?.contact}</p></a>
+        <p className="text-[#454545]">{footers?.contact}</p></a>
         </div>
         </div>
         
@@ -101,7 +101,7 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
         <div className="md:ml-2">
         <p className="text-[18px] text-black font-semibold">Location</p>
         <a href="">
-        <p>{footers?.location}</p></a>
+        <p className="text-[#454545]">{footers?.location}</p></a>
         </div>
         </div>
         </div>
@@ -109,8 +109,8 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
        </div>
       <hr className="md:px-5"/>
        <div className="md:flex md:gap-3 md:px-5 justify-between pb-5 md:py-0 py-3 px-10 items-center text-[16px]">
-        <a href=""><p>Copyright © 2022 Trilok. </p></a>
-        <a href="https://github.com/mohammadashrafulislam1" className="mt-2" target="_blank"><p>Developed By Md Ashraful Islam</p></a>
+        <a href="" className="text-[#454545]"><p>Copyright © 2022 Trilok. </p></a>
+        <a href="https://github.com/mohammadashrafulislam1" className="mt-2" target="_blank" className="text-[#454545]"><p>Developed By Md Ashraful Islam</p></a>
        </div>
     </div>
     );

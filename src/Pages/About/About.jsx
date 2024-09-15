@@ -76,7 +76,7 @@ const About = () => {
                 <SectionTitle value="About Us" color="white" />
           </div> 
 
-        <div className="md:flex gap-5 mx-5 md:mx-5 lg:mx-14 md:mx-8 rounded-lg shadow-md md:mt-20 mt-4 mb-10 lg:p-14 text-black items-center bg-[#04630742] p-5">
+        <div className="md:flex gap-5 mx-5 md:mx-5 lg:mx-14 md:mx-8 rounded-lg shadow-md md:mt-20 mt-4 mb-10 lg:p-14 text-black items-center bg-[#04630742] p-5 list-card-text">
             <div>
            <h2 className="text-3xl font-semibold mb-2">Company History</h2>
             <p>{about?.history}</p>
@@ -84,7 +84,7 @@ const About = () => {
             <img src={footer ? footer[0]?.image :""} alt="Trilokpropco - Real Estate Agency." className="lg:w-[300px] w-[200px] h-[120px] lg:h-[180px]" />
         </div> 
 
-        <div className="mx-5 lg:mx-14 md:mx-8 mt-10 mb-14 lg:flex items-center gap-5">
+        <div className="mx-5 lg:mx-14 md:mx-8 mt-10 mb-14 lg:flex items-center gap-5 list-card-text">
             <div className="md:flex gap-5 items-center bg-[#04630742] p-8 rounded-lg shadow-md lg:w-1/2 lg:h-[350px] mb-4 lg:mb-0">
                 <div>
                 <h2 className="text-3xl font-semibold mb-2">Our Mission</h2>
@@ -102,7 +102,7 @@ const About = () => {
             </div>
         </div>
 
-        <div className="md:flex gap-10 mx-5 lg:mx-14 md:mx-8 rounded-lg shadow-md mt-20 mb-10 lg:p-14 p-6 text-black items-center bg-[#ffffff1d] border">
+        <div className="md:flex gap-10 mx-5 lg:mx-14 md:mx-8 rounded-lg shadow-md mt-20 mb-10 lg:p-14 p-6 text-black items-center bg-[#ffffff1d] border ">
             
             <div style={{
                 backgroundImage:'url(https://i.ibb.co.com/BzrdmR3/pngegg-3.webp)',
@@ -121,7 +121,7 @@ const About = () => {
                 <p>country experience</p>
             </div>
             </div>
-            <div>
+            <div className="list-card-text">
             <h2 className="text-3xl font-semibold mb-2">Founder</h2>
             <p>{about?.founder}</p>
             </div>
@@ -133,7 +133,7 @@ const About = () => {
     {why?.map(item => (
       <div
   key={item._id}
-  className="relative flex flex-col items-center justify-center rounded-lg border border-transparent bg-white gap-5 p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105"
+  className="relative flex flex-col items-center justify-center rounded-lg border border-transparent bg-white gap-5 p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 property-list-card"
   style={{
     borderImage: "linear-gradient(45deg, #C19554, #E7C578) 1",
   }}

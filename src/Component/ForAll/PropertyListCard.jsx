@@ -115,7 +115,7 @@ const PropertyListCard = (property) => {
     return (
     <div>
         {property &&
-        <div className="flex gap-3 h-[210px] items-center rounded-2xl shadow-xl pr-2 hover:transform hover:translate-y-2 transition md:hover:shadow-2xl bg-white hover:border-[#046307] hover:border-2 hover:h-[212px] w-full">
+        <div className="flex gap-3 h-[210px] items-center rounded-2xl shadow-xl pr-2 hover:transform hover:translate-y-2 transition md:hover:shadow-2xl bg-white hover:border-[#046307] hover:border-2 hover:h-[212px] w-full property-list-card">
             <div className="relative">
                 <img src={property?.property?.galleryImages[0]} alt="" className="  h-[208px] lg:w-[170px] w-[140px] rounded-l-2xl relative object-cover object-center"/>
 
@@ -161,17 +161,17 @@ const PropertyListCard = (property) => {
             </div>
             
         <div className="relative"> 
-        <Link to={`/property/${property?.property?._id}`}>
-                <h4 className="lg:text-[20px] text-[18px] font-medium text-black lg:mb-2 mb-1"
+        <Link to={`/property/${property?.property?._id}`} className="list-card-text">
+                <h4 className="lg:text-[20px] text-[18px] font-medium text-black lg:mb-2 mb-1 list-card-text"
                 style={{
                     lineHeight:'22px'
                 }}
                 >{property?.property?.name}</h4></Link>
-                <h6 className="lg:text-[14px] text-[12px] font-normal text-black mt-[-4px]">by {curentDeveloper?.name}</h6>
+                <h6 className="lg:text-[14px] text-[12px] font-normal text-black mt-[-4px] list-card-text">by {curentDeveloper?.name}</h6>
                 <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><SlLocationPin/> {curentLocation?.name}</p>
-                <h4 className="lg:text-[20px] text-[18px] font-medium text-black mt-[-4px]">₹   {property?.property?.priceRange}</h4>
+                <h4 className="lg:text-[20px] text-[18px] font-medium text-black mt-[-4px] list-card-text">₹   {property?.property?.priceRange}</h4>
                 <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><img src={property?.property?.type?.logo ||curentType?.logo} alt={property?.property?.type?.type ||curentType?.type} className="w-[16px] h-[16px]" /> <span>{property?.property?.type?.type ||curentType?.type}</span></p>
-                <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><img src={curentStatus?.image} alt={curentStatus?.status} className="w-[16px] h-[16px]" /> <span>{curentStatus?.status}</span></p>
+                <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><img src={curentStatus?.image} alt={curentStatus?.status} className="w-[16px] h-[16px] status" /> <span>{curentStatus?.status}</span></p>
                 
             </div>
         </div>
