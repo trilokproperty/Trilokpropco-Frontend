@@ -7,7 +7,6 @@ const PropertyItem = ({ property, isActive }) => {
   // Conditional styles based on whether the slide is active or not
   const itemStyle = {
     width: '270px',
-    height: isActive ? '416px' : '380px',
     border: isActive ? '4px solid #046307' : '',
     transition: 'height 0.3s ease, border-color 0.3s ease',
     backgroundImage: `url(${galleryImages?.[0]})`,
@@ -19,7 +18,7 @@ const PropertyItem = ({ property, isActive }) => {
   };
 
   return (
-    <div style={itemStyle} className="relative flex items-end p-3">
+    <div style={itemStyle} className={`${isActive? 'md:h-[416px] h-[200px]' : 'md:h-[380px] h-[160px]' } relative flex items-end p-3`}>
       {/* Gradient shadow overlay */}
       <div className="absolute bottom-0 left-0 w-full h-[70%] bg-gradient-to-t from-black to-transparent"></div>
       

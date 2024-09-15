@@ -79,7 +79,7 @@ const SearchBar = () => {
         ))}
       </select>
 
-      <button onClick={handleSearch} className="bg-[#046307] lg:px-7 lg:py-3 text-white font-light flex gap-2 items-center lg:text-[16px] md:text-[13px] text-[10px] md:px-2 md:py-[9px] rounded py-1 px-1 search">Search Now <span className="text-2lg" ><GoSearch/></span>
+      <button onClick={handleSearch} className="bg-[#046307] lg:px-7 lg:py-3 text-white font-light flex gap-2 items-center lg:text-[16px] md:text-[13px] text-[10px] md:px-2 md:py-[9px] rounded py-2 px-2 search">Search Now <span className="text-2lg" ><GoSearch/></span>
 </button>
     </div>
   );

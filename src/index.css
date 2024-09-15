@@ -61,6 +61,11 @@ body {
   body.dark-mode .status{
     background-color: #fff;
   }
+  .slide-btn{
+    background-color: #E7C578;
+    color:#000000;
+    font-weight: 600;
+  }
 /* search bar */
 .search-bar{
     display: flex;
@@ -145,6 +150,11 @@ body {
         gap: 5px;
         margin-top: -60px;
     }
+    .option{
+      width: 115px;
+      height: 30px;
+      padding: 4px;
+  }
     .slide-btn{
         top:70%;
     }
@@ -161,12 +171,12 @@ body {
         height:60px ;
     }
     .option{
-        width: 100px;
-        height: 25px;
+        width: 115px;
+        height: 30px;
         padding: 4px;
     }
     .search{
-        height: 25px;
+        height: 30px;
     }
     .slide-btn{
         top:70%;
@@ -182,6 +192,7 @@ body {
         width: 90%;
         flex-wrap: wrap;
         height:60px ;
+        margin-top: -30px;
     }
     .option{
         width: 70px;
