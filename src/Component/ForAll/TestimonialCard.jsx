@@ -11,7 +11,7 @@ const TestimonialCard = (testimonial) => {
         return str;
       };
     return (
-    <div className="md:w-full md:mx-0 mx-6">
+    <div className="md:w-full md:mx-0 testimonial-card">
          <div><img src={testimonial?.testimonial?.image} alt={testimonial?.testimonial?.name} className="md:w-20 md:h-20 w-16 h-16 mb-[-50px] ml-8 shadow-md rounded-full"/></div>  
         <div className="border-[#c6c6c67d] border-[1px] p-3 pb-8 shadow-md rounded-lg">
             <h1 className="text-5xl text-[#1829412d] text-end flex justify-end w-full"><IoMdQuote/>
