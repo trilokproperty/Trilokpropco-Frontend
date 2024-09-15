@@ -110,7 +110,6 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
       <hr className="md:px-5"/>
        <div className="md:flex md:gap-3 md:px-5 justify-between pb-5 md:py-0 py-3 px-10 items-center text-[16px]">
         <a href="" className="text-[#454545]"><p>Copyright © 2022 Trilok. </p></a>
-        <a href="https://github.com/mohammadashrafulislam1" className="mt-2" target="_blank" className="text-[#454545]"><p>Developed By Md Ashraful Islam</p></a>
        </div>
     </div>
     );

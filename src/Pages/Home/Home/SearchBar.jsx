@@ -73,7 +73,7 @@ const SearchBar = () => {
       </select>
 
       <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="lg:px-6 lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 rounded option">
-        <option value="">All Statuses</option>
+        <option value="">Status</option>
         {statusOptions.map(status => (
           <option key={status._id} value={status._id}>{status.status}</option>
         ))}
