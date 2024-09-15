@@ -61,9 +61,17 @@ body {
   body.dark-mode .status{
     background-color: #fff;
   }
-  body.dark-mode .detailedProperty{
+  body.dark-mode  .detailedProperty{
     color: #fff;
   }
+  body.dark-mode .swiper-pagination-bullet{
+    background-color: #E7C578 !important;
+  }
+  body.dark-mode .swiper-pagination-bullet-active{
+    background-color: #E7C578 !important;
+    border: 1px solid #E7C578 !important;
+  }
+  /*  */
   .slide-btn{
     background-color: #E7C578;
     color:#000000;
