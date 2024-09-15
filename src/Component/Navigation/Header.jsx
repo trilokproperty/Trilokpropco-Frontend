@@ -112,7 +112,7 @@ const Header = ({ isDefault = true }) => {
         </div>
 
         <a href="/">
-          <div className="md:w-[104px] lg:h-[50px] w-full navbar-start">
+          <div className="md:w-[104px] lg:h-[50px] w-1/3 navbar-start">
             <img
               src={isDefault ? "https://i.ibb.co/stKQtrJ/1000278004-1.webp" : "https://i.ibb.co/f1L99L9/18a006575c097b8b99494b75da063caf-removebg-preview-2.webp"}
               alt=""
@@ -122,7 +122,7 @@ const Header = ({ isDefault = true }) => {
         </a>
       </div>
 
-      <nav className="navbar-center navbar-end">
+      <nav className="navbar-center md:navbar-end">
         <div className="hidden lg:flex">{menuLiLarge}</div>
       </nav>
 

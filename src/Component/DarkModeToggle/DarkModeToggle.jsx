@@ -37,10 +37,9 @@ const DarkModeToggle = () => {
       />
       {/* Sun icon for light mode */}
       <svg
-        className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
+        className="stroke-base-100 fill-base-100 col-start-1 row-start-1 w-[10px] h-[10px] md:w-[12px] md:h-[12px]"
         xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="14"
+        
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -54,10 +53,8 @@ const DarkModeToggle = () => {
 
       {/* Moon icon for dark mode */}
       <svg
-        className="stroke-base-100 fill-base-100 col-start-2 row-start-1"
+        className="stroke-base-100 fill-base-100 col-start-2 row-start-1 w-[10px] h-[10px] md:w-[12px] md:h-[12px]"
         xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="14"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
