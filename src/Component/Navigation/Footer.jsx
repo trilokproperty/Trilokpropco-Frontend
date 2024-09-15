@@ -51,7 +51,7 @@ youtube}><div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex ju
         <Link to="#">
         <p className="text-[#1B5638] font-[400] flex items-center mb-4"><span className="flex gap-[-10px]"><GoDotFill /><AiFillCaretRight /></span> How It Work</p>
         </Link>
-
+        <Link to="/" className="text-[#454545]">Home</Link>
         <Link to="/about" className="text-[#454545]"><p>About</p></Link>
         <Link to="#" className="text-[#454545]"><p>Career</p></Link>
         <Link to="/contact" className="text-[#454545]"><p>Contact Us</p></Link>
