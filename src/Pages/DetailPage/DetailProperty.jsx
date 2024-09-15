@@ -453,17 +453,17 @@ const DetailProperty = () => {
           <p className="text-[14px] text-black ml-5 mb-2 detailedProperty">{location?.name}</p>
           <hr />
           <div className="md:flex gap-3 my-2">
-            <div className="text-xl text-black flex gap-4 items-center detailedProperty">
+            <div className="text-xl text-black flex gap-4 items-center detailedProperty md:mb-0 mb-2">
               <IoBedOutline className="text-2xl" />
               <p>{property?.configuration}</p>
             </div>
 
-            <div className="text-xl text-black flex gap-4 items-center detailedProperty">
+            <div className="text-xl text-black flex gap-4 items-center detailedProperty md:mb-0 mb-2">
               <IoResize className="text-2xl border-2 border-black rounded-[4px] header-text font-semibold" />
               <p>{property?.size}</p>
             </div>
 
-            <div className="text-xl text-black flex gap-4 items-center detailedProperty">
+            <div className="text-xl text-black flex gap-4 items-center detailedProperty md:mb-0 mb-2">
               <img
                 src={status?.image}
                 className="text-2xl font-semibold config-text"
@@ -485,7 +485,7 @@ const DetailProperty = () => {
                 </span>
               </button>
             </div>
-            <h3 className="text-2xl flex gap-1 text-black items-center detailedProperty">
+            <h3 className="md:text-2xl text-[18px] flex gap-1 text-black items-center detailedProperty">
               PRICE RANGE:{" "}
               <span className="flex gap-1 font-bold items-center">
                 <FaIndianRupeeSign />
@@ -656,7 +656,7 @@ const DetailProperty = () => {
       {selectedPlan && (
         <div className="my-5 mx-5 border rounded-2xl">
           {selectedPlan?.image && <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="!w-full  rounded-t-2xl"/>}
-        <div className="bg-[#0000000e] rounded-b-2xl p-4 flex justify-between items-center text-2xl"> 
+        <div className="bg-[#0000000e] rounded-b-2xl p-4 flex justify-between items-center md:text-2xl text-[14px]"> 
          {selectedPlan?.price && <p><strong>Price:</strong> {selectedPlan?.price || 'N/A'}</p>}
          {selectedPlan?.size &&<p><strong>Size:</strong> {selectedPlan?.size || 'N/A'}</p>}
          </div>
@@ -685,7 +685,7 @@ const DetailProperty = () => {
           </div>
 
           <a href={property?.pdfDownload}><button className="bg-[#ec0000] text-white flex items-center md:px-8 md:py-6 relative md:gap-10 my-10 rounded-2xl px-6 py-4">
-          <img src="https://i.ibb.co.com/w7HGyvB/Adobe-PDF.webp" alt="Download Brochure | Trilokpropco Real Estate Agent" className="md:w-[200px] w-[160px] absolute left-[-26px]"/><span className="md:ml-20 ml-10 text-3xl font-light ">Download Brochure</span></button></a>
+          <img src="https://i.ibb.co.com/w7HGyvB/Adobe-PDF.webp" alt="Download Brochure | Trilokpropco Real Estate Agent" className="md:w-[200px] w-[130px] absolute left-[-26px]"/><span className="md:ml-20 ml-12 md:text-3xl text-xl font-light ">Download Brochure</span></button></a>
           </div>
 
           {/* Nearby description section*/}
