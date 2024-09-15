@@ -25,7 +25,7 @@ const DetailBlog = () => {
     }, [id]);
 
     return (
-        <div className="min-h-screen bg-base-100">
+        <div>
             <Header isDefault={false} />
             <Helmet>
                 <meta charSet="utf-8" />
@@ -35,14 +35,14 @@ const DetailBlog = () => {
             <div className="container mx-auto px-4 py-10">
                 {blog ? (
                     <div className="prose lg:prose-xl mx-auto">
-                        <h1 className="md:text-4xl text-2xl font-bold text-[#046307] text-center my-8">{blog.title}</h1>
+                        <h1 className="md:text-4xl text-2xl font-bold blogTitle text-[#046307] text-center my-8">{blog.title}</h1>
                         <img
                             src={blog.image}
                             alt={blog.title}
                             className="rounded-lg w-full object-cover shadow-lg mb-6"
                         />
                         <div
-                            className="bg-white rounded-lg p-6 shadow-lg mt-8"
+                            className="bg-white rounded-lg p-6 shadow-lg mt-8 property-list-card"
                             dangerouslySetInnerHTML={{ __html: blog.description }}
                         />
                         <p className="mt-4 text-sm text-gray-500 text-right">

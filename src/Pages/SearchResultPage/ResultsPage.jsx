@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { endPoint } from "../../Component/ForAll/ForAll";
 import Header from "../../Component/Navigation/Header";
+import Footer from "../../Component/Navigation/Footer";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const ResultsPage = () => {
@@ -54,16 +55,16 @@ const ResultsPage = () => {
     }, [location.search]);
 
     return (
-        <div className="my-10">
-            <Header />
-            <div className="w-[85%] mx-auto">
+        <div className="">
+            <Header isDefault={false}/>
+            <div className="w-[85%] mx-auto mb-10">
                 <h1 className="text-2xl font-bold my-4">Search Results</h1>
                 {loading ? (
                     <p>Loading results...</p>
                 ) : error ? (
                     <p className="text-red-500">Error: {error}</p>
                 ) : results.length > 0 ? (
-                    <ul className="list-inside list-none grid lg:grid-cols-3 md:grid-cols-2 lg:gap-4 md:gap-2">
+                    <ul className="list-inside list-none grid lg:grid-cols-3 gap-3 md:grid-cols-2 lg:gap-4">
                         {results.map(result => (
                             <PropertyListCard key={result._id} property={result} />
                         ))}
@@ -72,6 +73,7 @@ const ResultsPage = () => {
                     <p>No results found.</p>
                 )}
             </div>
+            <Footer />
         </div>
     );
 };

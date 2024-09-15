@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-  const [selectedOption, setSelectedOption] = useState("sale");
+  const [selectedOption, setSelectedOption] = useState("buy");
   const [loading, setLoading] = useState(false);
   const [countryCodes, setCountryCodes] = useState([]);
   const [selectedCountryCode, setSelectedCountryCode] = useState("+91"); 
@@ -126,17 +126,6 @@ const Contact = () => {
           </div>
           
           <div className="flex gap-4 mt-4">
-            <button
-              type="button"
-              onClick={() => handleOptionClick("sale")}
-              className={`w-fit py-3 px-6 rounded-full ${
-                selectedOption === "sale"
-                  ? "!bg-[#046307] !text-white"
-                  : "bg-transparent border !border-[#ffffff] !text-[#ffffff]"
-              }`}
-            >
-              Sale
-            </button>
             <button
               type="button"
               onClick={() => handleOptionClick("buy")}

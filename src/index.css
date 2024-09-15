@@ -64,6 +64,9 @@ body {
   body.dark-mode  .detailedProperty{
     color: #fff;
   }
+  body.dark-mode  .blogTitle{
+    color: #E7C578;
+  }
   body.dark-mode .swiper-pagination-bullet{
     background-color: #E7C578 !important;
   }
@@ -183,7 +186,7 @@ body {
     .search-bar{
         background-size: cover;
         width: 90%;
-        height:60px ;
+        height:80px ;
     }
     .option{
         width: 115px;
@@ -205,7 +208,7 @@ body {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 540px) {
     .search-bar{
         background-size: cover;
         width: 90%;
