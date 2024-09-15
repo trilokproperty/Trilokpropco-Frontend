@@ -61,6 +61,9 @@ body {
   body.dark-mode .status{
     background-color: #fff;
   }
+  body.dark-mode .detailedProperty{
+    color: #fff;
+  }
   .slide-btn{
     background-color: #E7C578;
     color:#000000;

@@ -22,6 +22,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Sector } from "recha
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { LiaPercentSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 // Custom active shape rendering for Pie chart
 const renderActiveShape = (props) => {
@@ -313,6 +314,10 @@ const DetailProperty = () => {
   return (
     <div className="mb-20 overflow-hidden">
       <Header isDefault={false} />
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>{`${property ? property.name : "Loading..."} - Trilokpropco`}</title>
+            </Helmet>
       <ToastContainer />
       {/* Custom Navigation Buttons and slider */}
       <div
@@ -441,27 +446,27 @@ const DetailProperty = () => {
 
       <div className="lg:flex gap-5 mt-10 md:ml-10 md:mr-6">
         {/* Full left side details  */}
-        <div className="lg:w-[65%] md:mx-0 mx-6">
-          <h2 className="md:text-4xl text-3xl text-black font-semibold">
+        <div className="lg:w-[65%] md:mx-0 mx-6 ">
+          <h2 className="md:text-4xl text-3xl text-black font-semibold detailedProperty">
             {property?.name}
           </h2>
-          <p className="text-[14px] text-black ml-5 mb-2">{location?.name}</p>
+          <p className="text-[14px] text-black ml-5 mb-2 detailedProperty">{location?.name}</p>
           <hr />
           <div className="md:flex gap-3 my-2">
-            <div className="text-xl text-black flex gap-4 items-center">
+            <div className="text-xl text-black flex gap-4 items-center detailedProperty">
               <IoBedOutline className="text-2xl" />
               <p>{property?.configuration}</p>
             </div>
 
-            <div className="text-xl text-black flex gap-4 items-center">
-              <IoResize className="text-2xl border-2 border-black rounded-[4px] font-semibold" />
+            <div className="text-xl text-black flex gap-4 items-center detailedProperty">
+              <IoResize className="text-2xl border-2 border-black rounded-[4px] header-text font-semibold" />
               <p>{property?.size}</p>
             </div>
 
-            <div className="text-xl text-black flex gap-4 items-center">
+            <div className="text-xl text-black flex gap-4 items-center detailedProperty">
               <img
                 src={status?.image}
-                className="text-2xl font-semibold"
+                className="text-2xl font-semibold config-text"
                 alt={status?.status}
               />
               <p>{status?.status}</p>
@@ -469,7 +474,7 @@ const DetailProperty = () => {
           </div>
           <hr />
           {/* price, title and contact btn */}
-          <div className="md:flex items-center justify-between gap-3 my-8">
+          <div className="md:flex items-center justify-between gap-3 my-8 ">
             <div className="flex items-center gap-3 my-8">
               <button className="bg-black text-white px-20 py-3 rounded-xl">
                 Contact
@@ -480,7 +485,7 @@ const DetailProperty = () => {
                 </span>
               </button>
             </div>
-            <h3 className="text-2xl flex gap-1 text-black items-center">
+            <h3 className="text-2xl flex gap-1 text-black items-center detailedProperty">
               PRICE RANGE:{" "}
               <span className="flex gap-1 font-bold items-center">
                 <FaIndianRupeeSign />
@@ -490,87 +495,87 @@ const DetailProperty = () => {
           </div>
           {/* project overview section */}
           <div>
-            <h2 className="text-3xl font-semibold text-black poppins">
+            <h2 className="text-3xl font-semibold text-black poppins detailedProperty">
               Project Overview
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
-              <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+              <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
+                <h3 className="text-2xl  font-medium uppercase">
                   POSSESSION DATE
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] font-light">
                   {property?.projectOverview?.possessionStart}
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+              <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
+                <h3 className="text-2xl font-medium uppercase">
                   LAND AREA
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] font-light">
                   {property?.projectOverview?.landArea}
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+              <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   CONFIGURATION
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.configuration}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   FLAT AREA
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.flatArea}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   PRICE RANGE
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.priceRange}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   NO. OF BLOCKS
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.numberOfBlocks}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   ELEVATION
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.elevation}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   NO. OF UNITS
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.numberOfUnits}
                 </p>
               </div>
 
  <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl text-black font-medium uppercase">
+                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
                   RERA Reg No.
                 </h3>
-                <p className="uppercase text-[18px] text-black font-light">
+                <p className="uppercase text-[18px] detailedProperty text-black font-light">
                   {property?.projectOverview?.RegistrationNo}
                 </p>
               </div>
@@ -579,18 +584,18 @@ const DetailProperty = () => {
 
           {/* description section*/}
           <div>
-            <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+            <h2 className="text-3xl font-semibold detailedProperty detailedProperty text-black poppins mt-10 mb-6">
               Description
             </h2>
             <p
-              className="text-[16px] md:text-[18px] text-black font-normal"
+              className="text-[16px] md:text-[18px] detailedProperty detailedProperty text-black font-normal"
               dangerouslySetInnerHTML={{ __html: property?.description }}
             />
           </div>
 
           {/* project video */}
           <div>
-            <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+            <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
               Video
             </h2>
             <iframe
@@ -604,7 +609,7 @@ const DetailProperty = () => {
           
           {/* Price Table */}
           <div>
-          <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
               Price
             </h2>
             <table className="table text-center">
@@ -615,7 +620,7 @@ const DetailProperty = () => {
               </tr>
                 {property?.priceDetails?.map(
                   (pd) => (
-                    <tr key={pd._id} className="text-black font-normal text-[16px] border-[1px] border-[#00000035]">
+                    <tr key={pd._id} className="detailedProperty text-black font-normal text-[16px] border-[1px] border-[#00000035]">
                       <td className="border-[1px] border-[#00000035]">{pd?.configuration}</td>
                       <td className="border-[1px] border-[#00000035]">{pd?.size}</td>
                       <td className="border-[1px] border-[#00000035]">{pd?.price}</td>
@@ -627,7 +632,7 @@ const DetailProperty = () => {
 
           {/* Plans section */}
           <div>
-          <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Plans
             </h2>
             <div>
@@ -663,7 +668,7 @@ const DetailProperty = () => {
 
           {/* Amenities section*/}
           <div>
-          <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Amenities
             </h2>
           <div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 gap-3 justify-center">
@@ -673,7 +678,7 @@ const DetailProperty = () => {
                 <div className="border text-center w-[200px] h-[200px] flex items-center justify-center flex-col relative overflow-hidden rounded-3xl gap-4" key={amenity._id}>
         <img src={amenity?.logo} alt={amenity?.name} />
         <img src={amenity?.logo} alt={amenity?.name}  className="absolute right-0 bottom-0 rotate-[-50deg] opacity-10"/>
-        <p className="text-[#000] text-[14px]">{amenity?.name}</p>
+        <p className="detailedProperty text-black text-[14px]">{amenity?.name}</p>
     </div>   )
               )
             }
@@ -685,11 +690,11 @@ const DetailProperty = () => {
 
           {/* Nearby description section*/}
           <div>
-            <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+            <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
             What s Nearby
             </h2>
             <p
-              className="md:text-[18px] text-[16px] text-black font-normal"
+              className="md:text-[18px] text-[16px] detailedProperty text-black font-normal"
               dangerouslySetInnerHTML={{ __html: property?.nearbyFacilities
               }}
             />
@@ -697,7 +702,7 @@ const DetailProperty = () => {
 
           {/* Location Map section */}
           <div>
-          <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Location Map
             </h2>
             <iframe
@@ -712,11 +717,11 @@ const DetailProperty = () => {
 
           {/* specifications description section*/}
           <div>
-            <h2 className="text-3xl font-semibold text-black poppins mt-10 mb-6">
+            <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
             Specifications
             </h2>
             <p
-              className="md:text-[18px] text-[16px] text-black font-normal"
+              className="md:text-[18px] text-[16px] detailedProperty text-black font-normal"
               dangerouslySetInnerHTML={{ __html: property?.specifications
               }}
             />
@@ -724,7 +729,7 @@ const DetailProperty = () => {
 
           {/* Bank Approve Images */}
           <div>
-          <h2 className="text-3xl font-semibold text-black poppins mt-10 msb-6">
+          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 msb-6">
           Bank Approval
             </h2>
             <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-3">
@@ -900,18 +905,18 @@ const DetailProperty = () => {
         <div className="middle-section text-center border-r-[1px] mt-10">
           <div className="p-6 border-t-[1px]">
           <p className="text-xl text-[#818181]">Loan EMI</p>
-          <h3 className="text-5xl text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{emi.toFixed(2)}</h3>
+          <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{emi.toFixed(2)}</h3>
           </div>
           <div className="p-6 border-t-[1px]">
           <p className="text-xl text-[#818181]">Total Interest Payable</p>
-          <h3 className="text-5xl text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{totalInterest.toFixed(2)} </h3>
+          <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{totalInterest.toFixed(2)} </h3>
           </div>
           <div className="p-6 border-t-[1px]">
           <p className="text-xl text-[#818181]">Total of Payments (Principal + Interest)</p>
-          <h3 className="text-5xl text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{totalPayment.toFixed(2)}</h3></div>
+          <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{totalPayment.toFixed(2)}</h3></div>
         </div>
 
-        <div className="right-section ">
+        <div className="right-section lg:ml-8">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
