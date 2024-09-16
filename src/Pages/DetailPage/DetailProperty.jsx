@@ -23,6 +23,7 @@ import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { LiaPercentSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { Helmet } from "react-helmet";
+import ContactModel from "../../Component/ForAll/ContactModel";
 
 // Custom active shape rendering for Pie chart
 const renderActiveShape = (props) => {
@@ -84,11 +85,12 @@ const DetailProperty = () => {
   const [isInFav, setIsInFav] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [amenities, setAmenities] = useState([]);
-  console.log(property, property?.specifications);
   const [loanAmount, setLoanAmount] = useState(5000000);
   const [interestRate, setInterestRate] = useState(9);
   const [loanTenure, setLoanTenure] = useState(20); // in years
   const [tenureType, setTenureType] = useState("years"); // 'years' or 'months'
+  const [footer, setFooter] = useState();
+
   
   useEffect(() => {
     const fetchProperty = async () => {
@@ -137,6 +139,17 @@ const DetailProperty = () => {
       }
     };
     fetchProperty();
+
+    const fetchFooter = async()=>{
+      try {
+          const response = await fetch(`${endPoint}/footer`);
+          const data = await response.json();
+          setFooter(data);
+      } catch (error) {
+          console.error('Error fetching properties:', error);
+      }
+  }
+  fetchFooter()
   }, [id, property]);
 
   useEffect(() => {
@@ -200,7 +213,6 @@ const DetailProperty = () => {
       favList.push(property);
     }
 
-    console.log(favList);
     // Update localStorage
 
     localStorage.setItem("favList", JSON.stringify(favList));
@@ -221,6 +233,18 @@ const DetailProperty = () => {
   });
   const [isCountryListVisible, setIsCountryListVisible] = useState(false); // Manage dropdown visibility
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
+   // State to toggle the modal
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [isMoreModalOpen, setIsMoreModalOpen] = useState(false);
+
+   // Function to open and close the modal
+   const toggleModal = () => {
+     setIsModalOpen(!isModalOpen);
+   };
+   const toggleMoreModal = () => {
+    setIsMoreModalOpen(!isMoreModalOpen);
+  };
+ 
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -497,14 +521,51 @@ const DetailProperty = () => {
           {/* price, title and contact btn */}
           <div className="md:flex items-center justify-between gap-3 my-8 ">
             <div className="flex items-center gap-3 my-8">
-              <button className="bg-black text-white px-20 py-3 rounded-xl">
-                Contact
-              </button>
-              <button className="bg-[#dbdbdb] text-black px-3 py-3 rounded-xl">
+            <button
+        className="bg-black text-white px-20 py-3 rounded-xl"
+        onClick={toggleModal}
+      >
+        Contact
+      </button>
+      {isModalOpen && <ContactModel toggleModal={toggleModal} 
+      property={property}/>}
+              <button className="bg-[#dbdbdb] text-black px-3 py-3 rounded-xl" onClick={toggleMoreModal}>
                 <span className="bg-white border-[1px] border-black text-[12px] p-1 rounded-md flex items-center justify-center">
                   <BsThreeDots />
                 </span>
               </button>
+              {isMoreModalOpen && 
+              <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                <div className="bg-white rounded-xl p-8 shadow-lg relative max-w-md w-full text-black">
+                <p className="font-semibold text-xl">More Ways To Contact.</p>
+                <button
+          className="absolute top-9 right-6 text-gray-800 font-bold hover:text-black"
+          onClick={toggleMoreModal} // Make sure toggleModal is called correctly
+        >
+          ✕
+        </button>
+              <div className="p-10">
+              <div className="md:ml-2 mt-3">
+                <p className="text-[18px] text-black font-semibold">E-mail:</p>
+                <a href={`mailto:${footer? footer[0]?.email :""}`}>
+                  <p className="text-[#000] hover:bg-gray-200 p-2 rounded-lg">{footer? footer[0]?.email :""}</p>
+                </a>
+              </div>
+              <div className="md:ml-2 mt-3">
+                <p className="text-[18px] text-black font-semibold">Address:</p>
+                  <p className="text-[#000]  hover:bg-gray-200 p-2 rounded-lg">{footer? footer[0]?.location :""}
+                  </p>
+              </div>
+              <div className="md:ml-2 mt-3">
+                <p className="text-[18px] text-black font-semibold">Phone:</p>
+                <a href={`tel:${footer? footer[0]?.contact :""}`}>
+                  <p className="text-[#000]  hover:bg-gray-200 p-2 rounded-lg">{footer? footer[0]?.contact :""}</p>
+                </a>
+              </div>
+              </div>
+            </div>
+              </div>
+              }
             </div>
             <h3 className="md:text-2xl text-[18px] flex gap-1 text-black items-center detailedProperty">
               PRICE RANGE:{" "}

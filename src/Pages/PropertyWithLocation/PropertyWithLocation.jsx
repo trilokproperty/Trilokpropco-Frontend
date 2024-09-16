@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { endPoint } from "../../Component/ForAll/ForAll";
 import Header from "../../Component/Navigation/Header";
+import Footer from "../../Component/Navigation/Footer";
 import { Helmet } from "react-helmet";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
@@ -40,11 +41,13 @@ const PropertyWithLocation = () => {
                 </Helmet>
                 <SectionTitle value={`Explore Properties In: ${city?.name}`} color="white" />
             </div> 
-            <div className=' grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20  items-start md:mx-10 mx-5 !md:h-fit !h-screen'>
+            <div className=' grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20  items-start md:mx-10 mx-5 '>
                     {properties?.map(property => (
                         <PropertyListCard key={property?._id} property={property} />
                     ))}
                 </div>
+
+                <Footer />
     </div>
     );
 };

@@ -138,7 +138,7 @@ const Footer = () => {
               </div>
               <div className="md:ml-2">
                 <p className="text-[18px] text-black font-semibold">E-mail</p>
-                <a href="mailto:info@trilokpropco.com">
+                <a href={`mailto:${footers?.email}`}>
                   <p className="text-[#454545]">{footers?.email}</p>
                 </a>
               </div>
@@ -152,7 +152,7 @@ const Footer = () => {
               </div>
               <div className="md:ml-2">
                 <p className="text-[18px] text-black font-semibold">Contact</p>
-                <a href="tel:+91-9831775758">
+                <a href={`tel:${footers?.contact}`}>
                   <p className="text-[#454545]">{footers?.contact}</p>
                 </a>
               </div>
