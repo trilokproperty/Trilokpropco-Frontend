@@ -67,6 +67,9 @@ body {
   body.dark-mode  .blogTitle{
     color: #E7C578;
   }
+  body.dark-mode .menu-hover:hover{
+    background-color: #ffffff85;
+  }
   body.dark-mode .swiper-pagination-bullet{
     background-color: #E7C578 !important;
   }

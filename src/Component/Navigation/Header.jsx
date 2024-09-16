@@ -1,10 +1,14 @@
-import { FaRegHeart } from "react-icons/fa6";
+import { FaBloggerB, FaRegHeart } from "react-icons/fa6";
 import { IoGitCompareOutline, IoMenu, IoClose } from "react-icons/io5"; // Added IoClose for the cross icon
 import "./Navigation.css";
 import { useEffect, useState } from "react";
 import CompareDrawer from "../CompareDrawer/CompareDrawer";
 import { Link } from "react-router-dom";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { IoMdHome } from "react-icons/io";
+import { CiGrid41 } from "react-icons/ci";
+import { MdOutlineMedicalServices } from "react-icons/md";
+import { RiContactsBook3Fill, RiErrorWarningFill } from "react-icons/ri";
 
 const Header = ({ isDefault = true }) => {
   const [compareCount, setCompareCount] = useState();
@@ -14,24 +18,30 @@ const Header = ({ isDefault = true }) => {
 
   const menuLiMobile = (
     <ul className="menu p-4 z-[1000] w-80 h-full property-list-card bg-white text-black">
-      <li onClick={() => setIsMenuDrawerVisible(false)}>
-        <Link to="/">Home</Link>
+      <li className="p-2" onClick={() => setIsMenuDrawerVisible(false)}>
+        <Link to="/" className=" menu-hover"><IoMdHome />Home</Link>
       </li>
-      <li onClick={() => setIsMenuDrawerVisible(false)}>
-        <Link to="/properties">Property</Link>
+      <hr />
+      <li className="p-2" onClick={() => setIsMenuDrawerVisible(false)}>
+        <Link to="/properties" className=" menu-hover"><CiGrid41 />Property</Link>
       </li>
-      <li onClick={() => setIsMenuDrawerVisible(false)}>
-        <Link to="/services">Services</Link>
+      <hr />
+      <li className="p-2" onClick={() => setIsMenuDrawerVisible(false)}>
+        <Link to="/services" className=" menu-hover"><MdOutlineMedicalServices />Services</Link>
       </li>
-      <li onClick={() => setIsMenuDrawerVisible(false)}>
-        <Link to="/blog">Blog</Link>
+      <hr />
+      <li className="p-2" onClick={() => setIsMenuDrawerVisible(false)}>
+        <Link to="/blog" className=" menu-hover"><FaBloggerB />Blog</Link>
       </li>
-      <li onClick={() => setIsMenuDrawerVisible(false)}>
-        <Link to="/about">About</Link>
+      <hr />
+      <li className="p-2" onClick={() => setIsMenuDrawerVisible(false)}>
+        <Link to="/about" className=" menu-hover"><RiErrorWarningFill/>About</Link>
       </li>
-      <li onClick={() => setIsMenuDrawerVisible(false)}>
-        <Link to="/contact">Contact</Link>
+      <hr />
+      <li className="p-2" onClick={() => setIsMenuDrawerVisible(false)}>
+        <Link to="/contact" className=" menu-hover"><RiContactsBook3Fill />Contact</Link>
       </li>
+      <hr />
     </ul>
   );
 
