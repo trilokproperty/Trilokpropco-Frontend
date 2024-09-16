@@ -178,6 +178,9 @@ body {
     .city-item{
         height: 200px;
     }
+    .swiper-container{
+      left: 0px;
+    }
     .testimonial-card{
       margin-left: 50px;
       margin-right: 50px;
@@ -229,6 +232,9 @@ body {
     }
     .slide-btn{
         top:80%;
+    }
+    .swiper-container{
+      left: 0px;
     }
     .testimonial-card{
       margin-left: 18px;

@@ -326,9 +326,8 @@ const DetailProperty = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: "670px",
           position: "relative",
-        }}
+        }} className="md:h-[670px] h-[550px]"
       >
         <div className="flex items-center justify-between pt-3 px-8">
           <div className="flex gap-2 text-[#ffffff77] text-4xl">
@@ -354,7 +353,7 @@ const DetailProperty = () => {
             <img
               src={developer.image}
               alt={developer.name}
-              className="w-[70px] h-[70px] rounded-full opacity-70"
+              className="md:w-[70px] w-[50px] h-[50px] md:h-[70px] rounded-full opacity-70"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             />
@@ -405,25 +404,47 @@ const DetailProperty = () => {
             <img
               src={type?.logo}
               alt={type?.type}
-              className="w-[50px] h-[50px] bg-[#fff] p-2"
+              className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] bg-[#fff] p-2"
             />
-            <h5 className="text-2xl font-semibold text-white">{type?.type}</h5>
+            <h5 className="md:text-2xl text-xl font-semibold text-white">{type?.type}</h5>
           </div>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={12}
-            slidesPerView={2.9}
+            breakpoints={{
+              // Small devices
+              0: {
+                slidesPerView: 3.5,
+              },
+              // Medium devices
+              640: {
+                slidesPerView: 4,
+              },
+              768: {
+                slidesPerView: 4.5,
+              },
+              900: {
+                slidesPerView: 6,
+              },
+              // Large devices
+              1000: {
+                slidesPerView: 3.2,
+              },
+              1300: {
+                slidesPerView: 3.2,
+              },
+            }}
             onSlideChange={(swiper) => {
               setActiveIndex(swiper.realIndex);
             }}
             onSwiper={setSwiperInstance}
-            className="swiper-container !mr-0  !absolute md:!bottom-14 !bottom-32 !right-[-250px]"
+            className="swiper-container !mr-0  !absolute lg:!bottom-14 md:!bottom-30 !bottom-32 md:!right-[-280px]"
           >
             {property?.galleryImages?.map((image, index) => (
               <SwiperSlide
                 key={index}
                 onClick={() => handleSlideClick(index)}
-                className={`!w-[160px] !h-[100px] flex items-center justify-center gap-5 cursor-pointer ${
+                className={`md:!w-[160px] !w-[90px] !h-[70px] md:!h-[100px] flex items-center justify-center gap-5 cursor-pointer ${
                   index === activeIndex
                     ? "border-[3px] border-[#046307] rounded-[10px] !h-[103px]"
                     : "rounded-[10px]"
@@ -447,7 +468,7 @@ const DetailProperty = () => {
       <div className="lg:flex gap-5 mt-10 md:ml-10 md:mr-6">
         {/* Full left side details  */}
         <div className="lg:w-[65%] md:mx-0 mx-6 ">
-          <h2 className="md:text-4xl text-3xl text-black font-semibold detailedProperty">
+          <h2 className="md:text-4xl text-2xl text-black font-semibold detailedProperty">
             {property?.name}
           </h2>
           <p className="text-[14px] text-black ml-5 mb-2 detailedProperty">{location?.name}</p>
@@ -495,87 +516,87 @@ const DetailProperty = () => {
           </div>
           {/* project overview section */}
           <div>
-            <h2 className="text-3xl font-semibold text-black poppins detailedProperty">
+            <h2 className="md:text-3xl text-xl font-semibold text-black poppins detailedProperty">
               Project Overview
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
               <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
-                <h3 className="text-2xl  font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px]  font-medium uppercase">
                   POSSESSION DATE
                 </h3>
-                <p className="uppercase text-[18px] font-light">
+                <p className="uppercase md:text-[18px] text-[15px] font-light">
                   {property?.projectOverview?.possessionStart}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
-                <h3 className="text-2xl font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] font-medium uppercase">
                   LAND AREA
                 </h3>
-                <p className="uppercase text-[18px] font-light">
+                <p className="uppercase md:text-[18px] text-[15px] font-light">
                   {property?.projectOverview?.landArea}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   CONFIGURATION
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.configuration}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   FLAT AREA
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.flatArea}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   PRICE RANGE
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.priceRange}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   NO. OF BLOCKS
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.numberOfBlocks}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   ELEVATION
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.elevation}
                 </p>
               </div>
 
               <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   NO. OF UNITS
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.numberOfUnits}
                 </p>
               </div>
 
  <div className="text-center border py-6 px-3 rounded-2xl">
-                <h3 className="text-2xl detailedProperty text-black font-medium uppercase">
+                <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   RERA Reg No.
                 </h3>
-                <p className="uppercase text-[18px] detailedProperty text-black font-light">
+                <p className="uppercase md:text-[18px] text-[15px] detailedProperty text-black font-light">
                   {property?.projectOverview?.RegistrationNo}
                 </p>
               </div>
@@ -584,7 +605,7 @@ const DetailProperty = () => {
 
           {/* description section*/}
           <div>
-            <h2 className="text-3xl font-semibold detailedProperty detailedProperty text-black poppins mt-10 mb-6">
+            <h2 className="md:text-3xl text-xl font-semibold detailedProperty detailedProperty text-black poppins mt-10 mb-6">
               Description
             </h2>
             <p
@@ -595,7 +616,7 @@ const DetailProperty = () => {
 
           {/* project video */}
           <div>
-            <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+            <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
               Video
             </h2>
             <iframe
@@ -609,7 +630,7 @@ const DetailProperty = () => {
           
           {/* Price Table */}
           <div>
-          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+          <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
               Price
             </h2>
             <table className="table text-center">
@@ -632,7 +653,7 @@ const DetailProperty = () => {
 
           {/* Plans section */}
           <div>
-          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+          <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Plans
             </h2>
             <div>
@@ -668,7 +689,7 @@ const DetailProperty = () => {
 
           {/* Amenities section*/}
           <div>
-          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+          <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Amenities
             </h2>
           <div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 gap-3 justify-center">
@@ -690,7 +711,7 @@ const DetailProperty = () => {
 
           {/* Nearby description section*/}
           <div>
-            <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+            <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
             What s Nearby
             </h2>
             <p
@@ -702,7 +723,7 @@ const DetailProperty = () => {
 
           {/* Location Map section */}
           <div>
-          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+          <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Location Map
             </h2>
             <iframe
@@ -717,7 +738,7 @@ const DetailProperty = () => {
 
           {/* specifications description section*/}
           <div>
-            <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
+            <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
             Specifications
             </h2>
             <p
@@ -729,7 +750,7 @@ const DetailProperty = () => {
 
           {/* Bank Approve Images */}
           <div>
-          <h2 className="text-3xl font-semibold detailedProperty text-black poppins mt-10 msb-6">
+          <h2 className="md:text-3xl text-xl font-semibold detailedProperty text-black poppins mt-10 mb-6">
           Bank Approval
             </h2>
             <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-3">

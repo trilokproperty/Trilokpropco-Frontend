@@ -26,7 +26,7 @@ const PropertyWithLocation = () => {
             fetchCity()
     },[locationId])
     return (
-    <div className="h-full">
+    <div>
            <div style={{
                 backgroundImage: `url(https://i.ibb.co/NT6PZjt/16406692-rm378-02c.webp)`,
                 backgroundSize: 'cover',
@@ -40,7 +40,7 @@ const PropertyWithLocation = () => {
                 </Helmet>
                 <SectionTitle value={`Explore Properties In: ${city?.name}`} color="white" />
             </div> 
-            <div className=' grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20 h-full items-center md:mx-10 mx-5'>
+            <div className=' grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20  items-start md:mx-10 mx-5 !md:h-fit !h-screen'>
                     {properties?.map(property => (
                         <PropertyListCard key={property?._id} property={property} />
                     ))}
