@@ -11,6 +11,7 @@ import ContactUs from "../Pages/Contact/ContactUs";
 import Blogs from "../Pages/Blogs/Blogs";
 import DetailBlog from "../Pages/DetailPage/DetailBlog";
 import Services from "../Pages/Services/Services";
+import PropertyWithLocation from "../Pages/PropertyWithLocation/PropertyWithLocation";
 
 
 export const router = createBrowserRouter([
@@ -67,5 +68,11 @@ export const router = createBrowserRouter([
         path: '/blog/:id',
         element: <DetailBlog />,
         loader: ({ params }) => fetch(`${endPoint}/blog/${params._id}`)
+      },
+      
+      {
+        path: '/property/location/:locationId',
+        element: <PropertyWithLocation />,
+        loader: ({ params }) => fetch(`${endPoint}/property/location/${params._id}`)
       }
 ])

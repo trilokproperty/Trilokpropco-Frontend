@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../../Component/ForAll/SectionTitle";
 import { endPoint } from "../../../Component/ForAll/ForAll";
+import { Link } from "react-router-dom";
 
 const ExploreCities = () => {
     const [cities, setCities] = useState([]);
@@ -72,7 +73,8 @@ const ExploreCities = () => {
                             }}
                         >
                             {/* Overlay */}
-                            <div className="overlay absolute inset-0 bg-black opacity-20 rounded-[25px]"></div>
+                            <Link to={`property/location/${city._id}`} > <div className="overlay absolute inset-0 bg-black opacity-20 rounded-[25px]"></div>
+                            </Link>
 
                             {/* Content */}
                             <div className="relative z-10 text-white md:p-1 p-4 pb-8">
