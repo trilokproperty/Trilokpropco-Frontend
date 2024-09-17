@@ -73,7 +73,7 @@ const AllProperties = () => {
   };
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <div
         style={{
           backgroundImage: `url(https://i.ibb.co/NT6PZjt/16406692-rm378-02c.webp)`,
@@ -91,12 +91,12 @@ const AllProperties = () => {
         <SectionTitle value="Explore Properties" color="white" />
       </div>
 
-      <div className='md:mx-0 mx-2'>
+      <div className='md:mx-0 mx-2 '>
         <Filter onFilterChange={handleFilterChange} />
       </div>
 
       {/* Property Category Buttons */}
-      <div className="flex justify-center space-x-4 my-6">
+      <div className="flex justify-center flex-wrap space-x-4 my-6">
         <button
           className={`btn btn-sm ${selectedCategory === 'All' ? 'bg-[#046307] text-white' : 'bg-black text-white'}`}
           onClick={() => handleButtonClick('All')}
