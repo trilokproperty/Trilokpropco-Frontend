@@ -96,7 +96,7 @@ const AllProperties = () => {
       </div>
 
       {/* Property Category Buttons */}
-      <div className="flex justify-center flex-wrap space-x-4 my-6">
+      <div className="flex justify-center gap-2 flex-wrap space-x-4 my-6">
         <button
           className={`btn btn-sm ${selectedCategory === 'All' ? 'bg-[#046307] text-white' : 'bg-black text-white'}`}
           onClick={() => handleButtonClick('All')}

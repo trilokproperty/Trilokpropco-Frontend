@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -24,6 +24,7 @@ import { LiaPercentSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { Helmet } from "react-helmet";
 import ContactModel from "../../Component/ForAll/ContactModel";
+import { ShareSocial } from "react-share-social";
 
 // Custom active shape rendering for Pie chart
 const renderActiveShape = (props) => {
@@ -90,7 +91,11 @@ const DetailProperty = () => {
   const [loanTenure, setLoanTenure] = useState(20); // in years
   const [tenureType, setTenureType] = useState("years"); // 'years' or 'months'
   const [footer, setFooter] = useState();
-
+  const [modelOpen, setModelOpen] = useState(false);
+  
+  const toggleModalOpen = () => {
+    setModelOpen(!modelOpen);
+  };
   
   useEffect(() => {
     const fetchProperty = async () => {
@@ -335,7 +340,10 @@ const DetailProperty = () => {
     { name: 'Principal', value: loanAmount },
     { name: 'Interest', value: totalInterest }
   ];
-
+  
+// Get the current URL using useLocation
+const locationUrl = useLocation(); // Correctly use useLocation
+const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use window.locations
 
   return (
     <div className="overflow-hidden">
@@ -373,7 +381,23 @@ const DetailProperty = () => {
                 <FaRegHeart className="" />
               </div>
             )}
-            <IoShareSocial />
+            <IoShareSocial onClick={toggleModalOpen}/>
+            {/* Modal */}
+      {modelOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white rounded-xl p-8 shadow-lg relative max-w-2xl w-full text-black">
+            {/* Close button */}
+            <button className="btn btn-circle mr-2" onClick={toggleModalOpen}>X</button>
+
+            {/* Share icons from react-share-social */}
+            <ShareSocial
+              url={currentUrl}
+              socialTypes={['facebook', 'twitter', 'linkedin', 'whatsapp']}  // Choose the platforms
+              style={{ margin: '0 auto', width: '200px', height: '50px' }} // Optional styling
+            />
+          </div>
+        </div>
+      )}
           </div>
           <div>
             <img
