@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const PropertyTypes = () => {
   const [types, setTypes] = useState([]);
@@ -88,7 +89,7 @@ const PropertyTypes = () => {
       >
         {types?.map((type) => (
           <SwiperSlide key={type._id}>
-            <div className="flex flex-col justify-center items-center mb-16">
+           <Link to={`property/type/${type._id}`}> <div className="flex flex-col justify-center items-center mb-16">
             <div style={{
                 backgroundImage:'url(https://i.ibb.co/JqpB1St/Ellipse-1.webp)',
                 backgroundSize: 'auto',
@@ -105,7 +106,7 @@ const PropertyTypes = () => {
             </div>
             <h6 className="text-xl mt-5">{type.type}</h6>
             <p className="bg-[#EBEEF2] w-[104px] text-black text-center p-[2px] rounded-full drop-shadow-md mt-2">{typeCounts[type._id] || 0} Listing</p>
-            </div>
+            </div></Link>
           </SwiperSlide>
         ))}
       </Swiper>

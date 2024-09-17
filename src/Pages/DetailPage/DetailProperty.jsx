@@ -74,7 +74,7 @@ const renderActiveShape = (props) => {
 
 const DetailProperty = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { id } = useParams();
+  const { name } = useParams();  // Get id and slug from URL parameters
   const [property, setProperty] = useState({});
   const [developer, setDeveloper] = useState({});
   const [location, setLocation] = useState({});
@@ -94,9 +94,11 @@ const DetailProperty = () => {
   
   useEffect(() => {
     const fetchProperty = async () => {
-      const response = await fetch(`${endPoint}/property/${id}`);
+      // Fetch property by its ID
+      const response = await fetch(`${endPoint}/property/name/${name}`);
       const propertyData = await response.json();
       setProperty(propertyData);
+
       if (propertyData.developer) {
         const developerResponse = await fetch(`${endPoint}/developer`);
         const developerData = await developerResponse.json();
@@ -150,7 +152,7 @@ const DetailProperty = () => {
       }
   }
   fetchFooter()
-  }, [id, property]);
+  }, [name, property]);
 
   useEffect(() => {
     if (swiperInstance) {

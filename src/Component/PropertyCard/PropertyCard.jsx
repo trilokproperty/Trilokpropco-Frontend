@@ -171,9 +171,9 @@ const PropertyCard = ({ property }) => {
             </div>
             </Link>
             <div className="mt-6 text-black property-detail">
-            <Link to={`/property/${property?._id}`}>
+            <Link to={`/property/name/${property?.name}`}>
                 <h3 className="text-[26px] font-semibold !mb-0">₹ {property?.priceRange}</h3></Link>
-                <Link to={`/property/${property?._id}`}>
+                <Link to={`/property/name/${property?.name}`}>
                 <h4 className="text-[20px] font-medium !mt-0">{property?.name}</h4></Link>
                 <p className="text-[#9a9a9a] flex items-center gap-2"><SlLocationPin /><span>{curentLocation?.name}</span></p>
                 <p className="flex items-center justify-between text-[15px] config-text text-[#000]">

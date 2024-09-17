@@ -12,6 +12,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import DetailBlog from "../Pages/DetailPage/DetailBlog";
 import Services from "../Pages/Services/Services";
 import PropertyWithLocation from "../Pages/PropertyWithLocation/PropertyWithLocation";
+import PropertyWithType from "../Pages/PropertyWithType/PropertyWithType";
 
 
 export const router = createBrowserRouter([
@@ -60,10 +61,11 @@ export const router = createBrowserRouter([
         element: <Services/>,
     },
     {
-        path: '/property/:id',
+        path: '/property/name/:name',  // Include both the id and slug in the path
         element: <DetailProperty />,
-        loader: ({ params }) => fetch(`${endPoint}/property/${params._id}`)
+        loader: ({ params }) => fetch(`${endPoint}/property/name/${params.name}`),  // Fetch property by names
       },
+      
       {
         path: '/blog/:id',
         element: <DetailBlog />,
@@ -74,5 +76,10 @@ export const router = createBrowserRouter([
         path: '/property/location/:locationId',
         element: <PropertyWithLocation />,
         loader: ({ params }) => fetch(`${endPoint}/property/location/${params._id}`)
+      },
+      {
+        path: '/property/type/:typeId',
+        element: <PropertyWithType />,
+        loader: ({ params }) => fetch(`${endPoint}/property/type/${params._id}`)
       }
 ])
