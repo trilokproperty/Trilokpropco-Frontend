@@ -361,7 +361,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "relative",
-        }} className="md:h-[670px] h-[550px]"
+        }} className="md:h-[670px] h-[250px]"
       >
         <div className="flex items-center justify-between pt-3 px-8">
           <div className="flex gap-2 text-[#ffffff77] text-4xl">
@@ -488,7 +488,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               setActiveIndex(swiper.realIndex);
             }}
             onSwiper={setSwiperInstance}
-            className="swiper-container !mr-0  !absolute lg:!bottom-14 md:!bottom-30 !bottom-32 md:!right-[-280px]"
+            className="swiper-container !mr-0  !absolute lg:!bottom-14 md:!bottom-32 md:!right-[-280px]"
           >
             {property?.galleryImages?.map((image, index) => (
               <SwiperSlide
@@ -515,7 +515,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
         </div>
       </div>
 
-      <div className="lg:flex gap-5 mt-10 md:ml-10 md:mr-6">
+      <div className="lg:flex gap-5 md:mt-10 mt-24 md:ml-10 md:mr-6">
         {/* Full left side details  */}
         <div className="lg:w-[65%] md:mx-0 mx-6 ">
           <h2 className="md:text-4xl text-2xl text-black font-semibold detailedProperty">
