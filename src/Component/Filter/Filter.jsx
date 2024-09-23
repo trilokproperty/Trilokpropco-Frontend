@@ -45,8 +45,8 @@ const Filter = ({ onFilterChange }) => {
 
     return (
         <div>
-            <div className="flex items-end justify-center mb-10 md:gap-5 gap-2 mt-10">
-                <div>
+            <div className="md:flex grid grid-cols-2 items-end justify-center mb-10 md:gap-5 gap-2 mt-10 flex-warp">
+                <div className="cols-span-1">
                     <label htmlFor="city">Location</label>
                     <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="input w-full input-bordered  text-black">
                         <option value="">All Cities</option>
@@ -55,7 +55,7 @@ const Filter = ({ onFilterChange }) => {
                         ))}
                     </select>
                 </div>
-                <div>
+                <div className="cols-span-1">
                     <label htmlFor="type">Type</label>
                     <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="select select-bordered text-black w-full max-w-xs">
                         <option value="">All Types</option>
@@ -64,7 +64,7 @@ const Filter = ({ onFilterChange }) => {
                         ))}
                     </select>
                 </div>
-                <div>
+                <div className="cols-span-1">
                     <label htmlFor="for">For</label>
                     <select value={selectedFor} onChange={(e) => setSelectedFor(e.target.value)} className="select select-bordered text-black w-full">
                         <option value="">All</option>
@@ -73,7 +73,7 @@ const Filter = ({ onFilterChange }) => {
                         <option value="Rent">Rent</option>
                     </select>
                 </div>
-                <div>
+                <div className="cols-span-1">
                     <label htmlFor="status">Status</label>
                     <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="select select-bordered text-black w-full">
                         <option value="">All Statuses</option>
@@ -82,7 +82,7 @@ const Filter = ({ onFilterChange }) => {
                         ))}
                     </select>
                 </div>
-                <button onClick={handleFilterSubmit} className="btn bg-[#046307] text-white"><FaSearch /></button>
+                <button onClick={handleFilterSubmit} className="btn bg-[#046307] text-white col-span-2"><FaSearch /></button>
             </div>
         </div>
     );
