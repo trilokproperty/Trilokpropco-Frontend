@@ -10,7 +10,7 @@ const CompareDrawer = ({ isVisible, onClose }) => {
   console.log(compareList)
 
   return (
-    <div className="fixed top-0 right-0 w-[50%] md:w-1/3 h-full bg-white shadow-lg flex flex-col overflow-y-auto text-center z-[1000]">
+    <div className="fixed top-0 right-0 w-[50%] md:w-1/3 h-full bg-white shadow-lg flex flex-col overflow-y-auto text-center z-[1000] text-black">
     <h3 className="text-lg font-semibold">Compare Properties</h3>
     <button onClick={onClose} className="text-4xl text-center flex justify-center">
       <IoClose />
