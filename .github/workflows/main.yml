@@ -25,8 +25,8 @@ jobs:
       - name: Build and Deploy Frontend
         run: |
           cd /home/ubuntu/Trilokpropco-frontend 
-          npm install
-          npm run build
+          sudo npm install
+          sudo npm run build
           sudo cp -r ./dist/* /var/www/html  # Make sure the frontend build outputs to 'dist'
 
       - name: Restart Nginx
