@@ -30,7 +30,7 @@ const Footer = () => {
     >
       <div className="md:flex lg:gap-3 md:gap-2 md:px-2 lg:px-5 justify-center md:h-[400px] py-10 px-10 items-start md:pt-20">
         <div className="md:w-[25%] w-full flex flex-col items-center md:mt-0 mt-5">
-          <img src={footers?.image} alt="" className="w-[105px] h-[53px]" />
+          <img src={footers?.image} alt="Trilok Propco - Real Estate Website" className="w-[105px] h-[53px]" />
           <p className="text-[#454545]">{footers?.description}</p>
           <h6 className="text-xl font-semibold mt-4 text-black">Follow us</h6>
 

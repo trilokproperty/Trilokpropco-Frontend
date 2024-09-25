@@ -130,7 +130,7 @@ const Header = ({ isDefault = true }) => {
             <div className="md:w-[104px] lg:h-[50px] w-1/3 navbar-start">
               <img
                 src={isDefault ? "https://i.ibb.co/stKQtrJ/1000278004-1.webp" : "https://i.ibb.co/f1L99L9/18a006575c097b8b99494b75da063caf-removebg-preview-2.webp"}
-                alt="logo"
+                alt="logo - Trilok Propco"
                 className="logo"
               />
             </div>

@@ -117,7 +117,7 @@ const PropertyListCard = (property) => {
         {property &&
         <div className="flex gap-3 h-[210px] items-center rounded-2xl shadow-xl pr-2 hover:transform hover:translate-y-2 transition md:hover:shadow-2xl bg-white hover:border-[#046307] hover:border-2 hover:h-[212px] w-full property-list-card">
             <div className="relative">
-                <img src={property?.property?.galleryImages[0]} alt="" className="  h-[208px] lg:w-[170px] w-[140px] rounded-l-2xl relative object-cover object-center"/>
+                <img src={property?.property?.galleryImages[0]} alt={property?.property?.name} className="  h-[208px] lg:w-[170px] w-[140px] rounded-l-2xl relative object-cover object-center"/>
 
                 {property?.property?.exclusive && (
                     <div className="bg-[#046307]  h-[30px] flex items-center justify-center rounded-r-[10px] absolute top-[10%] text-white font-normal uppercase px-3 text-[17px] Bebas-Neue pt-1"

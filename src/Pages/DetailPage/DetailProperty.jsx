@@ -502,7 +502,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               >
                 <img
                   src={image}
-                  alt={`Slide ${index}`}
+                  alt={property?.name}
                   className="w-full h-full object-cover rounded-[10px]"
                   style={{
                     opacity: index === activeIndex ? 1 : 0.9,
