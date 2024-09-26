@@ -1,1 +1,1 @@
-export const endPoint = "https://trilokpropco-backend.vercel.app";
+export const endPoint = "https://trilokpropco.com/api";
