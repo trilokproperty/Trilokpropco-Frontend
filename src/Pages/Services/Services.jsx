@@ -43,7 +43,7 @@ const Services = () => {
     }
     fetchFooter()
   }, []);
-  console.log(sectionDes, sectionDes[0]?.sectionDes)
+  console.log(sectionDes)
   return (
     <div className="overflow-hidden">
       <div
