@@ -354,11 +354,11 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 <meta name="description" content={ property ? property.metaDescription : 'Default Description'} />
         <meta name="og:title" content={ property ? property.metaTitle : 'Default Title'} />
         <meta name="og:description" content={ property ? property.metaDescription : 'Default Description'} />
-        <meta name="og:image" content={ property ? property?.galleryImages[0] : 'default-image-url.jpg'} />
+        <meta name="og:image" content={ property ? property?.galleryImages?.[activeIndex] : 'default-image-url.jpg'} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={ property ? property.metaTitle : 'Default Title'} />
         <meta name="twitter:description" content={ property ? property.metaDescription : 'Default Description'} />
-        <meta name="twitter:image" content={ property ? property?.galleryImages[0] : 'default-image-url.jpg'} />
+        <meta name="twitter:image" content={ property ? property?.galleryImages?.[activeIndex] : 'default-image-url.jpg'} />
             </Helmet>
       <ToastContainer />
       {/* Custom Navigation Buttons and slider */}
