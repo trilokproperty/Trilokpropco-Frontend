@@ -90,30 +90,35 @@ const Contact = () => {
       <ToastContainer />
       <div className="md:w-1/2 contact-text">
         <h2 className="lg:text-6xl text-4xl font-semibold text-black contact-text">
-          We help to buy and sell your properties.
+        Your Path to Homeownership and Smart Real Estate Investment
         </h2>
-        <div className="flex gap-3 items-center mt-8">
+        <p>Finding your dream home or a profitable investment property is easier with our help:</p>
+        <div className="flex gap-3 items-start mt-8">
           <TbHomeSearch className="text-6xl font-semibold text-[#046307] md:text-8xl" />
           <div>
             <h5 className="md:text-3xl text-2xl font-semibold text-black contact-text">
-              Looking for the new home?
+              Home Buying Support
             </h5>
             <p>
-              10 new offers every day. 350 offers on-site, trusted by a
-              community of thousands of users.
+              <b>Property Identification:</b> We find homes that fit your lifestyle and budget.
+            </p>
+            <p>
+              <b>Financing Guidance:</b> We simplify mortgage options for informed decisions.
             </p>
           </div>
         </div>
 
-        <div className="flex gap-3 items-center mt-5">
+        <div className="flex gap-3 items-start mt-5">
           <MdOutlineAddHomeWork className="text-6xl font-semibold text-[#046307] md:text-8xl" />
           <div>
             <h5 className="md:text-3xl text-2xl font-semibold contact-text text-black">
-              Want to sell your home?
+              Real Estate Investment
             </h5>
             <p>
-              10 new offers every day. 350 offers on-site, trusted by a
-              community of thousands of users.
+              <b>Market Analysis:</b> We identify emerging neighborhoods and undervalued properties.
+            </p>
+            <p>
+              <b>Growth Strategies:</b> We develop investment plans for immediate and long-term returns.
             </p>
           </div>
         </div>
@@ -177,7 +182,7 @@ const Contact = () => {
           </div>
           <div className="flex w-full">
             {/* Custom Country Code Dropdown */}
-            <div className="relative w-1/4">
+            <div className="relative md:w-1/4 !w-full">
               <button
                 type="button"
                 onClick={() => setIsCountryListVisible(!isCountryListVisible)} // Toggle list visibility
@@ -188,7 +193,7 @@ const Contact = () => {
               </button>
               
               {isCountryListVisible && ( // Show country list only when visible
-                <div className="absolute top-full left-0 bg-black w-full max-h-60 overflow-y-auto z-10">
+                <div className="absolute top-full left-0 bg-black md:w-full w-[200px] max-h-60 overflow-y-auto z-10">
                   {/* Search Input */}
                   <input
                     type="text"
