@@ -64,8 +64,15 @@ const Services = () => {
       </div>
 
       <div>
-        <p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[#046307] pb-4 list-card-text">{sectionDes? sectionDes[0]?.sectionDes :""}
-        </p>
+        {services?.map(des => (
+  <p
+    className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[rgb(4,99,7)] pb-4 list-card-text"
+    key={des._id}
+  >
+    {des?.serviceDes}
+  </p>
+))}
+
 
         <div className="mt-32 mx-10">
           <SectionTitle value="Our Workflow" />
