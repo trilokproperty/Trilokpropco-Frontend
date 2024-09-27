@@ -29,7 +29,7 @@ const Footer = () => {
       }}
     >
       <div className="md:flex-row flex-col  flex lg:gap-3 md:gap-2 md:px-2 lg:px-5 md:justify-center justify-start md:h-[400px] py-10 px-10 items-start md:pt-20">
-        <div className="md:w-[25%] w-full flex flex-col items-center md:mt-0 mt-5">
+        <div className="md:w-[25%] w-full flex flex-col md:items-center md:mt-0 mt-5">
           <img src={footers?.image} alt="Trilok Propco - Real Estate Website" className="w-[105px] h-[53px]" />
           <p className="text-[#454545]">{footers?.description}</p>
           <h6 className="text-xl font-semibold mt-4 text-black">Follow us</h6>
@@ -131,7 +131,7 @@ const Footer = () => {
           <h6 className="text-xl font-semibold text-black mb-5">Contact Us</h6>
           <div className="flex gap-3 flex-col">
             <div className="flex gap-3 items-center">
-              <div className="w-[10%]">
+              <div className="md:w-[10%] w-[16%]">
                 <div className="bg-[#2a323c34] w-[40px] h-[40px] flex items-center justify-center text-[20px] rounded-full">
                   <FaRegEnvelope />
                 </div>
@@ -145,7 +145,7 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-3 md:items-center">
-              <div className="w-[10%]">
+              <div className="md:w-[10%] w-[16%]">
                 <div className="bg-[#2a323c34] w-[40px] h-[40px] flex items-center justify-center text-[20px] rounded-full">
                   <FaPhone />
                 </div>
@@ -159,7 +159,7 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-3 items-center">
-              <div className="w-[10%]">
+              <div className="md:w-[10%] w-[16%]">
                 <div className="bg-[#2a323c34] !w-[40px] !h-[40px] flex items-center justify-center text-[20px] rounded-full">
                   <CiLocationOn />
                 </div>
