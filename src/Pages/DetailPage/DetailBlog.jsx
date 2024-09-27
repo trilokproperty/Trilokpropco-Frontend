@@ -30,6 +30,14 @@ const DetailBlog = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>{blog ? blog.title : "Loading..."} - Trilokpropco</title>
+                <meta name="description" content={ blog ? blog.metaDescription : 'Default Description'} />
+        <meta name="og:title" content={ blog ? blog.metaTitle : 'Default Title'} />
+        <meta name="og:description" content={ blog ? blog.metaDescription : 'Default Description'} />
+        <meta name="og:image" content={ blog ? blog.image : 'default-image-url.jpg'} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={ blog ? blog.metaTitle : 'Default Title'} />
+        <meta name="twitter:description" content={ blog ? blog.metaDescription : 'Default Description'} />
+        <meta name="twitter:image" content={ blog ? blog.image : 'default-image-url.jpg'} />
             </Helmet>
 
             <div className="container mx-auto px-4 py-10">
