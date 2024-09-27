@@ -48,7 +48,7 @@ const Filter = ({ onFilterChange }) => {
             <div className="md:flex grid grid-cols-2 items-end justify-center mb-10 md:gap-5 gap-2 mt-10 flex-warp">
                 <div className="cols-span-1">
                     <label htmlFor="city">Location</label>
-                    <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="input w-full input-bordered  text-black">
+                    <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="input w-full input-bordered  text-black bg-white">
                         <option value="">All</option>
                         {cityOptions.map(city => (
                             <option key={city._id} value={city._id}>{city.name}</option>
@@ -57,7 +57,7 @@ const Filter = ({ onFilterChange }) => {
                 </div>
                 <div className="cols-span-1">
                     <label htmlFor="type">Type</label>
-                    <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="select select-bordered text-black w-full max-w-xs">
+                    <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="select select-bordered text-black w-full max-w-xs  bg-white">
                         <option value="">All Types</option>
                         {typeOptions.map(type => (
                             <option key={type._id} value={type._id}>{type.type}</option>
@@ -66,7 +66,7 @@ const Filter = ({ onFilterChange }) => {
                 </div>
                 <div className="cols-span-1">
                     <label htmlFor="for">For</label>
-                    <select value={selectedFor} onChange={(e) => setSelectedFor(e.target.value)} className="select select-bordered text-black w-full">
+                    <select value={selectedFor} onChange={(e) => setSelectedFor(e.target.value)} className="select select-bordered text-black w-full bg-white">
                         <option value="">All</option>
                         <option value="Buy">Buy</option>
                         <option value="Sale">Sale</option>
@@ -75,7 +75,7 @@ const Filter = ({ onFilterChange }) => {
                 </div>
                 <div className="cols-span-1">
                     <label htmlFor="status">Status</label>
-                    <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="select select-bordered text-black w-full">
+                    <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="select select-bordered text-black w-full bg-white">
                         <option value="">Status</option>
                         {statusOptions.map(status => (
                             <option key={status._id} value={status._id}>{status.status}</option>

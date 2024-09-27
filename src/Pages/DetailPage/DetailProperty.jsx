@@ -891,7 +891,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 required
                 name="name"
                 placeholder="Type name here"
-                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black"
+                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black bg-white"
               />
             </div>
 
@@ -904,7 +904,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 required
                 name="email"
                 placeholder="Type email here"
-                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black"
+                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black  bg-white"
               />
             </div>
 
@@ -921,7 +921,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               </button>
               
               {isCountryListVisible && ( // Show country list only when visible
-                <div className="absolute top-full left-0 text-black bg-white w-full max-h-60 overflow-y-auto z-10">
+                <div className="absolute top-full left-0 text-black bg-white md:w-full w-[200px] max-h-60 overflow-y-auto z-10">
                   {/* Search Input */}
                   <input
                     type="text"
@@ -950,7 +950,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               type="text"
               name="phone"
               placeholder="Your phone number"
-              className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4 focus:text-black"
+              className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4 focus:text-black  bg-white"
             />
           </div>
 
@@ -959,7 +959,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 <span className="label-text text-black ">Your message</span>
               </div>
               <textarea
-                className="border-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] text-area w-full mt-4 rounded-xl focus:text-black"
+                className="border-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] text-area w-full mt-4 rounded-xl focus:text-black bg-white"
                 placeholder="What is in your mind?"
                 rows={3}
                 name="message"
@@ -989,7 +989,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             type="number"
             value={loanAmount}
             onChange={(e) => setLoanAmount(Number(e.target.value))}
-            className="input !rounded-l-none w-full text-black"
+            className="input !rounded-l-none w-full text-black bg-white"
           />
         </div>
       </div>
@@ -1002,7 +1002,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             type="number"
             value={interestRate}
             onChange={(e) => setInterestRate(Number(e.target.value))}
-            className="input !rounded-l-none w-full text-black"
+            className="input !rounded-l-none w-full text-black bg-white"
           />
         </div>
       </div>
@@ -1015,7 +1015,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             type="number"
             value={loanTenure}
             onChange={(e) => setLoanTenure(Number(e.target.value))}
-            className="input !rounded-l-none w-full text-black"
+            className="input !rounded-l-none w-full text-black bg-white"
           />
           <select
             value={tenureType}

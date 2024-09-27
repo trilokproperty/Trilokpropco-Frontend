@@ -124,7 +124,7 @@ const Services = () => {
          <SectionTitle value="Contact Us" color="white"/>
          <div className=" mt-8 md:flex items-center justify-between gap-10">
          <div className="text-white md:mb-0 mb-6">
-        <h3 className="text-3xl font-semibold">Trilok Property Consultant</h3>
+        <h3 className="md:text-3xl text-xl font-semibold">Trilok Property Consultant</h3>
         <p>Email: <span className="font-light">{footer? footer[0]?.email :""}</span></p>
         <p>Phone: <span className="font-light">{footer? footer[0]?.contact :""}</span></p>
         <p>Address: <span className="font-light">{footer? footer[0]?.location :""}</span></p>

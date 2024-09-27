@@ -58,21 +58,21 @@ const SearchBar = () => {
       WebkitBackdropFilter: 'blur( 6px )',
       border: '1px solid rgba( 255, 255, 255, 0.18 )',
     }} >
-      <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="lg:px-10 lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 rounded option">
+      <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="lg:px-10 lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 rounded option bg-white">
         <option value="">All Types</option>
         {typeOptions.map(type => (
           <option key={type._id} value={type._id}>{type.type}</option>
         ))}
       </select>
 
-      <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className=" lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 lg:px-2 rounded option">
+      <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className=" lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 lg:px-2 rounded option bg-white">
         <option value="">All Cities</option>
         {cityOptions.map(city => (
           <option key={city._id} value={city._id}>{city.name}</option>
         ))}
       </select>
 
-      <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="lg:px-6 lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 rounded option">
+      <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="lg:px-6 lg:py-3 md:text-[13px] text-[10px] md:px-1 md:py-2 rounded option bg-white">
         <option value="">Status</option>
         {statusOptions.map(status => (
           <option key={status._id} value={status._id}>{status.status}</option>
