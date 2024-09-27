@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="md:w-[14%] w-full flex flex-col items-center md:mt-0 mt-5">
+        <div className="md:w-[14%] w-full flex flex-col md:items-center md:mt-0 mt-5">
           <h6 className="text-xl font-semibold text-black mb-2">About Us</h6>
           <div className="flex gap-3 flex-col">
             <Link to="#">
@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="md:w-[20%] w-full flex flex-col items-center md:mt-0 mt-5">
+        <div className="md:w-[20%] w-full flex flex-col md:items-center md:mt-0 mt-5">
           <h6 className="text-xl font-semibold text-black mb-6">Free Consultation</h6>
           <img src="https://i.ibb.co.com/stvmhsL/best-service-png.webp" alt="" />
           <a href="tel:+91-9831775758">
@@ -106,7 +106,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="md:w-[20%] w-full flex flex-col items-center md:mt-0 mt-5">
+        <div className="md:w-[20%] w-full flex flex-col md:items-center md:mt-0 mt-5">
           <h6 className="text-xl font-semibold text-black mb-6">Support & Summary</h6>
           <div className="flex gap-3 flex-col">
             <Link to="#" className="text-[#454545]">
@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="md:w-[25%] w-full flex flex-col items-center md:mt-0 mt-5">
+        <div className="md:w-[25%] w-full flex flex-col md:items-center md:mt-0 mt-5">
           <h6 className="text-xl font-semibold text-black mb-5">Contact Us</h6>
           <div className="flex gap-3 flex-col">
             <div className="flex gap-3 items-center">
@@ -144,7 +144,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex gap-3 items-center">
+            <div className="flex gap-3 md:items-center">
               <div className="w-[10%]">
                 <div className="bg-[#2a323c34] w-[40px] h-[40px] flex items-center justify-center text-[20px] rounded-full">
                   <FaPhone />
