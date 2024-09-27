@@ -100,7 +100,7 @@ const Footer = () => {
 
         <div className="md:w-[20%] w-full flex flex-col items-center md:mt-0 mt-5">
           <h6 className="text-xl font-semibold text-black mb-6">Free Consultation</h6>
-          <img src="https://i.ibb.co.com/f1bx4f8/best-service-png.webp" alt="" />
+          <img src="https://i.ibb.co.com/stvmhsL/best-service-png.webp" alt="" />
           <a href="tel:+91-9831775758">
             <button className="btn bg-[#046307] text-white mt-4">Schedule Now</button>
           </a>
