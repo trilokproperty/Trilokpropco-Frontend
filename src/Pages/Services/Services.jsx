@@ -124,9 +124,11 @@ const Services = () => {
          <SectionTitle value="Contact Us" color="white"/>
          <div className=" mt-8 md:flex items-center justify-between gap-10">
          <div className="text-white md:mb-0 mb-6">
+        <h3 className="text-3xl font-semibold">Trilok Property Consultant</h3>
         <p>Email: <span className="font-light">{footer? footer[0]?.email :""}</span></p>
-        <p>Address: <span className="font-light">{footer? footer[0]?.location :""}</span></p>
         <p>Phone: <span className="font-light">{footer? footer[0]?.contact :""}</span></p>
+        <p>Address: <span className="font-light">{footer? footer[0]?.location :""}</span></p>
+        <p>RERA Registered : <span className="font-light">{footer? footer[0]?.regis :""}</span></p>
          <Link to='/contact'><button className="bg-white text-[#046307] font-semibold p-2 md:text-2xl px-5 rounded-lg mt-8">Contact Us</button></Link>
          </div>
          <div>
