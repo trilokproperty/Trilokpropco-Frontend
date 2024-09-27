@@ -64,7 +64,7 @@ const Services = () => {
       </div>
 
       <div>
-        {services?.map(des => (
+        {sectionDes?.map(des => (
   <p
     className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[rgb(4,99,7)] pb-4 list-card-text"
     key={des._id}
