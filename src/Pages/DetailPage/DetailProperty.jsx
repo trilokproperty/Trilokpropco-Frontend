@@ -824,7 +824,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             <iframe
   src={property?.locationMap}
   title="Location Map"
-  className="w-full md:h-[500px] h-[200px] rounded-3xl"
+  className="w-full md:h-[500px] h-[250px] rounded-3xl"
   frameBorder="0"
   allowFullScreen
 />
