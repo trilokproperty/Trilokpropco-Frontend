@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const [services, setServices] = useState();
   const [footer, setFooter] = useState();
+  const [sectionDes, setSectionDes] = useState();
   useEffect(() => {
     const fetchServices = async () => {
       try {
@@ -21,6 +22,16 @@ const Services = () => {
       }
     };
     fetchServices();
+    const fetchServiceDes = async () => {
+      try {
+        const response = await fetch(`${endPoint}/service/text`);
+        const data = await response.json();
+        setSectionDes(data);
+      } catch (error) {
+        console.error("Error fetching properties:", error);
+      }
+    };
+    fetchServiceDes();
     const fetchFooter = async()=>{
         try {
             const response = await fetch(`${endPoint}/footer`);
@@ -52,17 +63,7 @@ const Services = () => {
       </div>
 
       <div>
-        <p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[#046307] pb-4 list-card-text">
-          Trilok Propco deal with luxury residential complex in Kolkata, mainly
-          with fresh properties both under construction as well as ready to move
-          properties. We search property according to your requirements, giving
-          you the best quotation price from the developer, without charging
-          brokerage from the client. Arranging site visit for the selected
-          properties, showing you the best properties according to your
-          requirements. We work with the renowned and nationalised developers of
-          Kolkata. Our journey starts from your property search till your
-          registration of your unit and later. Also guiding you with your home
-          loan process.
+        <p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[#046307] pb-4 list-card-text">{sectionDes[0]?.sectionDes}
         </p>
 
         <div className="mt-32 mx-10">
