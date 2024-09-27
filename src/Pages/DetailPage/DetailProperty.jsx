@@ -320,26 +320,34 @@ const DetailProperty = () => {
     setSelectedPlan(plan);
   };
 
-  // Helper function to calculate EMI
-  const calculateEMI = (amount, rate, tenure, tenureType) => {
-    const monthlyRate = rate / 12 / 100;
-    const months = tenureType === 'years' ? tenure * 12 : tenure;
-    const emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
-                (Math.pow(1 + monthlyRate, months) - 1);
-    return emi;
-  };
+ // Helper function to calculate EMI
+const calculateEMI = (amount, rate, tenure, tenureType) => {
+  const monthlyRate = rate / 12 / 100;
+  const months = tenureType === 'years' ? tenure * 12 : tenure;
 
-  // Calculate EMI, Total Interest, and Total Payment
-  const emi = calculateEMI(loanAmount, interestRate, loanTenure, tenureType);
-  const totalMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;
-  const totalInterest = emi * totalMonths - loanAmount;
-  const totalPayment = loanAmount + totalInterest;
+  // Handle cases where the interest rate is 0
+  if (monthlyRate === 0) {
+    return amount / months; // EMI without interest
+  }
 
-  // Pie chart data
-  const chartData = [
-    { name: 'Principal', value: loanAmount },
-    { name: 'Interest', value: totalInterest }
-  ];
+  const emi =
+    (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+    (Math.pow(1 + monthlyRate, months) - 1);
+
+  return emi;
+};
+
+// Calculate EMI, Total Interest, and Total Payment
+const emi = calculateEMI(loanAmount, interestRate, loanTenure, tenureType);
+const totalMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;
+const totalInterest = emi * totalMonths - loanAmount;
+const totalPayment = loanAmount + totalInterest;
+
+// Pie chart data
+const chartData = [
+  { name: 'Principal', value: loanAmount },
+  { name: 'Interest', value: totalInterest },
+];
   
 // Get the current URL using useLocation
 const locationUrl = useLocation(); // Correctly use useLocation
@@ -970,92 +978,105 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
       </div>
 
       {/* Loan Calculator Section */}
-      <div className="loan-calculator grid lg:w-full md:w-1/2 md:mx-auto lg:grid-cols-3 grid-cols-1 items-center justify-center my-20 lg:mx-5">
-        <div className="left-section bg-[#dadada91] rounded-3xl pb-4">
-          <h2 className="bg-black text-white text-4xl text-medium text-center p-2 rounded-t-3xl">EMI Calculator</h2>
-          <div className="p-3 px-12 pt-12 mb-4">
-            <label>Loan Amount</label>
-            <div className="relative flex items-center justify-center ">
-            <MdOutlineCurrencyRupee className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
-            <input
-              type="number"
-              value={loanAmount}
-              onChange={(e) => setLoanAmount(Number(e.target.value))}
-              className="input !rounded-l-none w-full text-black"
-            />
-            </div>
-
-          </div>
-          <div className="p-3 px-12">
-            <label>Interest Rate</label>
-            <div className="relative flex items-center justify-center">
-            <LiaPercentSolid className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
-            <input
-              type="number"
-              value={interestRate}
-              onChange={(e) => setInterestRate(Number(e.target.value))}
-              className="input !rounded-l-none w-full text-black"
-            />
-            </div>
-          </div>
-          <div className="p-3 px-12">
-            <label>Loan Tenure</label>
-             <div className="relative flex items-center justify-center">
-            <IoMdTime  className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
-            <input
-              type="number"
-              value={loanTenure}
-              onChange={(e) => setLoanTenure(Number(e.target.value))}
-              className="input !rounded-l-none w-full text-black"
-            />
-            <select
-              value={tenureType}
-              onChange={(e) => setTenureType(e.target.value)}className="select md:ml-2 bg-[#046307] text-white md:text-xl text-[12px] text-black"
-            >
-              <option value="years">Years</option>
-              <option value="months">Months</option>
-            </select></div>
-          </div>
-        </div>
-
-        <div className="middle-section text-center border-r-[1px] mt-10">
-          <div className="p-6 border-t-[1px]">
-          <p className="text-xl text-[#818181]">Loan EMI</p>
-          <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{emi.toFixed(2)}</h3>
-          </div>
-          <div className="p-6 border-t-[1px]">
-          <p className="text-xl text-[#818181]">Total Interest Payable</p>
-          <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{totalInterest.toFixed(2)} </h3>
-          </div>
-          <div className="p-6 border-t-[1px]">
-          <p className="text-xl text-[#818181]">Total of Payments (Principal + Interest)</p>
-          <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center"><MdOutlineCurrencyRupee />{totalPayment.toFixed(2)}</h3></div>
-        </div>
-
-        <div className="right-section lg:ml-8">
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                activeIndex={activeIndex}
-                activeShape={renderActiveShape}
-                data={chartData}
-                cx="50%"
-                cy="50%"
-                innerRadius={60}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-                onMouseEnter={(e, index) => setActiveIndex(index)}
-              >
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#36A2EB' : '#FF6384'} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
+       <div className="loan-calculator grid lg:w-full md:w-1/2 md:mx-auto lg:grid-cols-3 grid-cols-1 items-center justify-center my-20 lg:mx-5">
+    <div className="left-section bg-[#dadada91] rounded-3xl pb-4">
+      <h2 className="bg-black text-white text-4xl text-medium text-center p-2 rounded-t-3xl">EMI Calculator</h2>
+      <div className="p-3 px-12 pt-12 mb-4">
+        <label>Loan Amount</label>
+        <div className="relative flex items-center justify-center">
+          <MdOutlineCurrencyRupee className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
+          <input
+            type="number"
+            value={loanAmount}
+            onChange={(e) => setLoanAmount(Number(e.target.value))}
+            className="input !rounded-l-none w-full text-black"
+          />
         </div>
       </div>
+
+      <div className="p-3 px-12">
+        <label>Interest Rate</label>
+        <div className="relative flex items-center justify-center">
+          <LiaPercentSolid className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
+          <input
+            type="number"
+            value={interestRate}
+            onChange={(e) => setInterestRate(Number(e.target.value))}
+            className="input !rounded-l-none w-full text-black"
+          />
+        </div>
+      </div>
+
+      <div className="p-3 px-12">
+        <label>Loan Tenure</label>
+        <div className="relative flex items-center justify-center">
+          <IoMdTime className="p-[6px] text-5xl rounded-l-lg bg-[#bdbdbd]" />
+          <input
+            type="number"
+            value={loanTenure}
+            onChange={(e) => setLoanTenure(Number(e.target.value))}
+            className="input !rounded-l-none w-full text-black"
+          />
+          <select
+            value={tenureType}
+            onChange={(e) => setTenureType(e.target.value)}
+            className="select md:ml-2 bg-[#046307] text-white md:text-xl text-[12px] text-black"
+          >
+            <option value="years">Years</option>
+            <option value="months">Months</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div className="middle-section text-center border-r-[1px] mt-10">
+      <div className="p-6 border-t-[1px]">
+        <p className="text-xl text-[#818181]">Loan EMI</p>
+        <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center">
+          <MdOutlineCurrencyRupee />
+          {emi.toFixed(2)}
+        </h3>
+      </div>
+      <div className="p-6 border-t-[1px]">
+        <p className="text-xl text-[#818181]">Total Interest Payable</p>
+        <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center">
+          <MdOutlineCurrencyRupee />
+          {totalInterest.toFixed(2)}
+        </h3>
+      </div>
+      <div className="p-6 border-t-[1px]">
+        <p className="text-xl text-[#818181]">Total of Payments (Principal + Interest)</p>
+        <h3 className="text-5xl detailedProperty text-black flex font-bold justify-center">
+          <MdOutlineCurrencyRupee />
+          {totalPayment.toFixed(2)}
+        </h3>
+      </div>
+    </div>
+
+    <div className="right-section lg:ml-8">
+      <ResponsiveContainer width="100%" height={300}>
+        <PieChart>
+          <Pie
+            activeIndex={activeIndex}
+            activeShape={renderActiveShape}
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            innerRadius={60}
+            outerRadius={80}
+            fill="#8884d8"
+            dataKey="value"
+            onMouseEnter={(e, index) => setActiveIndex(index)}
+          >
+            {chartData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#36A2EB' : '#FF6384'} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  </div>
 
       <Footer />
      </div>
