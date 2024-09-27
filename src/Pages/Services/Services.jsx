@@ -43,6 +43,7 @@ const Services = () => {
     }
     fetchFooter()
   }, []);
+  console.log(sectionDes)
   return (
     <div className="overflow-hidden">
       <div
@@ -63,8 +64,8 @@ const Services = () => {
       </div>
 
       <div>
-       {sectionDes?.map(des =><p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[rgb(4,99,7)] pb-4 list-card-text" key={des._id}>{des?.sectionDes}
-        </p>) }
+        <p className="lg:w-1/2 md:w-3/4 w-[90%] mx-auto my-10 text-black border-b-4 border-[#046307] pb-4 list-card-text">{sectionDes? sectionDes[0]?.sectionDes :""}
+        </p>
 
         <div className="mt-32 mx-10">
           <SectionTitle value="Our Workflow" />
