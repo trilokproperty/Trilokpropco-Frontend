@@ -180,7 +180,7 @@ const About = () => {
         <div className="mt-32 mx-10">
         <SectionTitle value="Partners"/>
          
-         <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-center gap-6 mt-10 w-1/2 md:w-3/4 mx-auto">
+         <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-center gap-6 mt-10 w-full md:w-3/4 mx-auto">
             {
                 partners?.map(partner => <div className="rounded-lg border flex items-center justify-center w-full" key={partner._id}>
                     <img src={partner?.images[0]?.url} alt={partner.name} />
