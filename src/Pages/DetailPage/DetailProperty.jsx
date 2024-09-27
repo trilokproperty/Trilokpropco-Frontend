@@ -377,7 +377,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "relative",
-        }} className="md:h-[670px] h-[250px]"
+        }} className="md:h-[600px] h-[250px]"
       >
         <div className="flex items-center justify-between pt-3 px-8">
           <div className="flex gap-2 text-[#ffffff77] text-4xl">
@@ -504,13 +504,13 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               setActiveIndex(swiper.realIndex);
             }}
             onSwiper={setSwiperInstance}
-            className="swiper-container !mr-0  !absolute lg:!bottom-14 md:!bottom-32 md:!right-[-280px]"
+            className="swiper-container !mr-0  !absolute lg:!bottom-14 md:!bottom-32 !bottom-[-90px] md:!right-[-280px]"
           >
             {property?.galleryImages?.map((image, index) => (
               <SwiperSlide
                 key={index}
                 onClick={() => handleSlideClick(index)}
-                className={`md:!w-[160px] !w-[90px] !h-[70px] md:!h-[100px] flex items-center justify-center gap-5 cursor-pointer ${
+                className={`md:!w-[160px] !w-[100px] !h-[80px] md:!h-[100px] flex items-center justify-center gap-5 cursor-pointer ${
                   index === activeIndex
                     ? "border-[3px] border-[#046307] rounded-[10px] !h-[103px]"
                     : "rounded-[10px]"
@@ -531,7 +531,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
         </div>
       </div>
 
-      <div className="lg:flex gap-5 md:mt-10 mt-24 md:ml-10 md:mr-6">
+      <div className="lg:flex gap-5 md:mt-10 mt-28 md:ml-10 md:mr-6">
         {/* Full left side details  */}
         <div className="lg:w-[65%] md:mx-0 mx-6 ">
           <h2 className="md:text-4xl text-2xl text-black font-semibold detailedProperty">

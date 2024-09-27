@@ -21,6 +21,8 @@ const BlogCard = (blog) => {
     }
     return str;
   };
+  // Replace spaces with hyphens in the blog title
+  const formattedTitle = blog?.blog?.title?.replace(/\s+/g, '-');
 
   return (
     <div className="w-full">
@@ -43,7 +45,7 @@ const BlogCard = (blog) => {
         <h3 className="md:text-2xl text-[20px] font-medium blog-title text-black mb-2">{blog?.blog?.title}</h3>
             <p>{truncateText(stripHtmlTags(blog?.blog?.description), 10)}</p>
       </div>
-      <Link to={`/blog/${blog?.blog?._id}`} > <div className="text-3xl bg-black text-white w-12 h-12 flex justify-center items-center rounded-full mt-8 ml-auto">
+      <Link to={`/blog/${formattedTitle}/${blog?.blog?._id}`} > <div className="text-3xl bg-black text-white w-12 h-12 flex justify-center items-center rounded-full mt-8 ml-auto">
       <FiArrowRight />
       </div></Link>
       </div>

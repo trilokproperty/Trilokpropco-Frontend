@@ -111,7 +111,7 @@ const PropertyListCard = (property) => {
         setIsInFav(!isInFav);
     };
     
-
+    
     return (
     <div>
         {property &&
