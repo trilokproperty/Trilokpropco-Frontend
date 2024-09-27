@@ -34,6 +34,8 @@ const Main = () => {
     return (
         <div className="overflow-hidden">
             <Helmet>
+                
+    <title>Trilok Propco - Real Estate Consultant</title>
         <meta name="description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
         <meta name="og:title" content={ metaDatas? metaDatas[0]?.metaTitle : 'Default Title'} />
         <meta name="og:description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
