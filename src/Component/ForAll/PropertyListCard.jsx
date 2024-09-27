@@ -161,7 +161,7 @@ const PropertyListCard = (property) => {
             </div>
             
         <div className="relative"> 
-        <Link to={`/${property?.property?.name}`} className="list-card-text">
+        <Link to={`/${property?.property?.category}/${property?.property?.name}`} className="list-card-text">
                 <h4 className="lg:text-[20px] text-[18px] font-medium text-black lg:mb-2 mb-1 list-card-text"
                 style={{
                     lineHeight:'22px'

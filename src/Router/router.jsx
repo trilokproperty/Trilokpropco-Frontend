@@ -61,9 +61,9 @@ export const router = createBrowserRouter([
         element: <Services/>,
     },
     {
-        path: '/:name',  // Include both the id and slug in the path
+        path: '/:category/:name',  // Include both the id and slug in the path
         element: <DetailProperty />,
-        loader: ({ params }) => fetch(`${endPoint}/property/name/${params.name}`),  // Fetch property by names
+        loader: ({ params }) => fetch(`${endPoint}/${params.category}/${params.name}`),  // Fetch property by names
       },
       
       {

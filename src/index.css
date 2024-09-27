@@ -71,11 +71,11 @@ body {
     background-color: #ffffff85;
   }
   body.dark-mode .swiper-pagination-bullet{
-    background-color:  !important;
+    background-color: #fff !important;
   }
   body.dark-mode .swiper-pagination-bullet-active{
-    background-color: #E7C578 !important;
-    border: 1px solid #E7C578 !important;
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
   }
   /*  */
   .slide-btn{
