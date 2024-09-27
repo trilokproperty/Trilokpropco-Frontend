@@ -76,7 +76,7 @@ const CompareLists = () => {
       <div className="overflow-x-auto mx-4 lg:mx-20 !rounded-[25px] mb-12 mt-10">
         <table className="table-auto border w-full !rounded-[25px]">
           <tbody className="!rounded-[25px]">
-            <tr className="border">
+            <tr className="border !rounded-t-[25px]">
               <td className="p-4 font-bold"></td>
               {detailedCompareLists?.map((item, index) => (
                 <td key={index} className="p-4">
@@ -150,7 +150,7 @@ const CompareLists = () => {
                 <td key={index} className="p-4">{item?.projectOverview?.numberOfBlocks}</td>
               ))}
             </tr>
-            <tr className="border hover:bg-[#046307] hover:text-white">
+            <tr className="border hover:bg-[#046307] hover:text-white !rounded-b-[25px]">
               <td className="p-4 font-bold">Number of Units</td>
               {detailedCompareLists?.map((item, index) => (
                 <td key={index} className="p-4">{item?.projectOverview?.numberOfUnits}</td>
