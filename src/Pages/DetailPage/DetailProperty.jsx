@@ -377,7 +377,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "relative",
-        }} className="md:h-[600px] h-[250px]"
+        }} className="md:h-[550px] h-[250px]"
       >
         <div className="flex items-center justify-between pt-3 px-8">
           <div className="flex gap-2 text-[#ffffff77] text-4xl">
