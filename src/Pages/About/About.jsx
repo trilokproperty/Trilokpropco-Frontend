@@ -76,12 +76,14 @@ const About = () => {
                 <SectionTitle value="About Us" color="white" />
           </div> 
 
-        <div className="md:flex gap-5 mx-5 md:mx-5 lg:mx-14 md:mx-8 rounded-lg shadow-md md:mt-20 mt-4 mb-10 lg:p-14 text-black items-center bg-[#04630742] p-5 list-card-text">
-            <div>
+        <div className="md:grid lg:grid-cols-3 grid-cols-2 gap-5 mx-5 justify-center lg:mx-14 md:mx-8 rounded-lg shadow-md md:mt-20 mt-4 mb-10 text-black items-center bg-[#04630742] list-card-text">
+            <div className="lg:col-span-2 col-span-1 lg:p-14 p-5">
            <h2 className="text-3xl font-semibold mb-2">Company History</h2>
             <p>{about?.history}</p>
             </div>
-            <img src={footer ? footer[0]?.image :""} alt="Trilokpropco - Real Estate Agency." className="lg:w-[300px] w-[200px] h-[120px] lg:h-[180px]" />
+           <div className="bg-[#ffffff9b] h-full my-auto flex items-center justify-center rounded-lg">
+           <img src={footer ? footer[0]?.image :""} alt="Trilokpropco - Real Estate Agency." className="lg:w-[300px] w-[200px] h-[120px] lg:h-[180px]" />
+           </div>
         </div> 
 
         <div className="mx-5 lg:mx-14 md:mx-8 mt-10 mb-14 lg:flex items-center gap-5 list-card-text">
@@ -191,9 +193,11 @@ const About = () => {
          <SectionTitle value="Contact Us" color="white"/>
          <div className=" mt-8 md:flex items-center justify-between gap-10">
          <div className="text-white md:mb-0 mb-6">
+        <h3 className="text-3xl font-semibold">Trilok Property Consultant</h3>
         <p>Email: <span className="font-light">{footer? footer[0]?.email :""}</span></p>
-        <p>Address: <span className="font-light">{footer? footer[0]?.location :""}</span></p>
         <p>Phone: <span className="font-light">{footer? footer[0]?.contact :""}</span></p>
+        <p>Address: <span className="font-light">{footer? footer[0]?.location :""}</span></p>
+        <p>RERA Registered : <span className="font-light">{footer? footer[0]?.regis :""}</span></p>
          <Link to='/contact'><button className="bg-white text-[#046307] font-semibold p-2 md:text-2xl px-5 rounded-lg mt-8">Contact Us</button></Link>
          </div>
          <div>
