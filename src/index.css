@@ -67,6 +67,11 @@ body {
   body.dark-mode  .blogTitle{
     color: #E7C578;
   }
+  body.dark-mode .background-white-text-black{
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+  }
   body.dark-mode .menu-hover:hover{
     background-color: #ffffff85;
   }

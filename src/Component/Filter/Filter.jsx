@@ -49,7 +49,7 @@ const Filter = ({ onFilterChange }) => {
                 <div className="cols-span-1">
                     <label htmlFor="city">Location</label>
                     <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="input w-full input-bordered  text-black">
-                        <option value="">All Cities</option>
+                        <option value="">All</option>
                         {cityOptions.map(city => (
                             <option key={city._id} value={city._id}>{city.name}</option>
                         ))}
@@ -76,7 +76,7 @@ const Filter = ({ onFilterChange }) => {
                 <div className="cols-span-1">
                     <label htmlFor="status">Status</label>
                     <select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)} className="select select-bordered text-black w-full">
-                        <option value="">All Statuses</option>
+                        <option value="">Status</option>
                         {statusOptions.map(status => (
                             <option key={status._id} value={status._id}>{status.status}</option>
                         ))}

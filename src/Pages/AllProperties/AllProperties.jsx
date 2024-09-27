@@ -124,7 +124,7 @@ const AllProperties = () => {
             <PropertyListCard key={property?._id} property={property} />
           ))}
         </div>
-        <div className="md:col-span-3 sticky top-0 md:h-[calc(160vh-160px)] h-[calc(60vh-60px)]">
+        <div className="md:col-span-3 sticky top-0 md:h-[calc(160vh-160px)] h-[calc(100vh-100px)]">
           <Map properties={filteredProperties} />
         </div>
       </div>

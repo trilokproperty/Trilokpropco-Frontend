@@ -529,7 +529,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           <h2 className="md:text-4xl text-2xl text-black font-semibold detailedProperty">
             {property?.name}
           </h2>
-          <p className="text-[14px] text-black ml-5 mb-2 detailedProperty">{location?.name}</p>
+          <p className="text-[14px] text-black mb-2 detailedProperty">{location?.name}</p>
           <hr />
           <div className="md:flex gap-3 my-2">
             <div className="text-xl text-black flex gap-4 items-center detailedProperty md:mb-0 mb-2">
@@ -556,7 +556,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           <div className="md:flex items-center justify-between gap-3 my-8 ">
             <div className="flex items-center gap-3 my-8">
             <button
-        className="bg-black text-white px-20 py-3 rounded-xl"
+        className="bg-black background-white-text-black text-white px-20 py-3 rounded-xl"
         onClick={toggleModal}
       >
         Contact
