@@ -71,7 +71,7 @@ const Home = () => {
 
   return (
     <div
-      className="pt-5 md:h-[900px] h-[680px]"
+      className="pt-5 md:h-[750px] h-[680px]"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${activeItem?.galleryImages?.[0]})`,
         backgroundSize: 'cover',
