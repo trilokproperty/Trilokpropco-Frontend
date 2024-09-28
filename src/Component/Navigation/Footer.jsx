@@ -180,9 +180,7 @@ const Footer = () => {
               </div>
               <div className="md:ml-2">
                 <p className="text-[18px] text-black font-semibold">RERA License</p>
-                <a href="#">
                   <p className="text-[#454545]">{footers?.regis}</p>
-                </a>
               </div>
               </div>
           </div>
