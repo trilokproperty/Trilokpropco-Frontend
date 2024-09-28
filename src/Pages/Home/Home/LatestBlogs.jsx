@@ -5,7 +5,7 @@ import BlogCard from "../../../Component/BlogCard/BlogCard";
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from 'swiper/modules';
-
+import { Link } from "react-router-dom";
 const LatestBlogs = () => {
     const [blogs, setBlogs] = useState(null);
     
