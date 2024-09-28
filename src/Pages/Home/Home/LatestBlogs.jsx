@@ -69,6 +69,9 @@ const LatestBlogs = () => {
                     </SwiperSlide>
                 )}
             </Swiper>
+            <div className="flex justify-center justify-center"><Link to={`/blog`}> <button className="px-7 py-2 mt-4 bg-[#046307] text-white rounded font-extralight flex justify-center items-center gap-2">
+              More News
+            </button></Link></div>
         </div>
     );
 };
