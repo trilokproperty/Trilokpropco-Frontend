@@ -46,7 +46,7 @@ const BlogCard = (blog) => {
             <p>{truncateText(stripHtmlTags(blog?.blog?.description), 10)}</p>
       </div>
       <Link to={`/blog/${formattedTitle}/${blog?.blog?._id}`} > <div className="text-3xl bg-black text-white w-12 h-12 flex justify-center items-center rounded-full mt-8 ml-auto">
-      <FiArrowRight />
+      <small>Explore</small><FiArrowRight />
       </div></Link>
       </div>
     </div>
