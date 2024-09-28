@@ -170,14 +170,20 @@ const Footer = () => {
                   <p className="text-[#454545]">{footers?.location}</p>
                 </a>
               </div>
+            </div>
+            <div className="flex gap-3 items-center">
+              <div className="md:w-[10%] w-[16%]">
+                <div className="bg-[#2a323c34] !w-[40px] !h-[40px] flex items-center justify-center text-[20px] rounded-full">
+                  <CiLocationOn />
+                </div>
+              </div>
               <div className="md:ml-2">
                 <p className="text-[18px] text-black font-semibold">RERA License</p>
                 <a href="#">
                   <p className="text-[#454545]">{footers?.regis}</p>
                 </a>
               </div>
-            
-            </div>
+              </div>
           </div>
         </div>
       </div>
