@@ -5,6 +5,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { GoDotFill } from "react-icons/go";
 import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { GrLicense } from "react-icons/gr";
 
 const Footer = () => {
   const [footers, setFooters] = useState();
@@ -174,7 +175,7 @@ const Footer = () => {
             <div className="flex gap-3 items-center">
               <div className="md:w-[10%] w-[16%]">
                 <div className="bg-[#2a323c34] !w-[40px] !h-[40px] flex items-center justify-center text-[20px] rounded-full">
-                  <CiLocationOn />
+                  <GrLicense />
                 </div>
               </div>
               <div className="md:ml-2">
