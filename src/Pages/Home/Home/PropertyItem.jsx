@@ -20,9 +20,9 @@ const PropertyItem = ({ property, isActive }) => {
 
   return (
     <div style={itemStyle} className={`${isActive? 'md:h-[416px] h-[200px]' : 'md:h-[380px] h-[160px]' } relative flex items-end p-3`}>
-      <Link to={`${category}/${name}`}>
+     
       {/* Gradient shadow overlay */}
-      <div className="absolute bottom-0 left-0 w-full h-[70%] bg-gradient-to-t from-black to-transparent"></div></Link>
+      <div className="absolute bottom-0 left-0 w-full h-[70%] bg-gradient-to-t from-black to-transparent"></div>
       
       <div className="text-white w-full p-2 rounded-b-lg z-10 !font-light">
         <h3 className="text-[24px] Bebas-Neue"
