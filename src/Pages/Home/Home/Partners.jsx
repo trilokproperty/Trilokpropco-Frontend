@@ -72,7 +72,7 @@ const Partners = () => {
       {
         partners?.map(partner =>
           <SwiperSlide key={partner._id}>
-            <img src={partner.images[0].url} alt={partner.name}  className='rounded-2xl drop-shadow-lg w-[261px] h-[110px] my-10'/>
+            <img src={partner?.image} alt={partner.name}  className='rounded-2xl drop-shadow-lg w-[261px] h-[110px] my-10'/>
           </SwiperSlide>
         )
       }
