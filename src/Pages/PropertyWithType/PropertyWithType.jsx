@@ -8,7 +8,8 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const PropertyWithType = () => {
-    const { name } = useParams();  // Extract the name from the URL
+    
+        const { type } = useParams();  // Extract the type name from the URL
     const [typeId, setTypeId] = useState(null);  // State for storing the type ID
     const [properties, setProperties] = useState([]);
     const [type, setType] = useState(null);  // State for storing the type details
@@ -20,8 +21,12 @@ const PropertyWithType = () => {
                 const response = await fetch(`${endPoint}/type`);
                 const types = await response.json();  // Assuming your API returns a list of types
 
-                // Find the type by name
-                const foundType = types.find(type => type.name?.toLowerCase() === name?.replace(/_/g, " ")?.toLowerCase());
+                console.log("Fetched types:", types);  // Debugging: Log fetched types
+
+                // Find the type by 
+                const foundType = types.find(type => type.type?.toLowerCase() === type?.replace(/_/g, " ")?.toLowerCase());
+
+                console.log("Found type:", foundType);  // Debugging: Log found type
 
                 // Set the type ID if the type is found
                 if (foundType) {
@@ -36,30 +41,43 @@ const PropertyWithType = () => {
         };
 
         fetchTypes();
-    }, [name]);  // Run the effect when the "name" from the URL changes
+    }, [type]);  // Run the effect when the type "name" from the URL changes
 
     // Fetch properties and type details once we have the typeId
     useEffect(() => {
         if (typeId) {
+            console.log("Fetching properties for typeId:", typeId);  // Debugging: Log typeId before fetching
+
             // Fetch properties by typeId
             const fetchProperties = async () => {
-                const response = await fetch(`${endPoint}/property/type/${typeId}`);
-                const data = await response.json();
-                setProperties(data);  // Store the fetched properties
+                try {
+                    const response = await fetch(`${endPoint}/property/type/${typeId}`);
+                    const data = await response.json();
+                    console.log("Fetched properties:", data);  // Debugging: Log fetched properties
+                    setProperties(data);  // Store the fetched properties
+                } catch (error) {
+                    console.error('Error fetching properties:', error);
+                }
             };
 
             fetchProperties();
 
             // Fetch type details by typeId
             const fetchType = async () => {
-                const response = await fetch(`${endPoint}/type/${typeId}`);
-                const data = await response.json();
-                setType(data);  // Store the type details
+                try {
+                    const response = await fetch(`${endPoint}/type/${typeId}`);
+                    const data = await response.json();
+                    console.log("Fetched type details:", data);  // Debugging: Log fetched type details
+                    setType(data);  // Store the type details
+                } catch (error) {
+                    console.error('Error fetching type details:', error);
+                }
             };
 
             fetchType();
         }
     }, [typeId]);  // Only run this effect when typeId is available
+    
     return (
     <div>
            <div style={{
