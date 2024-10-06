@@ -96,11 +96,16 @@ const DetailProperty = () => {
   const toggleModalOpen = () => {
     setModelOpen(!modelOpen);
   };
+
+  const cleanUrl = (url) => {
+  return url.replace(/-/g, ''); // This removes all hyphens from the URL
+};
   
   useEffect(() => {
     const fetchProperty = async () => {
-      // Fetch property by its ID
-      const response = await fetch(`${endPoint}/property/name/${name}`);
+      // Fetch property by its name
+      const cleanedName = cleanUrl(name);
+      const response = await fetch(`${endPoint}/property/name/${cleanedName}`);
       const propertyData = await response.json();
       setProperty(propertyData);
 
