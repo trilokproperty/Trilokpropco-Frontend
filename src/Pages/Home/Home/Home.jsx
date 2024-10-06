@@ -16,6 +16,8 @@ const Home = () => {
   const [activeItem, setActiveItem] = useState({});
   const [swiperInstance, setSwiperInstance] = useState(null);
 
+  const nameSlug = activeItem?.name.toLowerCase().replace(/\s+/g, '-')
+  
   // Fetch properties from the API
   useEffect(() => {
     const fetchProperties = async () => {
@@ -114,7 +116,7 @@ const Home = () => {
             <p className="font-semibold text-white mt-2 lg:text-[18px] text-[12px] md:text-[16px]">Price: <span className="!text-white font-extralight"> {activeItem?.priceRange}</span></p>
             <p className="font-semibold text-white lg:text-[18px] text-[12px] md:text-[16px]">Unit Size: <span className="!text-white font-extralight">{activeItem?.size}</span></p>
             <p className="font-semibold text-white lg:text-[18px] text-[12px] md:text-[16px]">Config: <span className="!text-white font-extralight">{activeItem?.configuration}</span></p>
-            <Link to={`/${activeItem?.category}/${activeItem?.name}`}> <button className="px-7 py-2 mt-4 bg-[#046307] text-white rounded font-extralight flex justify-center items-center gap-2">
+            <Link to={`/${activeItem?.category}/${nameSlug}`}> <button className="px-7 py-2 mt-4 bg-[#046307] text-white rounded font-extralight flex justify-center items-center gap-2">
               View <FaArrowRight />
             </button></Link>
           </div>
