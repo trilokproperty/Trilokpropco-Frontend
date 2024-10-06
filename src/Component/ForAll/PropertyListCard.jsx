@@ -169,7 +169,7 @@ const PropertyListCard = (property) => {
                 }}
                 >{property?.property?.name}</h4></Link>
                 <h6 className="lg:text-[14px] text-[12px] font-normal text-black mt-[-4px] list-card-text">by {curentDeveloper?.name}</h6>
-                <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><SlLocationPin/> {curentLocation?.name}</p>
+                <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><SlLocationPin/> {property?.property?.location?.name || curentLocation?.name}</p>
                 <h4 className="lg:text-[20px] text-[18px] font-medium text-black mt-[-4px] list-card-text">₹   {property?.property?.priceRange}</h4>
                 <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><img src={property?.property?.type?.logo ||curentType?.logo} alt={property?.property?.type?.type ||curentType?.type} className="w-[16px] h-[16px]" /> <span>{property?.property?.type?.type ||curentType?.type}</span></p>
                 <p className="lg:text-[14px] text-[12px] flex items-center gap-2"><img src={curentStatus?.image} alt={curentStatus?.status} className="w-[16px] h-[16px] status" /> <span>{curentStatus?.status}</span></p>
