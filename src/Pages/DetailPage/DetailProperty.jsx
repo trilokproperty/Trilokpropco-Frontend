@@ -627,7 +627,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             <h2 className="md:text-3xl text-xl font-semibold text-black poppins detailedProperty">
               Project Overview
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-6">
               <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
                 <h3 className="md:text-2xl text-[18px]  font-medium uppercase">
                   POSSESSION DATE
