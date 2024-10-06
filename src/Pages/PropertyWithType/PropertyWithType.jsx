@@ -69,9 +69,9 @@ const PropertyWithType = () => {
         <Header />
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{`Properties of Type: ${type?.name} - Trilokpropco`}</title>
+          <title>{`Properties of Type: ${type?.type} - Trilokpropco`}</title>
         </Helmet>
-        <SectionTitle value={`Explore Properties of Type: ${type?.name}`} color="white" />
+        <SectionTitle value={`Explore Properties of Type: ${type?.type}`} color="white" />
       </div>
       <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20 items-start md:mx-10 mx-5'>
         {properties?.map(property => (
