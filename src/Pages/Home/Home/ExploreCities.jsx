@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Utility function to create slug from city name
 const createSlug = (name) => {
-    return name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+    return name.toLowerCase().replace(/\s+/g, '_').replace(/[^\w-]+/g, '');
 };
 
 const ExploreCities = () => {
