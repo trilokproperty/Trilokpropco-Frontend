@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 // Function to generate slug from the type
 const generateSlug = (type) => {
-  return type.toLowerCase().replace(/\s+/g, '-');
+  return type.toLowerCase().replace(/\s+/g, '_');
 };
 
 const PropertyTypes = () => {
@@ -94,7 +94,7 @@ const PropertyTypes = () => {
       >
         {types?.map((type) => (
           <SwiperSlide key={type._id}>
-            <Link to={`property/type/${generateSlug(type.type)}/${type._id}`}>
+            <Link to={`property/type/${generateSlug(type.type)}`}>
               <div className="flex flex-col justify-center items-center mb-16">
                 <div
                   style={{
