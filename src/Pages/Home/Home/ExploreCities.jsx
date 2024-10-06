@@ -3,6 +3,11 @@ import SectionTitle from "../../../Component/ForAll/SectionTitle";
 import { endPoint } from "../../../Component/ForAll/ForAll";
 import { Link } from "react-router-dom";
 
+// Utility function to create slug from city name
+const createSlug = (name) => {
+    return name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+};
+
 const ExploreCities = () => {
     const [cities, setCities] = useState([]);
     const [propertyCounts, setPropertyCounts] = useState({});
@@ -62,6 +67,9 @@ const ExploreCities = () => {
                         flexBasisClasses = "flex-grow lg:basis-1/4 md:basis-1/3 basis-full";
                     }
 
+                    // Create the slug for the city name
+                    const citySlug = createSlug(city.name);
+
                     return (
                         <div
                             key={city._id}
@@ -73,7 +81,8 @@ const ExploreCities = () => {
                             }}
                         >
                             {/* Overlay */}
-                            <Link to={`property/location/${city.name}/${city._id}`} > <div className="overlay absolute inset-0 bg-black opacity-20 rounded-[25px]"></div>
+                            <Link to={`property/location/${citySlug}/${city._id}`} >
+                                <div className="overlay absolute inset-0 bg-black opacity-20 rounded-[25px]"></div>
                             </Link>
 
                             {/* Content */}
