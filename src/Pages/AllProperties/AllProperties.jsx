@@ -91,7 +91,7 @@ const AllProperties = () => {
         <SectionTitle value="Explore Properties" color="white" />
       </div>
 
-      <div className='md:mx-0 mx-2 '>
+      <div className='md:mx-0 mx-2'>
         <Filter onFilterChange={handleFilterChange} />
       </div>
 
@@ -118,7 +118,7 @@ const AllProperties = () => {
       </div>
 
       {/* Property List */}
-      <div className="grid md:grid-cols-5 gap-8 lg:mx-20 mx-5 mb-3 md:h-screen">
+      <div className="grid md:grid-cols-5 gap-8 lg:mx-20 mx-5 mb-3">
         <div className='md:col-span-2 flex flex-col gap-5 mt-5'>
           {filteredProperties.slice(0, 8).map(property => (
             <PropertyListCard key={property?._id} property={property} />
@@ -129,6 +129,7 @@ const AllProperties = () => {
         </div>
       </div>
 
+      {/* Ensure Footer is outside of grid */}
       <Footer />
     </div>
   );
