@@ -73,7 +73,7 @@ const ExploreCities = () => {
                             }}
                         >
                             {/* Overlay */}
-                            <Link to={`property/location/${city._id}`} > <div className="overlay absolute inset-0 bg-black opacity-20 rounded-[25px]"></div>
+                            <Link to={`property/location/${city.name}/${city._id}`} > <div className="overlay absolute inset-0 bg-black opacity-20 rounded-[25px]"></div>
                             </Link>
 
                             {/* Content */}
