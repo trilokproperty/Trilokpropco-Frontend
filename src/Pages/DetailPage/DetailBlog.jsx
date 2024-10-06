@@ -6,14 +6,17 @@ import Header from "../../Component/Navigation/Header";
 import { endPoint } from "../../Component/ForAll/ForAll";
 
 const DetailBlog = () => {
-    const { id } = useParams(); // Get blog ID from URL params
+    const { title } = useParams(); // Get blog ID from URL params
     const [blog, setBlog] = useState(null); // State to store blog details
-
+const cleanUrl = (url) => {
+  return url.replace(/_/g, ' '); // This removes all hyphens from the URL
+};
     useEffect(() => {
         // Fetch blog details using the ID
         const fetchBlogDetails = async () => {
+             const cleanedName = cleanUrl(title);
             try {
-                const response = await fetch(`${endPoint}/blog/${id}`);
+                const response = await fetch(`${endPoint}/blog/${cleanedName}`);
                 const data = await response.json();
                 setBlog(data);
             } catch (error) {
@@ -22,7 +25,7 @@ const DetailBlog = () => {
         };
 
         fetchBlogDetails();
-    }, [id]);
+    }, [title]);
 
     return (
         <div>
