@@ -12,7 +12,7 @@ const PropertyWithType = () => {
     const [typeId, setTypeId] = useState(null);  // State for storing the type ID
     const [properties, setProperties] = useState([]);
     const [type, setType] = useState(null);  // State for storing the type details
-
+console.log(name, typeId)
     useEffect(() => {
         // Fetch all types from your API
         const fetchTypes = async () => {
