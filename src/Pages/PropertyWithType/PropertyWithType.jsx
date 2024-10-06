@@ -8,24 +8,58 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const PropertyWithType = () => {
-    const {typeId} = useParams();
-    console.log(typeId)
-    const [properties, setProperties] = useState();
-    const [type, setType] = useState();
-    useEffect(()=>{
-        const fetchProperty = async()=>{
-        const response = await fetch(`${endPoint}/property/type/${typeId}`);
-        const data = await response.json();
-        setProperties(data)
-        }
-        fetchProperty()
-        const fetchType = async()=>{
-            const response = await fetch(`${endPoint}/type/${typeId}`);
-            const data = await response.json();
-            setType(data)
+    const { name } = useParams();  // Extract the name from the URL
+    const [typeId, setTypeId] = useState(null);  // State for storing the type ID
+    const [properties, setProperties] = useState([]);
+    const [type, setType] = useState(null);  // State for storing the type details
+
+    useEffect(() => {
+        // Fetch all types from your API
+        const fetchTypes = async () => {
+            try {
+                const response = await fetch(`${endPoint}/type`);
+                const types = await response.json();  // Assuming your API returns a list of types
+
+                // Find the type by name
+                const foundType = types.find(type => type.name.toLowerCase() === name.replace(/_/g, " ").toLowerCase());
+
+                // Set the type ID if the type is found
+                if (foundType) {
+                    setTypeId(foundType._id);  // Assuming the type object has an '_id' field for the type ID
+                    setType(foundType);  // Store the found type
+                } else {
+                    console.log('Type not found');
+                }
+            } catch (error) {
+                console.error('Error fetching types:', error);
             }
-            fetchType()
-    },[typeId])
+        };
+
+        fetchTypes();
+    }, [name]);  // Run the effect when the "name" from the URL changes
+
+    // Fetch properties and type details once we have the typeId
+    useEffect(() => {
+        if (typeId) {
+            // Fetch properties by typeId
+            const fetchProperties = async () => {
+                const response = await fetch(`${endPoint}/property/type/${typeId}`);
+                const data = await response.json();
+                setProperties(data);  // Store the fetched properties
+            };
+
+            fetchProperties();
+
+            // Fetch type details by typeId
+            const fetchType = async () => {
+                const response = await fetch(`${endPoint}/type/${typeId}`);
+                const data = await response.json();
+                setType(data);  // Store the type details
+            };
+
+            fetchType();
+        }
+    }, [typeId]);  // Only run this effect when typeId is available
     return (
     <div>
            <div style={{
