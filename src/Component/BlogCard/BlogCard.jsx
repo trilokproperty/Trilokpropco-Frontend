@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BlogCard = (blog) => {
   console.log(blog?.blog);
   const date = new Date(blog?.blog?.date);
-const locationNameSlug = blog?.blog?.title.toLowerCase().replace(/\s+/g, '-');
+const locationNameSlug = blog?.blog?.title.toLowerCase().replace(/\s+/g, '_');
   // Convert the date to the desired format
   const day = date.getUTCDate();
   const month = date.toLocaleString("default", { month: "short" });
@@ -43,7 +43,7 @@ const locationNameSlug = blog?.blog?.title.toLowerCase().replace(/\s+/g, '-');
         <h3 className="md:text-2xl text-[20px] font-medium blog-title text-black mb-2">{blog?.blog?.title}</h3>
             <p>{truncateText(stripHtmlTags(blog?.blog?.description), 10)}</p>
       </div>
-      <Link to={`/blog/${locationNameSlug}/${blog?.blog?._id}`} > <div className="dark-mode-btn text-2xl w-[100px] bg-black text-white flex justify-center items-center rounded-full mt-8 ml-auto">
+      <Link to={`/blog/${locationNameSlug}/`} > <div className="dark-mode-btn text-2xl w-[100px] bg-black text-white flex justify-center items-center rounded-full mt-8 ml-auto">
       <small className="text-[12px]">Explore</small><FiArrowRight />
       </div></Link>
       </div>
