@@ -118,7 +118,7 @@ const AllProperties = () => {
       </div>
 
       {/* Property List */}
-      <div className="grid md:grid-cols-5 gap-8 lg:mx-20 mx-5 mb-3">
+      <div className="grid md:grid-cols-5 gap-8 lg:mx-20 mx-5 mb-3 md:h-screen">
         <div className='md:col-span-2 flex flex-col gap-5 mt-5'>
           {filteredProperties.slice(0, 8).map(property => (
             <PropertyListCard key={property?._id} property={property} />
