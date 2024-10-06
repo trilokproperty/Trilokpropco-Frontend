@@ -13,7 +13,7 @@ const PropertyListCard = (property) => {
     const [isInCompare, setIsInCompare] = useState(false);
     const [isInFav, setIsInFav] = useState(false);
    console.log(property)
-    const nameSlug = property?.property?.name.toLowerCase().replace(/\s+/g, '-');
+    const nameSlug = property?.property?.name.replace(/\s+/g, '-');
     useEffect(() => {
         const fetchLocation = async () => {
             const cityResponse = await fetch(`${endPoint}/city`);
