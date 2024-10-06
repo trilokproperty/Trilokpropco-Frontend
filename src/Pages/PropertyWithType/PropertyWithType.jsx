@@ -21,7 +21,7 @@ const PropertyWithType = () => {
                 const types = await response.json();  // Assuming your API returns a list of types
 
                 // Find the type by name
-                const foundType = types.find(type => type.name?.toLowerCase() === name.replace(/_/g, " ")?.toLowerCase());
+                const foundType = types.find(type => type.name?.toLowerCase() === name?.replace(/_/g, " ")?.toLowerCase());
 
                 // Set the type ID if the type is found
                 if (foundType) {
