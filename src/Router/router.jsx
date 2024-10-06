@@ -67,9 +67,9 @@ export const router = createBrowserRouter([
       },
       
       {
-        path: '/blog/:title/:id',
+        path: '/blog/:title',
         element: <DetailBlog />,
-        loader: ({ params }) => fetch(`${endPoint}/blog/${params.title}/${params._id}`)
+        loader: ({ params }) => fetch(`${endPoint}/blog/${params.title}`)
       },
       
       {
