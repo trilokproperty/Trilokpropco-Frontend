@@ -98,7 +98,7 @@ const DetailProperty = () => {
   };
 
   const cleanUrl = (url) => {
-  return url.replace(/-/g, ''); // This removes all hyphens from the URL
+  return url.replace(/-/g, ' '); // This removes all hyphens from the URL
 };
   
   useEffect(() => {
