@@ -8,6 +8,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 
+// Function to generate slug from the type
+const generateSlug = (type) => {
+  return type.toLowerCase().replace(/\s+/g, '-');
+};
+
 const PropertyTypes = () => {
   const [types, setTypes] = useState([]);
   const [typeCounts, setTypeCounts] = useState({});
@@ -39,6 +44,7 @@ const PropertyTypes = () => {
 
     fetchTypesAndProperties();
   }, []);
+
   return (
     <div className="lg:my-24 lg:mx-24 mx-5 md:mx-2 my-10">
       <SectionTitle value="Explore our properties" />
@@ -64,7 +70,6 @@ const PropertyTypes = () => {
           550: {
             slidesPerView: 2.3,
           },
-
           640: {
             slidesPerView: 2.6,
           },
@@ -89,24 +94,30 @@ const PropertyTypes = () => {
       >
         {types?.map((type) => (
           <SwiperSlide key={type._id}>
-           <Link to={`property/type/${type._id}`}> <div className="flex flex-col justify-center items-center mb-16">
-            <div style={{
-                backgroundImage:'url(https://i.ibb.co/JqpB1St/Ellipse-1.webp)',
-                backgroundSize: 'auto',
-                height:'100px',
-                width:'100px',
-                backgroundRepeat: 'no-repeat',
-              }}
-              className="flex justify-center items-center">
-            <img
-              src={type.logo}
-              alt={type.type}
-              className="w-[60px] h-[60px] my-10"
-            />
-            </div>
-            <h6 className="text-xl mt-5">{type.type}</h6>
-            <p className="bg-[#EBEEF2] w-[104px] text-black text-center p-[2px] rounded-full drop-shadow-md mt-2">{typeCounts[type._id] || 0} Listing</p>
-            </div></Link>
+            <Link to={`property/type/${generateSlug(type.type)}/${type._id}`}>
+              <div className="flex flex-col justify-center items-center mb-16">
+                <div
+                  style={{
+                    backgroundImage: 'url(https://i.ibb.co/JqpB1St/Ellipse-1.webp)',
+                    backgroundSize: 'auto',
+                    height: '100px',
+                    width: '100px',
+                    backgroundRepeat: 'no-repeat',
+                  }}
+                  className="flex justify-center items-center"
+                >
+                  <img
+                    src={type.logo}
+                    alt={type.type}
+                    className="w-[60px] h-[60px] my-10"
+                  />
+                </div>
+                <h6 className="text-xl mt-5">{type.type}</h6>
+                <p className="bg-[#EBEEF2] w-[104px] text-black text-center p-[2px] rounded-full drop-shadow-md mt-2">
+                  {typeCounts[type._id] || 0} Listing
+                </p>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
