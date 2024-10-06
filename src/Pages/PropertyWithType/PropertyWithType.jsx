@@ -8,8 +8,7 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const PropertyWithType = () => {
-    
-        const { type } = useParams();  // Extract the type name from the URL
+    const { name } = useParams();  // Extract the name from the URL
     const [typeId, setTypeId] = useState(null);  // State for storing the type ID
     const [properties, setProperties] = useState([]);
     const [type, setType] = useState(null);  // State for storing the type details
@@ -23,8 +22,8 @@ const PropertyWithType = () => {
 
                 console.log("Fetched types:", types);  // Debugging: Log fetched types
 
-                // Find the type by 
-                const foundType = types.find(type => type.type?.toLowerCase() === type?.replace(/_/g, " ")?.toLowerCase());
+                // Find the type by name
+                const foundType = types.find(type => type.name?.toLowerCase() === name?.replace(/_/g, " ")?.toLowerCase());
 
                 console.log("Found type:", foundType);  // Debugging: Log found type
 
@@ -41,7 +40,7 @@ const PropertyWithType = () => {
         };
 
         fetchTypes();
-    }, [type]);  // Run the effect when the type "name" from the URL changes
+    }, [name]);  // Run the effect when the "name" from the URL changes
 
     // Fetch properties and type details once we have the typeId
     useEffect(() => {
@@ -77,9 +76,9 @@ const PropertyWithType = () => {
             fetchType();
         }
     }, [typeId]);  // Only run this effect when typeId is available
-    
+
     return (
-    <div>
+        <div>
            <div style={{
                 backgroundImage: `url(https://i.ibb.co/NT6PZjt/16406692-rm378-02c.webp)`,
                 backgroundSize: 'cover',
@@ -89,18 +88,17 @@ const PropertyWithType = () => {
                 <Header />
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>{`Properties Type: ${type?.type} - Trilokpropco`}</title>
+                    <title>{`Properties Type: ${type?.name} - Trilokpropco`}</title>
                 </Helmet>
-                <SectionTitle value={`Explore Properties Type: ${type?.type}`} color="white" />
+                <SectionTitle value={`Explore Properties Type: ${type?.name}`} color="white" />
             </div> 
-            <div className=' grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20  items-start md:mx-10 mx-5 '>
-                    {properties?.map(property => (
-                        <PropertyListCard key={property?._id} property={property} />
-                    ))}
-                </div>
-
-                <Footer />
-    </div>
+            <div className='grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 mt-10 pb-10 md:pb-20 md:mt-20 items-start md:mx-10 mx-5'>
+                {properties?.map(property => (
+                    <PropertyListCard key={property?._id} property={property} />
+                ))}
+            </div>
+            <Footer />
+        </div>
     );
 };
 
