@@ -21,7 +21,7 @@ const Info = () => {
         setTotalProperties(data.length);
 
         // Filter and count properties for sale
-        const forSale = data.filter((property) => property.for === 'sale').length;
+        const forSale = data.filter((property) => property.for === 'Sale').length;
         setPropertiesForSale(forSale);
 
       } catch (error) {
