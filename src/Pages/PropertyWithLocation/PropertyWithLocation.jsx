@@ -14,7 +14,7 @@ const PropertyWithLocation = () => {
   const [city, setCity] = useState(null); // To store city details
 
   // Convert hyphenated name to normal space-separated name
-  const formattedName = name.replace(/-/g, " ");
+  const formattedName = name.replace(/_/g, " ");
 
   // Fetch city ID based on formatted name
   useEffect(() => {
