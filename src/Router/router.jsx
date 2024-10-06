@@ -78,8 +78,8 @@ export const router = createBrowserRouter([
         loader: ({ params }) => fetch(`${endPoint}/property/location/${params.name}`)
       },
       {
-        path: '/property/type/:type',
+        path: '/property/type/:name',
         element: <PropertyWithType />,
-        loader: ({ params }) => fetch(`${endPoint}/property/type/${params.type}`)
+        loader: ({ params }) => fetch(`${endPoint}/property/type/${params.name}`)
       }
 ])
