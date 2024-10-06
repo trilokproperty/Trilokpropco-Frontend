@@ -8,20 +8,23 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const PropertyWithLocation = () => {
-const { name } = useParams(); // Get city name from URL params
+  const { name } = useParams(); // Get city name from URL params
   const [cityId, setCityId] = useState(null); // To store city ID
   const [properties, setProperties] = useState([]); // To store properties
   const [city, setCity] = useState(null); // To store city details
 
-  // Fetch city ID based on name
+  // Convert hyphenated name to normal space-separated name
+  const formattedName = name.replace(/-/g, " ");
+
+  // Fetch city ID based on formatted name
   useEffect(() => {
     const fetchCities = async () => {
       try {
         const response = await fetch(`${endPoint}/city`);
         const cities = await response.json(); // Fetch all cities
 
-        // Find the city by name
-        const city = cities.find(city => city.name.toLowerCase() === name.toLowerCase());
+        // Find the city by the formatted name
+        const city = cities.find(city => city.name.toLowerCase() === formattedName.toLowerCase());
 
         // If the city is found, set the cityId and city details
         if (city) {
@@ -36,7 +39,7 @@ const { name } = useParams(); // Get city name from URL params
     };
 
     fetchCities();
-  }, [name]);
+  }, [formattedName]);
 
   // Fetch properties based on cityId
   useEffect(() => {
@@ -54,6 +57,7 @@ const { name } = useParams(); // Get city name from URL params
       fetchProperties();
     }
   }, [cityId]); // Fetch properties when cityId changes
+  
     return (
     <div>
            <div style={{
