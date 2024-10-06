@@ -8,23 +8,23 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const PropertyWithType = () => {
-  const { name } = useParams(); // Get type name from URL params
+  const { type } = useParams(); // Get type name from URL params
   const [typeId, setTypeId] = useState(null); // To store type ID
   const [properties, setProperties] = useState([]); // To store properties
   const [type, setType] = useState(null); // To store type details
 
   // Convert hyphenated name to normal space-separated name
-  const formattedName = name.replace(/_/g, " ");
+  const formattedName = type.replace(/_/g, " ");
 
   // Fetch type ID based on formatted name
   useEffect(() => {
     const fetchTypes = async () => {
       try {
-        const response = await fetch(`${endPoint}/propertyType`); // Fetch all property types
+        const response = await fetch(`${endPoint}/type`); // Fetch all property types
         const types = await response.json();
 
         // Find the type by the formatted name
-        const type = types.find(type => type.name.toLowerCase() === formattedName.toLowerCase());
+        const type = types.find(type => type.type.toLowerCase() === formattedName.toLowerCase());
 
         // If the type is found, set the typeId and type details
         if (type) {
