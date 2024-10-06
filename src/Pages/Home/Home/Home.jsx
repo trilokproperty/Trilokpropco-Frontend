@@ -16,7 +16,7 @@ const Home = () => {
   const [activeItem, setActiveItem] = useState({});
   const [swiperInstance, setSwiperInstance] = useState(null);
 
-  const nameSlug = activeItem?.name.toLowerCase().replace(/\s+/g, '-')
+  const nameSlug = activeItem && activeItem?.name?.toLowerCase().replace(/\s+/g, '-')
   
   // Fetch properties from the API
   useEffect(() => {
