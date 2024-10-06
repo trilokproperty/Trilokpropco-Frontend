@@ -8,24 +8,25 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 
 const PropertyWithLocation = () => {
-    const {name} = useParams();
-    const [cityId, setCityId] = useState(null)
-    console.log(cityId, name)
-    const [properties, setProperties] = useState();
-    const [city, setCity] = useState();
-    useEffect(()=>{
-        // Fetch all cities from your API
+const { name } = useParams(); // Get city name from URL params
+  const [cityId, setCityId] = useState(null); // To store city ID
+  const [properties, setProperties] = useState([]); // To store properties
+  const [city, setCity] = useState(null); // To store city details
+
+  // Fetch city ID based on name
+  useEffect(() => {
     const fetchCities = async () => {
       try {
         const response = await fetch(`${endPoint}/city`);
-        const cities = await response.json(); // Assuming your API returns a list of cities
+        const cities = await response.json(); // Fetch all cities
 
         // Find the city by name
         const city = cities.find(city => city.name.toLowerCase() === name.toLowerCase());
 
-        // Set the city ID if the city is found
+        // If the city is found, set the cityId and city details
         if (city) {
-          setCityId(city._id); // Assuming the city object has an '_id' field for the city ID
+          setCityId(city._id); // Assuming city has '_id' field
+          setCity(city); // Save the city details
         } else {
           console.log('City not found');
         }
@@ -35,19 +36,24 @@ const PropertyWithLocation = () => {
     };
 
     fetchCities();
-        const fetchProperty = async()=>{
-        const response = await await fetch(`${endPoint}/property/location/${cityId}`);
-        const data = await response.json();
-        setProperties(data)
+  }, [name]);
+
+  // Fetch properties based on cityId
+  useEffect(() => {
+    if (cityId) { // Only fetch properties if cityId is available
+      const fetchProperties = async () => {
+        try {
+          const response = await fetch(`${endPoint}/property/location/${cityId}`);
+          const data = await response.json();
+          setProperties(data); // Set the fetched properties
+        } catch (error) {
+          console.error('Error fetching properties:', error);
         }
-        fetchProperty()
-        const fetchCity = async()=>{
-            const response = await await fetch(`${endPoint}/city/${locationId}`);
-            const data = await response.json();
-            setCity(data)
-            }
-            fetchCity()
-    },[locationId])
+      };
+
+      fetchProperties();
+    }
+  }, [cityId]); // Fetch properties when cityId changes
     return (
     <div>
            <div style={{
