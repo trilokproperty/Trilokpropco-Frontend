@@ -10,6 +10,7 @@ const Info = () => {
   const [totalProperties, setTotalProperties] = useState(0);
   const [propertiesForSale, setPropertiesForSale] = useState(0);
   const [happyCustomers, setHappyCustomers] = useState(60); // Static value for demonstration, can be dynamic if needed
+  const [exclusiveProperties, setExclusiveProperties] = useState(60); // Static value for demonstration, can be dynamic if needed
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -23,6 +24,9 @@ const Info = () => {
         // Filter and count properties for sale
         const forSale = data.filter((property) => property.for === 'Sale').length;
         setPropertiesForSale(forSale);
+        // Filter and count exclusive properties
+    const exclusiveProperties = data.filter((property) => property.exclusive === true);
+    setExclusiveProperties(exclusiveProperties);
 
       } catch (error) {
         console.error("Error fetching properties:", error);
@@ -66,8 +70,8 @@ const Info = () => {
         <img src="https://i.ibb.co/LrW9b6S/Mask-group-6.webp" alt="sold properties" />
         <img src="https://i.ibb.co/LrW9b6S/Mask-group-6.webp" alt="sold properties" className="absolute right-0 bottom-0 rotate-[-50deg] opacity-10" />
 
-        <h3 className="text-[#e2e7ee] text-[38px] font-bold">60</h3> {/* This could be dynamic if needed */}
-        <p className="text-[#fff] text-[13px]">sold properties</p>
+        <h3 className="text-[#e2e7ee] text-[38px] font-bold">{exclusiveProperties}</h3> {/* This could be dynamic if needed */}
+        <p className="text-[#fff] text-[13px]">exclusive properties</p>
       </div>
 
       {/* Happy Customers */}
