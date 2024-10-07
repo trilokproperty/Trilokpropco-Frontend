@@ -30,6 +30,15 @@ const Info = () => {
     };
 
     fetchProperties();
+
+    const fetchTestimonials = async()={
+      const response = await fetch(`${endPoint}/testimonial`);
+        const data = await response.json();
+
+        // Total number of properties
+        setHappyCustomers(data.length);
+    }
+    fetchTestimonials()
   }, []);
 
   return (
