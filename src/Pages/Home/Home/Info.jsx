@@ -35,8 +35,8 @@ const Info = () => {
       const response = await fetch(`${endPoint}/testimonial`);
         const data = await response.json();
 
-        // Total number of properties
-        setHappyCustomers(data.length);
+        // Total number of testimonials for happy customers
+        setHappyCustomers(data?.length);
     }
     fetchTestimonials()
   }, []);
