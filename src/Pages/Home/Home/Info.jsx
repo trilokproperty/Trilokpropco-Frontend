@@ -26,7 +26,7 @@ const Info = () => {
         setPropertiesForSale(forSale);
         // Filter and count exclusive properties
     const exclusiveProperties = data.filter((property) => property.exclusive === true);
-    setExclusiveProperties(exclusiveProperties);
+    setExclusiveProperties(exclusiveProperties?.length);
 
       } catch (error) {
         console.error("Error fetching properties:", error);
