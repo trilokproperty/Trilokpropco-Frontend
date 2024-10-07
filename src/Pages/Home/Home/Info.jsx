@@ -31,7 +31,7 @@ const Info = () => {
 
     fetchProperties();
 
-    const fetchTestimonials = async()={
+    const fetchTestimonials = async()=>{
       const response = await fetch(`${endPoint}/testimonial`);
         const data = await response.json();
 
