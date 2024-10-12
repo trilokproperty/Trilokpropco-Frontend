@@ -4,7 +4,10 @@ import SectionTitle from "../../../Component/ForAll/SectionTitle";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation'; // Import Swiper navigation styles
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  FaAngleLeft,
+  FaAngleRight
+} from "react-icons/fa6";
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules'; // Import Navigation module
 import PropertyCard from "../../../Component/PropertyCard/PropertyCard";
