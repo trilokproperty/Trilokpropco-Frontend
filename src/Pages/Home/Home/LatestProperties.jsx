@@ -43,15 +43,15 @@ const LatestProperties = () => {
             <div className="relative">
                 <div
                     ref={prevRef} // Attach the ref
-                    className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-20 text-white bg-[#6d6d6d9d] p-5 rounded-full cursor-pointer"
+                    className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-20 text-white bg-[#6d6d6d9d] p-8 rounded-full cursor-pointer"
                 >
-                    <FaArrowLeft className="text-2xl" />
+                    <FaArrowLeft className="text-2xl text-white" />
                 </div>
                 <div
                     ref={nextRef} // Attach the ref
-                    className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-20 text-white bg-[#6d6d6d9d] p-5 rounded-full cursor-pointer"
+                    className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-20 text-white bg-[#6d6d6d9d] p-8 rounded-full cursor-pointer"
                 >
-                    <FaArrowRight className="text-2xl" />
+                    <FaArrowRight className="text-2xl text-white" />
                 </div>
 
                 <Swiper
