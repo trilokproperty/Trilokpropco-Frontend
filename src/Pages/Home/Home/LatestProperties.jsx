@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { endPoint } from "../../../Component/ForAll/ForAll";
 import SectionTitle from "../../../Component/ForAll/SectionTitle";
 import 'swiper/css/pagination';
@@ -11,8 +11,8 @@ import PropertyCard from "../../../Component/PropertyCard/PropertyCard";
 
 const LatestProperties = () => {
     const [properties, setProperties] = useState([]);
-
-    console.log(properties);
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
 
     // Fetch properties from the API
     useEffect(() => {
@@ -41,11 +41,17 @@ const LatestProperties = () => {
 
             {/* Custom navigation buttons */}
             <div className="relative">
-                <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 text-white bg-gray-500 p-5 rounded-full hover:text-gray-800">
-                    <FaArrowLeft className="text-3xl cursor-pointer" />
+                <div
+                    ref={prevRef} // Attach the ref
+                    className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 text-white bg-gray-500 p-5 rounded-full hover:text-gray-800 cursor-pointer"
+                >
+                    <FaArrowLeft className="text-3xl" />
                 </div>
-                <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 text-white bg-gray-500 p-5 rounded-full hover:text-gray-800">
-                    <FaArrowRight className="text-3xl cursor-pointer" />
+                <div
+                    ref={nextRef} // Attach the ref
+                    className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 text-white bg-gray-500 p-5 rounded-full hover:text-gray-800 cursor-pointer"
+                >
+                    <FaArrowRight className="text-3xl" />
                 </div>
 
                 <Swiper
@@ -53,7 +59,17 @@ const LatestProperties = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={true} // Enable Swiper navigation
+                    navigation={{
+                        prevEl: prevRef.current,
+                        nextEl: nextRef.current,
+                    }}
+                    onBeforeInit={(swiper) => {
+                        // Assign the navigation elements to the Swiper instance
+                        swiper.params.navigation.prevEl = prevRef.current;
+                        swiper.params.navigation.nextEl = nextRef.current;
+                        swiper.navigation.init();
+                        swiper.navigation.update();
+                    }}
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
