@@ -813,8 +813,8 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             }
           </div>
 
-          <a href={property?.pdfDownload}><button className="bg-[#ec0000] text-white flex items-center md:px-7 md:py-5 relative md:gap-10 my-10 rounded-2xl px-6 py-4">
-          <img src="https://i.ibb.co.com/w7HGyvB/Adobe-PDF.webp" alt="Download Brochure | Trilokpropco Real Estate Agent" className="md:w-[150px] w-[120px] absolute left-[-26px]"/><span className="md:ml-20 ml-12 md:text-2xl text-xl font-light ">Download Brochure</span></button></a>
+          <a href={property?.pdfDownload}><button className="bg-[#ec0000] text-white flex items-center md:px-6 md:py-5 relative md:gap-10 my-10 rounded-2xl px-6 py-4">
+          <img src="https://i.ibb.co.com/w7HGyvB/Adobe-PDF.webp" alt="Download Brochure | Trilokpropco Real Estate Agent" className="md:w-[150px] w-[120px] absolute left-[-26px]"/><span className="md:ml-16 ml-12 md:text-2xl text-xl font-light ">Download Brochure</span></button></a>
           </div>
 
           {/* Nearby description section*/}
