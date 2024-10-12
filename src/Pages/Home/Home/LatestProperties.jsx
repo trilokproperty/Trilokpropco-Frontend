@@ -4,6 +4,7 @@ import SectionTitle from "../../../Component/ForAll/SectionTitle";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation'; // Import Swiper navigation styles
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules'; // Import Navigation module
 import PropertyCard from "../../../Component/PropertyCard/PropertyCard";
@@ -40,12 +41,12 @@ const LatestProperties = () => {
 
             {/* Custom navigation buttons */}
             <div className="relative">
-                <button className="swiper-button-prev-custom absolute left-0 z-10 text-2xl bg-white p-3 rounded-full shadow-lg">
-                    &lt; {/* Left arrow */}
-                </button>
-                <button className="swiper-button-next-custom absolute right-0 z-10 text-2xl bg-white p-3 rounded-full shadow-lg">
-                    &gt; {/* Right arrow */}
-                </button>
+                 <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#6d6d6d3f] hover:!text-[#6d6d6d9d]">
+                    <FaArrowLeft className="text-3xl !text-[#6d6d6d3f] cursor-pointer" />
+                </div>
+                <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#6d6d6d3f] hover:!text-[#6d6d6d9d]">
+                    <FaArrowRight className="text-3xl !text-[#6d6d6d3f] cursor-pointer hover:!text-[#6d6d6d9d]" />
+                </div>
 
                 <Swiper
                     spaceBetween={30}
