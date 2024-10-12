@@ -41,10 +41,10 @@ const LatestProperties = () => {
 
             {/* Custom navigation buttons */}
             <div className="relative">
-                 <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#fff] bg-[#6d6d6d3f] p-2 rounded-full hover:!text-[#6d6d6d9d]">
+                 <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#fff] bg-[#6d6d6d3f] p-5 z-10 rounded-full hover:!text-[#6d6d6d9d]">
                     <FaArrowLeft className="text-3xl !text-[#6d6d6d3f] cursor-pointer" />
                 </div>
-                <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#fff] bg-[#6d6d6d3f] p-2 rounded-full hover:!text-[#6d6d6d9d]">
+                <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#fff] bg-[#6d6d6d3f] p-5 z-10 rounded-full hover:!text-[#6d6d6d9d]">
                     <FaArrowRight className="text-3xl !text-[#6d6d6d3f] cursor-pointer hover:!text-[#6d6d6d9d]" />
                 </div>
 
