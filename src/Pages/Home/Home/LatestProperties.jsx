@@ -41,11 +41,11 @@ const LatestProperties = () => {
 
             {/* Custom navigation buttons */}
             <div className="relative">
-                 <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#fff] bg-[#6d6d6d3f] p-5 z-10 rounded-full hover:!text-[#6d6d6d9d]">
-                    <FaArrowLeft className="text-3xl !text-[#6d6d6d3f] cursor-pointer" />
+                <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 text-white bg-gray-500 p-5 rounded-full hover:text-gray-800">
+                    <FaArrowLeft className="text-3xl cursor-pointer" />
                 </div>
-                <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 !text-[#fff] bg-[#6d6d6d3f] p-5 z-10 rounded-full hover:!text-[#6d6d6d9d]">
-                    <FaArrowRight className="text-3xl !text-[#6d6d6d3f] cursor-pointer hover:!text-[#6d6d6d9d]" />
+                <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 text-white bg-gray-500 p-5 rounded-full hover:text-gray-800">
+                    <FaArrowRight className="text-3xl cursor-pointer" />
                 </div>
 
                 <Swiper
@@ -53,10 +53,7 @@ const LatestProperties = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={{
-                        prevEl: '.swiper-button-prev-custom', // Attach the custom button to Swiper
-                        nextEl: '.swiper-button-next-custom', // Attach the custom button to Swiper
-                    }}
+                    navigation={true} // Enable Swiper navigation
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
