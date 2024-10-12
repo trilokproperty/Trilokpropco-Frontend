@@ -44,18 +44,19 @@ const LatestProperties = () => {
 
             {/* Custom navigation buttons */}
             <div className="relative">
-                <div
-                    ref={prevRef} // Attach the ref
-                    className="swiper-button-prev absolute !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-0 top-1/2 transform -translate-y-1/2 z-20 rounded-full cursor-pointer"
-                >
-          <FaAngleLeft className="!text-[20px]"  />
-                </div>
-                <div
-                    ref={nextRef} // Attach the ref
-                    className="swiper-button-next absolute right-0 top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 rounded-full cursor-pointer"
-                >
-                    <FaAngleRight className="!text-[20px]" />
-                </div>
+               <div
+    ref={prevRef}
+    className="swiper-button-prev absolute !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-2 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
+>
+    <FaAngleLeft className="!text-[20px]" />
+</div>
+<div
+    ref={nextRef}
+    className="swiper-button-next absolute right-2 top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
+>
+    <FaAngleRight className="!text-[20px]" />
+</div>
+
 
                 <Swiper
                     spaceBetween={30}
