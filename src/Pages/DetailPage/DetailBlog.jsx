@@ -50,7 +50,7 @@ const cleanUrl = (url) => {
                         <img
                             src={blog.image}
                             alt={blog.title}
-                            className="rounded-lg w-full object-cover shadow-lg mb-6"
+                            className="rounded-lg w-full max-w-[1080px] h-full max-h-[720px] object-cover shadow-lg mb-6"
                         />
                         <div
                             className="bg-white rounded-lg p-6 shadow-lg mt-8 property-list-card"
