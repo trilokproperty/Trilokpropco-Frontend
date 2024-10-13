@@ -47,7 +47,7 @@ const LatestProperties = () => {
               {/* Previous Button */}
     <div
         ref={prevRef}
-        className="swiper-button-prev absolute !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-5 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
+        className="swiper-button-prev absolute md:block hidden !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-5 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
     >
    
     </div>
@@ -55,7 +55,7 @@ const LatestProperties = () => {
     {/* Next Button */}
     <div
         ref={nextRef}
-        className="swiper-button-next absolute right-5 top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
+        className="swiper-button-next absolute right-5 md:block hidden top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
     > 
     </div>
 
