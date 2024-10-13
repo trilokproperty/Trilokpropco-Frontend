@@ -55,7 +55,7 @@ const LatestProperties = () => {
                 {/* Previous Button */}
                 <div
                     ref={prevRef}
-                    className="absolute md:block hidden !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-5 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
+                    className="absolute md:block hidden !bg-[#ffffff69] !text-gray-800 p-2 rounded-full left-5 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
                 >
                     <FaAngleLeft size={24} />
                 </div>
@@ -63,7 +63,7 @@ const LatestProperties = () => {
                 {/* Next Button */}
                 <div
                     ref={nextRef}
-                    className="absolute right-5 md:block hidden top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
+                    className="absolute right-5 md:block hidden top-1/2 !bg-[#ffffff69] !text-gray-800 p-2 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
                 >
                     <FaAngleRight size={24} />
                 </div>
