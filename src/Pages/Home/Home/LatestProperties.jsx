@@ -8,7 +8,7 @@ import {
   FaAngleLeft,
   FaAngleRight
 } from "react-icons/fa6";
-// import required modules
+// Import required modules
 import { Pagination, Navigation } from 'swiper/modules'; // Import Navigation module
 import PropertyCard from "../../../Component/PropertyCard/PropertyCard";
 
@@ -16,6 +16,7 @@ const LatestProperties = () => {
     const [properties, setProperties] = useState([]);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+    const [initialized, setInitialized] = useState(false);
 
     // Fetch properties from the API
     useEffect(() => {
@@ -38,44 +39,54 @@ const LatestProperties = () => {
         fetchProperties();
     }, []);
 
+    // Update the Swiper instance once the refs for custom buttons are assigned
+    useEffect(() => {
+        if (prevRef.current && nextRef.current && !initialized) {
+            setInitialized(true);
+        }
+    }, [prevRef, nextRef, initialized]);
+
     return (
         <div className="mt-4 mb-24 lg:ml-24 lg:mx-0 mx-5">
             <SectionTitle value="Our Latest Properties" />
 
             {/* Custom navigation buttons */}
             <div className="relative">
-              {/* Previous Button */}
-    <div
-        ref={prevRef}
-        className="swiper-button-prev absolute md:block hidden !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-5 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
-    >
-   
-    </div>
+                {/* Previous Button */}
+                <div
+                    ref={prevRef}
+                    className="swiper-button-prev absolute md:block hidden !bg-[#ffffff69] !text-gray-800 p-5 rounded-full left-5 top-1/2 transform -translate-y-1/2 z-20 cursor-pointer"
+                >
+                    <FaAngleLeft size={24} />
+                </div>
 
-    {/* Next Button */}
-    <div
-        ref={nextRef}
-        className="swiper-button-next absolute right-5 md:block hidden top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
-    > 
-    </div>
-
-
+                {/* Next Button */}
+                <div
+                    ref={nextRef}
+                    className="swiper-button-next absolute right-5 md:block hidden top-1/2 !bg-[#ffffff69] !text-gray-800 p-5 rounded-full transform -translate-y-1/2 z-20 cursor-pointer"
+                >
+                    <FaAngleRight size={24} />
+                </div>
 
                 <Swiper
                     spaceBetween={30}
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={{
+                    navigation={initialized ? {
                         prevEl: prevRef.current,
                         nextEl: nextRef.current,
-                    }}
+                    } : false}
                     onBeforeInit={(swiper) => {
                         // Assign the navigation elements to the Swiper instance
                         swiper.params.navigation.prevEl = prevRef.current;
                         swiper.params.navigation.nextEl = nextRef.current;
-                        swiper.navigation.init();
-                        swiper.navigation.update();
+                    }}
+                    onSwiper={(swiper) => {
+                        if (initialized) {
+                            swiper.navigation.init();
+                            swiper.navigation.update();
+                        }
                     }}
                     breakpoints={{
                         0: {
