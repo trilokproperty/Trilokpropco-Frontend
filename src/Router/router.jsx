@@ -13,7 +13,7 @@ import DetailBlog from "../Pages/DetailPage/DetailBlog";
 import Services from "../Pages/Services/Services";
 import PropertyWithLocation from "../Pages/PropertyWithLocation/PropertyWithLocation";
 import PropertyWithType from "../Pages/PropertyWithType/PropertyWithType";
-import { ScrollToTop } from "../Component/ForAll/ForAll";
+import ScrollToTop  from "../Component/ForAll/ScrollToTop";
 
 
 export const router = createBrowserRouter([
