@@ -79,7 +79,7 @@ const Info = () => {
         <img src="https://i.ibb.co/HBxYv2H/emoticon-happy.webp" alt="happy customers" />
         <img src="https://i.ibb.co/HBxYv2H/emoticon-happy.webp" alt="happy customers" className="absolute right-0 bottom-0 rotate-[-50deg] opacity-10" />
 
-        <h3 className="text-[#e2e7ee] text-[38px] font-bold">{happyCustomers}</h3>
+        <h3 className="text-[#e2e7ee] text-[38px] font-bold">1000+</h3>
         <p className="text-[#fff] text-[13px]">happy customers</p>
       </div>
     </div>
