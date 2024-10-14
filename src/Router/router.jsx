@@ -13,6 +13,7 @@ import DetailBlog from "../Pages/DetailPage/DetailBlog";
 import Services from "../Pages/Services/Services";
 import PropertyWithLocation from "../Pages/PropertyWithLocation/PropertyWithLocation";
 import PropertyWithType from "../Pages/PropertyWithType/PropertyWithType";
+import { ScrollToTop } from "../Component/ForAll/ForAll";
 
 
 export const router = createBrowserRouter([
@@ -62,13 +63,17 @@ export const router = createBrowserRouter([
     },
     {
         path: '/:category/:name',  // Include both the id and slug in the path
-        element: <DetailProperty />,
+        element: (
+            <>
+                <ScrollToTop /> <DetailProperty /> </>),
         loader: ({ params }) => fetch(`${endPoint}/${params.category}/${params.name}`),  // Fetch property by names
       },
       
       {
         path: '/blog/:title',
-        element: <DetailBlog />,
+        element:(
+            <>
+                <ScrollToTop />  <DetailBlog /> </>),
         loader: ({ params }) => fetch(`${endPoint}/blog/${params.title}`)
       },
       
