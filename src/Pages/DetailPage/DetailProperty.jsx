@@ -477,7 +477,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               alt={type?.type}
               className="md:w-[50px] md:h-[50px] w-[30px] h-[30px] bg-[#fff] p-2"
             />
-            <h5 className="md:text-2xl text-xl font-semibold text-white">{type?.type}</h5>
+            <h5 className="md:text-2xl text-[16px] font-semibold text-white">{type?.type}</h5>
           </div>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
