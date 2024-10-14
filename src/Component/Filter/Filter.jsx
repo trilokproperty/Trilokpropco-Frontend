@@ -48,7 +48,7 @@ const Filter = ({ onFilterChange }) => {
             <div className="md:flex grid grid-cols-2 items-end justify-center mb-10 md:gap-5 gap-2 mt-10 flex-warp">
                 <div className="cols-span-1">
                     <label htmlFor="city">Location</label>
-                    <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="input w-full input-bordered  text-black bg-white">
+                    <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} className="select select-bordered  text-black bg-white">
                         <option value="">All</option>
                         {cityOptions.map(city => (
                             <option key={city._id} value={city._id}>{city.name}</option>
