@@ -471,7 +471,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
         </button>
 
         <div className="md:flex items-center justify-between mx-10">
-          <div className="flex gap-5 items-center  absolute md:bottom-14 bottom-6">
+          <div className="flex md:gap-5 gap-2 items-center  absolute md:bottom-14 bottom-6">
             <img
               src={type?.logo}
               alt={type?.type}
