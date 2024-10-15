@@ -407,13 +407,12 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             )}
             <IoShareSocial onClick={toggleModalOpen}/>
              {/* Full image modal */}
-        <Modal isOpen={fullImageOpen} onClose={() => setFullImageOpen(false)}>
-          <img
-            src={property?.galleryImages?.[activeIndex]}
-            alt="Full view"
-            style={{ width: "100%", height: "auto", borderRadius: "10px" }}
-          />
-        </Modal>
+        <Modal
+        isOpen={fullImageOpen}
+        onClose={() => setFullImageOpen(false)}
+        images={property?.galleryImages}   
+        initialIndex={activeIndex}        
+      />
             
             {/* Modal */}
       {modelOpen && (
