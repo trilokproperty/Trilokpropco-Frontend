@@ -6,12 +6,12 @@ const Modal = ({ isOpen, onClose, images, initialIndex }) => {
   if (!isOpen) return null;
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images?.length);
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images?.length - 1 : prevIndex - 1
     );
   };
 
