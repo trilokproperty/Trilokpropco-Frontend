@@ -8,6 +8,7 @@ import Header from "../../Component/Navigation/Header";
 import Footer from "../../Component/Navigation/Footer";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import Modal from "../../Component/ForAll/Modal";
 import {
   FaAngleLeft,
   FaAngleRight,
@@ -92,6 +93,7 @@ const DetailProperty = () => {
   const [tenureType, setTenureType] = useState("years"); // 'years' or 'months'
   const [footer, setFooter] = useState();
   const [modelOpen, setModelOpen] = useState(false);
+  const [fullImageOpen, setFullImageOpen] = useState(false)
   
   const toggleModalOpen = () => {
     setModelOpen(!modelOpen);
@@ -383,6 +385,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           backgroundRepeat: "no-repeat",
           position: "relative",
         }} className="md:h-[550px] h-[250px]"
+        onClick={() => setFullImageOpen(true)}
       >
         <div className="flex items-center justify-between pt-3 px-8">
           <div className="flex gap-2 text-[#ffffff77] text-4xl">
@@ -403,6 +406,15 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               </div>
             )}
             <IoShareSocial onClick={toggleModalOpen}/>
+             {/* Full image modal */}
+        <Modal isOpen={fullImageOpen} onClose={() => setFullImageOpen(false)}>
+          <img
+            src={property?.galleryImages?.[activeIndex]}
+            alt="Full view"
+            style={{ width: "100%", height: "auto", borderRadius: "10px" }}
+          />
+        </Modal>
+            
             {/* Modal */}
       {modelOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
