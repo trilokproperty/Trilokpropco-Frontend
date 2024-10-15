@@ -454,7 +454,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 <img
                   src={developer.image}
                   alt={developer.name}
-                  className="w-[150px] h-[100px]"
+                  className="w-[150px] h-[100px] object-cover"
                 />
                 <div>
                   <h5 className="font-semibold text-lg">{developer.name}</h5>
