@@ -435,7 +435,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             <img
               src={developer.image}
               alt={developer.name}
-              className="md:w-[70px] w-[50px] h-[50px] md:h-[70px] rounded-full opacity-70"
+              className="md:w-[70px] w-[50px] h-[50px] md:h-[70px] object-cover rounded-full opacity-70"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             />
