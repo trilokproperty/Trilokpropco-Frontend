@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose, images, initialIndex }) => {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
   if (!isOpen) return null;
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <div
@@ -20,9 +32,17 @@ const Modal = ({ isOpen, onClose, children }) => {
       onClick={onClose}
     >
       <div
-        style={{ position: "relative", maxWidth: "90vw", maxHeight: "90vh" }}
+        style={{
+          position: "relative",
+          maxWidth: "90vw",
+          maxHeight: "90vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close button */}
         <button
           onClick={onClose}
           style={{
@@ -38,7 +58,59 @@ const Modal = ({ isOpen, onClose, children }) => {
         >
           &times;
         </button>
-        {children}
+
+        {/* Previous Button */}
+        <button
+          onClick={handlePrev}
+          style={{
+            position: "absolute",
+            left: "10px",
+            background: "rgba(255, 255, 255, 0.6)",
+            border: "none",
+            borderRadius: "50%",
+            width: "40px",
+            height: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+          }}
+        >
+          &#8249;
+        </button>
+
+        {/* Image Slider */}
+        <img
+          src={images[currentIndex]}
+          alt={`Slide ${currentIndex + 1}`}
+          style={{
+            maxWidth: "80vw",
+            maxHeight: "80vh",
+            objectFit: "contain",
+          }}
+        />
+
+        {/* Next Button */}
+        <button
+          onClick={handleNext}
+          style={{
+            position: "absolute",
+            right: "10px",
+            background: "rgba(255, 255, 255, 0.6)",
+            border: "none",
+            borderRadius: "50%",
+            width: "40px",
+            height: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+          }}
+        >
+          &#8250;
+        </button>
       </div>
     </div>
   );
