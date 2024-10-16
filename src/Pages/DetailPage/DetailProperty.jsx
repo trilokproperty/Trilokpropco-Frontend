@@ -8,6 +8,7 @@ import Header from "../../Component/Navigation/Header";
 import Footer from "../../Component/Navigation/Footer";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 import Modal from "../../Component/ForAll/Modal";
 import {
   FaAngleLeft,
@@ -363,6 +364,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
   return (
     <div className="overflow-hidden">
       <Header isDefault={false} />
+      <FloatingIcons/>
       <Helmet>
                 <meta charSet="utf-8" />
                 <title>{`${property ? property.name : "Loading..."} - Trilokpropco`}</title>
