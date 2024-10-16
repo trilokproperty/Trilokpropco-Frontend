@@ -4,6 +4,7 @@ import Footer from '../../Component/Navigation/Footer';
 import SectionTitle from '../../Component/ForAll/SectionTitle';
 import { useEffect, useState } from 'react';
 import { endPoint } from '../../Component/ForAll/ForAll';
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 import PropertyListCard from '../../Component/ForAll/PropertyListCard';
 import Filter from '../../Component/Filter/Filter';
 import Map from '../../Component/Map/Map';
@@ -74,6 +75,7 @@ const AllProperties = () => {
 
   return (
     <div className='overflow-hidden'>
+      <FloatingIcons/>
       <div
         style={{
           backgroundImage: `url(https://i.ibb.co/NT6PZjt/16406692-rm378-02c.webp)`,
