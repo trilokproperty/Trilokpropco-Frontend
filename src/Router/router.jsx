@@ -30,35 +30,35 @@ export const router = createBrowserRouter([
     },
     {
         path:'/results',
-        element:( <ScrollToTop/><ResultsPage />),
+        element:(<><ScrollToTop/><ResultsPage /></> ),
     }, 
     {
         path:'/compare',
-        element:( <ScrollToTop/> <CompareLists/>),
+        element:(<> <ScrollToTop/> <CompareLists/></> ),
     }, 
     {
         path:'/favourite',
-        element:( <ScrollToTop/> <FavLists/>),
+        element:(<> <ScrollToTop/> <FavLists/></> ),
     },
     {
         path:'/properties',
-        element: ( <ScrollToTop/><AllProperties/>),
+        element: ( <><ScrollToTop/><AllProperties/></>),
     },
     {
         path:'/about',
-        element:( <ScrollToTop/> <About/>),
+        element:(<><ScrollToTop/> <About/></> ),
     },
     {
         path:'/contact',
-        element:( <ScrollToTop/> <ContactUs/>),
+        element:( <><ScrollToTop/> <ContactUs/></>),
     },
     {
         path:'/blog',
-        element:( <ScrollToTop/> <Blogs/>),
+        element:( <><ScrollToTop/> <Blogs/></>),
     },
     {
         path:'/services',
-        element:( <ScrollToTop/> <Services/>),
+        element:(<><ScrollToTop/> <Services/></> ),
     },
     {
         path: '/:category/:name',  // Include both the id and slug in the path
@@ -78,12 +78,12 @@ export const router = createBrowserRouter([
       
       {
         path: '/property/location/:name',
-        element: ( <ScrollToTop/><PropertyWithLocation />),
+        element: ( <><ScrollToTop/><PropertyWithLocation /></>),
         loader: ({ params }) => fetch(`${endPoint}/property/location/${params.name}`)
       },
       {
         path: '/property/type/:name',
-        element:( <ScrollToTop/> <PropertyWithType />),
+        element:( <><ScrollToTop/> <PropertyWithType /></>),
         loader: ({ params }) => fetch(`${endPoint}/property/type/${params.name}`)
       }
 ])
