@@ -4,6 +4,7 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import { useState } from "react";
 import { useEffect } from "react";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 import Footer from "../../Component/Navigation/Footer";
 import { Link } from "react-router-dom";
 
@@ -46,6 +47,7 @@ const Services = () => {
   console.log(sectionDes)
   return (
     <div className="overflow-hidden">
+      <FloatingIcons/>
       <div
         className="pt-5 lg:h-96 h-40 md:h-56"
         style={{
