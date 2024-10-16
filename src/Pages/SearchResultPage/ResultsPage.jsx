@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 import Header from "../../Component/Navigation/Header";
 import Footer from "../../Component/Navigation/Footer";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
@@ -56,6 +57,7 @@ const ResultsPage = () => {
 
     return (
         <div className="">
+            <FloatingIcons/>
             <Header isDefault={false}/>
             <div className="w-[85%] mx-auto mb-10">
                 <h1 className="text-2xl font-bold my-4">Search Results</h1>
