@@ -15,7 +15,6 @@ import PropertyWithLocation from "../Pages/PropertyWithLocation/PropertyWithLoca
 import PropertyWithType from "../Pages/PropertyWithType/PropertyWithType";
 import ScrollToTop  from "../Component/ForAll/ScrollToTop";
 
-
 export const router = createBrowserRouter([
     {
         path:'/',
