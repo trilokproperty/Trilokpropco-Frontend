@@ -3,10 +3,13 @@ import Header from "../../Component/Navigation/Header";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import Contact from "../Home/Home/Contact";
 import Footer from "../../Component/Navigation/Footer";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
+
 
 const ContactUs = () => {
     return (
     <div>
+        <FloatingIcons/>
        <div
                 className="pt-5 lg:h-96 h-40 md:h-56"
                 style={{
