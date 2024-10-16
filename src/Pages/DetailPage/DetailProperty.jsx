@@ -388,24 +388,24 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
         onClick={() => setFullImageOpen(true)}
       >
         <div className="flex items-center justify-between pt-3 px-8">
-          <div className="flex gap-2 text-[#ffffff77] text-4xl">
+          <div className="flex gap-2 text-[#ffffff77] text-4xl z-20">
             {/* Fav icon */}
             {isInFav ? (
               <div
                 onClick={handleFavClick}
-                className={`text-[#046307] text-4xl cursor-pointer`}
+                className={`text-[#046307] text-4xl cursor-pointer z-20`}
               >
                 <FaHeart className="" />
               </div>
             ) : (
               <div
                 onClick={handleFavClick}
-                className={` text-[#ffffff77] text-4xl cursor-pointer`}
+                className={` text-[#ffffff77] text-4xl cursor-pointer z-20`}
               >
                 <FaRegHeart className="" />
               </div>
             )}
-            <IoShareSocial onClick={toggleModalOpen}/>
+            <IoShareSocial onClick={toggleModalOpen} className="z-20"/>
              {/* Full image modal */}
         <Modal
         isOpen={fullImageOpen}
@@ -435,7 +435,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
             <img
               src={developer.image}
               alt={developer.name}
-              className="md:w-[70px] w-[50px] h-[50px] md:h-[70px] object-cover rounded-full opacity-70"
+              className="md:w-[70px] w-[50px] h-[50px] md:h-[70px] object-cover rounded-full opacity-70 z-20"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             />
