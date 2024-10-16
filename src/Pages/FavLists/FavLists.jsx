@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import PropertyListCard from "../../Component/ForAll/PropertyListCard";
 import Footer from "../../Component/Navigation/Footer";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 
 const FavLists = () => {
     const [favLists, setFavLists] = useState([]);
@@ -32,6 +33,7 @@ const FavLists = () => {
 
     return (
         <div className="bg-[#eae9e920] h-full">
+            <FloatingIcons/>
             <div
                 className="pt-5 lg:h-96 h-40 md:h-56"
                 style={{
