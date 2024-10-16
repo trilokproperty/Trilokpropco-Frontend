@@ -5,6 +5,7 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import { useEffect, useState } from "react";
 import { endPoint } from "../../Component/ForAll/ForAll";
 import { Link } from "react-router-dom";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 
 const About = () => {
     const [about, setAbout] = useState();
@@ -69,6 +70,7 @@ const About = () => {
                 }}
             >
                 <Header />
+              <FloatingIcons />
                 <Helmet>
                 <meta charSet="utf-8" />
                 <title>About Us - Trilokpropco</title>
