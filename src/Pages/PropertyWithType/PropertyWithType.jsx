@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 import Header from "../../Component/Navigation/Header";
 import Footer from "../../Component/Navigation/Footer";
 import { Helmet } from "react-helmet";
@@ -60,6 +61,7 @@ const PropertyWithType = () => {
 
   return (
     <div>
+      <FloatingIcons/>
       <div style={{
         backgroundImage: `url(https://i.ibb.co/NT6PZjt/16406692-rm378-02c.webp)`,
         backgroundSize: 'cover',
