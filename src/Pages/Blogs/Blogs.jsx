@@ -4,6 +4,7 @@ import SectionTitle from "../../Component/ForAll/SectionTitle";
 import Footer from "../../Component/Navigation/Footer";
 import { useState, useEffect } from "react";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 import BlogCard from "../../Component/BlogCard/BlogCard";
 
 const Blogs = () => {
@@ -48,6 +49,7 @@ const Blogs = () => {
 
   return (
     <div>
+      <FloatingIcons/>
       <div
         className="pt-5 lg:h-96 h-40 md:h-56"
         style={{
