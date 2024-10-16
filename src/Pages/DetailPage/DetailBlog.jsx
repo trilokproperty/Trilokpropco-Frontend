@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Footer from "../../Component/Navigation/Footer";
 import Header from "../../Component/Navigation/Header";
 import { endPoint } from "../../Component/ForAll/ForAll";
+import FloatingIcons from '../../Component/ForAll/FloatingIcons';
 
 const DetailBlog = () => {
     const { title } = useParams(); // Get blog ID from URL params
@@ -29,6 +30,7 @@ const cleanUrl = (url) => {
 
     return (
         <div>
+            <FloatingIcons/>
             <Header isDefault={false} />
             <Helmet>
                 <meta charSet="utf-8" />
