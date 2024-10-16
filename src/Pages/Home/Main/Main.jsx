@@ -13,6 +13,7 @@ import SearchBar from "../Home/SearchBar";
 import Testimonial from "../Home/Testimonial";
 import { useEffect, useState } from "react";
 import { endPoint } from "../../../Component/ForAll/ForAll";
+import FloatingIcons from "../../../Component/ForAll/FloatingIcons";
 
 const Main = () => {
     const [metaDatas, setMetaDatas] = useState();
@@ -33,6 +34,7 @@ const Main = () => {
     
     return (
         <div className="overflow-hidden">
+            <FloatingIcons />
             <Helmet>
                 
     <title>Trilok Propco - Real Estate Consultant</title>
