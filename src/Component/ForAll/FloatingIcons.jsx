@@ -1,11 +1,10 @@
-
 import React, { useEffect, useState } from "react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa6";
-import { endPoint } from "../ForAll/ForAll";
+import { endPoint } from "./ForAll";
 
 const FloatingIcons = () => {
   const [footerData, setFooterData] = useState(null);
-console.log(footerData)
+
   useEffect(() => {
     const fetchFooterData = async () => {
       try {
@@ -19,7 +18,7 @@ console.log(footerData)
 
     fetchFooterData();
   }, []);
-  
+
   return (
     <div style={styles.container}>
       <a
@@ -28,10 +27,10 @@ console.log(footerData)
         rel="noopener noreferrer"
         style={styles.icon}
       >
-        <FaWhatsapp style={styles.whatsappIcon}/>
+        <FaWhatsapp style={styles.whatsappIcon} />
       </a>
       <a href={`tel:${footerData?.contact}`} style={styles.icon}>
-        <FaPhone style={styles.phoneIcon}/>
+        <FaPhone style={styles.phoneIcon} />
       </a>
     </div>
   );
@@ -55,6 +54,11 @@ const styles = {
     padding: "15px",
     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
     transition: "transform 0.3s",
+    cursor: "pointer",
+    // Add hover effect
+    ':hover': {
+      transform: 'scale(1.1)',
+    },
   },
   whatsappIcon: {
     fontSize: "24px",
@@ -62,6 +66,38 @@ const styles = {
   phoneIcon: {
     fontSize: "24px",
     backgroundColor: "#34b7f1", // Phone icon blue color
+  },
+  // Media query for responsiveness
+  '@media(max-width: 768px)': {
+    container: {
+      bottom: "10px",
+      right: "10px",
+      gap: "10px",
+    },
+    icon: {
+      padding: "10px",
+    },
+    whatsappIcon: {
+      fontSize: "20px",
+    },
+    phoneIcon: {
+      fontSize: "20px",
+    },
+  },
+  '@media(max-width: 480px)': {
+    container: {
+      bottom: "8px",
+      right: "8px",
+    },
+    icon: {
+      padding: "8px",
+    },
+    whatsappIcon: {
+      fontSize: "18px",
+    },
+    phoneIcon: {
+      fontSize: "18px",
+    },
   },
 };
 
