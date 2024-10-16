@@ -7,7 +7,6 @@ import FloatingIcons from './Component/ForAll/FloatingIcons.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FloatingIcons />
     <RouterProvider router={router}> </RouterProvider>
   </StrictMode>,
 )
