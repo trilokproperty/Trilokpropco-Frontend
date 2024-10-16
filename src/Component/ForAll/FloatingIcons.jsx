@@ -65,7 +65,6 @@ const styles = {
   },
   phoneIcon: {
     fontSize: "24px",
-    backgroundColor: "#34b7f1", // Phone icon blue color
   },
   // Media query for responsiveness
   '@media(max-width: 768px)': {
@@ -90,13 +89,13 @@ const styles = {
       right: "8px",
     },
     icon: {
-      padding: "8px",
+      padding: "5px",
     },
     whatsappIcon: {
-      fontSize: "18px",
+      fontSize: "15px",
     },
     phoneIcon: {
-      fontSize: "18px",
+      fontSize: "15px",
     },
   },
 };
