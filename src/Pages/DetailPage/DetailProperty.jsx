@@ -641,7 +641,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               Project Overview
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-6">
-              <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
+              <div className="text-center border rounded-2xl detailedProperty text-black">
                 <h3 className="md:text-2xl text-[18px]  font-medium uppercase">
                   POSSESSION DATE
                 </h3>
@@ -650,7 +650,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
+              <div className="text-center border rounded-2xl detailedProperty text-black">
                 <h3 className="md:text-2xl text-[18px] font-medium uppercase">
                   LAND AREA
                 </h3>
@@ -659,7 +659,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl detailedProperty text-black">
+              <div className="text-center border rounded-2xl detailedProperty text-black">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   CONFIGURATION
                 </h3>
@@ -668,7 +668,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
+              <div className="text-center border rounded-2xl">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   FLAT AREA
                 </h3>
@@ -677,7 +677,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
+              <div className="text-center border rounded-2xl">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   PRICE RANGE
                 </h3>
@@ -686,7 +686,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
+              <div className="text-center border rounded-2xl">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   NO. OF BLOCKS
                 </h3>
@@ -695,7 +695,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
+              <div className="text-center border rounded-2xl">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   ELEVATION
                 </h3>
@@ -704,7 +704,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
-              <div className="text-center border py-6 px-3 rounded-2xl">
+              <div className="text-center border rounded-2xl">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   NO. OF UNITS
                 </h3>
@@ -713,7 +713,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
                 </p>
               </div>
 
- <div className="text-center border py-6 px-3 rounded-2xl">
+ <div className="text-center border rounded-2xl">
                 <h3 className="md:text-2xl text-[18px] detailedProperty text-black font-medium uppercase">
                   RERA Reg No.
                 </h3>
