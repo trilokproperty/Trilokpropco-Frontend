@@ -94,7 +94,11 @@ const DetailProperty = () => {
   const [tenureType, setTenureType] = useState("years"); // 'years' or 'months'
   const [footer, setFooter] = useState();
   const [modelOpen, setModelOpen] = useState(false);
-  const [fullImageOpen, setFullImageOpen] = useState(false)
+  const [fullImageOpen, setFullImageOpen] = useState(false);
+  const [isPlanModalOpen, setIsPlanModalOpen] = useState(false);
+
+  const openPlanModal = () => setIsPlanModalOpen(true);
+  const closePlanModal = () => setIsPlanModalOpen(false);
   
   const toggleModalOpen = () => {
     setModelOpen(!modelOpen);
@@ -797,14 +801,24 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
       {/* Display selected plan details */}
       {selectedPlan && (
         <div className="my-5 mx-5 border rounded-2xl">
-          {selectedPlan?.image && <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="!w-full  rounded-t-2xl"/>}
+          {selectedPlan?.image && <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="!w-full  rounded-t-2xl" onClick={openPlanModal} />}
         <div className="bg-[#0000000e] rounded-b-2xl p-4 flex justify-between items-center md:text-2xl text-[14px]"> 
          {selectedPlan?.price && <p><strong>Price:</strong> {selectedPlan?.price || 'N/A'}</p>}
          {selectedPlan?.size &&<p><strong>Size:</strong> {selectedPlan?.size || 'N/A'}</p>}
          </div>
         </div>
       )}
-
+{/* Modal */}
+      {isPlanModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg overflow-hidden">
+            <button className="absolute top-3 right-3 text-white bg-red-500 rounded-full px-2 py-1" onClick={closePlanModal}>
+              X
+            </button>
+            <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="max-w-full max-h-screen" />
+          </div>
+        </div>
+      )}
 
           </div>
 
