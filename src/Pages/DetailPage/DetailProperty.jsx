@@ -811,11 +811,11 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
 {/* Modal */}
       {isPlanModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg overflow-hidden">
-            <button className="absolute top-3 right-3 text-white bg-red-500 rounded-full px-2 py-2" onClick={closePlanModal}>
+          <div className="bg-white rounded-lg overflow-hidden relative">
+            <button className="absolute top-3 right-3 text-black rounded-full px-2 py-2" onClick={closePlanModal}>
               X
             </button>
-            <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="max-w-5xl" />
+            <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="max-w-5xl w-full h-full" />
           </div>
         </div>
       )}
