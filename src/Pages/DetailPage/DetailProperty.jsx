@@ -811,7 +811,10 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
 {/* Modal */}
       {isPlanModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg overflow-hidden relative">
+          <div className="bg-white rounded-lg overflow-hidden relative" style={{
+          maxWidth: "90vw",
+          maxHeight: "90vh",
+        }}>
             <button className="absolute top-3 right-3 text-black rounded-full px-2 py-2 bg-[#ffffff69] text-gray-800" onClick={closePlanModal}>
               X
             </button>
