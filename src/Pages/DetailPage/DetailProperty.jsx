@@ -815,7 +815,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
           maxWidth: "90vw",
           maxHeight: "90vh",
         }}>
-            <button className="absolute top-3 right-3 text-black rounded-full px-2 py-2 bg-[#ffffff69] text-gray-800" onClick={closePlanModal}>
+            <button className="absolute top-3 right-3 text-black rounded-full px-[11px] py-2 bg-[#ffffff69] text-gray-800" onClick={closePlanModal}>
               X
             </button>
             <img src={selectedPlan?.image} alt={selectedPlan?.planType} className="max-w-5xl w-full h-full" />
