@@ -13,6 +13,7 @@ const About = () => {
     const [why, setWhy] = useState();
     const [partners, setPartners] = useState();
     console.log(footer)
+    console.log(partners)
     useEffect(()=>{
         const fetchAbout = async()=>{
             try {
