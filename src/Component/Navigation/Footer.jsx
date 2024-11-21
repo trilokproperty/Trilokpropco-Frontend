@@ -36,32 +36,32 @@ const Footer = () => {
           <h6 className="text-xl font-semibold mt-4 text-black">Follow us</h6>
 
           <div className="flex gap-2">
-            <a href={footers?.facebook}>
+            <a href={footers?.facebook} target="_blank">
               <div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex justify-center items-center rounded-[4px] text-xl">
                 <FaFacebook />
               </div>
             </a>
-            <a href={footers?.instagram}>
+            <a href={footers?.instagram} target="_blank">
               <div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex justify-center items-center rounded-[4px] text-xl">
                 <FaInstagram />
               </div>
             </a>
-            <a href={footers?.linkedin}>
+            <a href={footers?.linkedin} target="_blank">
               <div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex justify-center items-center rounded-[4px] text-xl">
                 <FaLinkedin />
               </div>
             </a>
-            <a href={footers?.twitter}>
+            <a href={footers?.twitter} target="_blank">
               <div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex justify-center items-center rounded-[4px] text-xl">
                 <FaX />
               </div>
             </a>
-            <a href={footers?.whatsapp}>
+            <a href={footers?.whatsapp} target="_blank">
               <div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex justify-center items-center rounded-[4px] text-xl">
                 <FaWhatsapp />
               </div>
             </a>
-            <a href={footers?.youtube}>
+            <a href={footers?.youtube} target="_blank">
               <div className="text-[#5B687C] bg-[#2a323c34] w-[32px] h-[32px] flex justify-center items-center rounded-[4px] text-xl">
                 <FaYoutube />
               </div>
