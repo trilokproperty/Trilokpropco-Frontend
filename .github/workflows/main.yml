@@ -1,35 +1,41 @@
-name: Deploy Application
+name: Deploy Frontend App to S3
 
 on:
   push:
     branches:
-      - main  # Replace with your branch name
+      - main
 
 jobs:
-  deploy-frontend:
-    runs-on: self-hosted
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      # Step 1: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Step 2: Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18' 
 
-      - name: Sync Frontend Directory
-        run: |
-          sudo rsync -av --delete /home/ubuntu/actions-runner-frontend/_work/Trilokpropco-frontend/Trilokpropco-frontend/ /home/ubuntu/Trilokpropco-frontend/
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-      - name: Build and Deploy Frontend
-        run: |
-          cd /home/ubuntu/Trilokpropco-frontend 
-          rm -rf node_modules
-          npm install
-          npm run build
-          sudo cp -r ./dist/* /var/www/html  # Make sure the frontend build outputs to 'dist'
+      # Step 4: Build the React app
+      - name: Build React app
+        run: npm run build
 
-      - name: Restart Nginx
+      # Step 5: Configure AWS CLI
+      - name: Configure AWS CLI
         run: |
-          sudo systemctl restart nginx
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region ${{ secrets.AWS_REGION }}
+
+      # Step 6: Sync the build folder to S3
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }} --delete --acl public-read
