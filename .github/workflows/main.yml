@@ -40,6 +40,13 @@ jobs:
           aws configure set default.region "${{ secrets.AWS_REGION }}"
 
       # Step 7: Sync the build folder to S3
+      - name: check S3
+        run: |
+          aws s3 ls s3://
+
+      # Step 7: Sync the build folder to S3
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://trilokpropco.com --delete --acl public-read
+          cd dist
+          aws s3 rm s3://trilokpropco.com --recursive
+          aws s3 cp . s3://trilokpropco.com --recursive
