@@ -35,11 +35,11 @@ jobs:
       # Step 6: Configure AWS CLI
       - name: Configure AWS CLI
         run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws configure set default.region ${{ secrets.AWS_REGION }}
+          aws configure set aws_access_key_id "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          aws configure set default.region "${{ secrets.AWS_REGION }}"
 
       # Step 7: Sync the build folder to S3
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }} --delete --acl public-read
+          aws s3 sync ./dist s3://"${{ secrets.S3_BUCKET_NAME }}" --delete --acl public-read
