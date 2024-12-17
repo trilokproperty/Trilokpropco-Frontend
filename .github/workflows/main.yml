@@ -39,14 +39,19 @@ jobs:
           aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           aws configure set default.region "${{ secrets.AWS_REGION }}"
 
-      # Step 7: Sync the build folder to S3
-      - name: check S3
+      # Step 7: Check if the AWS CLI is properly configured
+      - name: Check S3
         run: |
-          aws s3 ls s3://
+          aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}
 
-      # Step 7: Sync the build folder to S3
+      # Step 8: Remove existing files from S3 bucket and deploy new files
       - name: Deploy to S3
         run: |
+          # Ensure you're in the correct directory where the build output is located (./dist by default)
           cd dist
-          aws s3 rm s3://trilokpropco.com --recursive
-          aws s3 cp . s3://trilokpropco.com --recursive
+
+          # Remove existing files from S3 bucket
+          aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }} --recursive
+
+          # Upload the build files to S3 bucket
+          aws s3 cp . s3://${{ secrets.S3_BUCKET_NAME }} --recursive
