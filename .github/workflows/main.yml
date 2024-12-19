@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' 
+          node-version: '18'
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -40,10 +40,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 8: Remove existing files from S3 bucket and deploy new files
+      # Step 7: Deploy to S3
       - name: Deploy to S3
         run: |
-          # Ensure you're in the correct directory where the build output is located (./dist by default)
           # Remove existing files from S3 bucket
           aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }} --recursive
 
