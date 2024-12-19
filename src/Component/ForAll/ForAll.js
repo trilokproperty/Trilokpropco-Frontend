@@ -1,1 +1,1 @@
-export const endPoint = "https://trilokpropco.com/api";
+export const endPoint = "https://api.trilokpropco.com/api";
