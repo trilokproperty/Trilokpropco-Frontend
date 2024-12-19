@@ -1,4 +1,4 @@
-name: Deploy Frontend App to S3
+name: Build and Deploy to S3
 
 on:
   push:
@@ -6,45 +6,39 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js environment
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18 # Specify your Node.js version
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
+      # Install dependencies and build the project
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm update
+          npm run build
 
-      # Step 4: Update dependencies
-      - name: Update dependencies
-        run: npm update
-
-      # Step 5: Build the React app
-      - name: Build React app
-        run: npm run build
-
-      # Step 6: Configure AWS CLI
-      - name: Configure AWS CLI
+      # Configure AWS credentials
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 7: Deploy to S3
+      # Deploy to S3
       - name: Deploy to S3
         run: |
-          # Remove existing files from S3 bucket
+          # delete exiting objects from bucket
           aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }} --recursive
-
-          # Upload the build files to S3 bucket
+          # push new build to bucket
           aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }}
