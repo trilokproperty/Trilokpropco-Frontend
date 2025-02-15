@@ -62,7 +62,7 @@ const AllProperties = () => {
   }, [filters, properties, selectedCategory]); // re-run when selectedCategory or filters change
 
   const handleButtonClick = (type) => {
-    console.log('Selected Category:', type);
+    // console.log('Selected Category:', type);
     setSelectedCategory(type); 
   };
 

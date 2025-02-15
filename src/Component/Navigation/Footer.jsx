@@ -9,7 +9,7 @@ import { GrLicense } from "react-icons/gr";
 
 const Footer = () => {
   const [footers, setFooters] = useState();
-  console.log(footers);
+  // console.log(footers);
   useEffect(() => {
     const fetchFooters = async () => {
       const response = await fetch(`${endPoint}/footer`);

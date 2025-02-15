@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PropertyItem = ({ property, isActive }) => {
   const { priceRange, name, galleryImages, category } = property;
-  console.log(property)
+  // console.log(property)
 
   // Conditional styles based on whether the slide is active or not
   const itemStyle = {

@@ -11,7 +11,7 @@ const Filter = ({ onFilterChange }) => {
     const [selectedCity, setSelectedCity] = useState('');
     const [selectedStatus, setSelectedStatus] = useState('');
     const [selectedFor, setSelectedFor] = useState('');
-    console.log(selectedType, selectedCity, selectedStatus, selectedFor )
+    // console.log(selectedType, selectedCity, selectedStatus, selectedFor )
     useEffect(() => {
         const fetchFilters = async () => {
             try {

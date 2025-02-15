@@ -7,7 +7,7 @@ const CompareDrawer = ({ isVisible, onClose }) => {
 
   if (!isVisible) return null;
 
-  console.log(compareList)
+  // console.log(compareList)
 
   return (
     <div className="fixed top-0 right-0 w-[50%] md:w-1/3 h-full bg-white shadow-lg flex flex-col overflow-y-auto text-center z-[1000] text-black">

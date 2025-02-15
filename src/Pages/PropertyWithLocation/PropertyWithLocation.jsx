@@ -32,7 +32,7 @@ const PropertyWithLocation = () => {
           setCityId(city._id); // Assuming city has '_id' field
           setCity(city); // Save the city details
         } else {
-          console.log('City not found');
+          // console.log('City not found');
         }
       } catch (error) {
         console.error('Error fetching cities:', error);

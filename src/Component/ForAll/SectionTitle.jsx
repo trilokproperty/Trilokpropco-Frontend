@@ -1,7 +1,7 @@
 
 
 const SectionTitle = (value) => {
-    console.log(value.color)
+    // console.log(value.color)
     return (
         <h1 className={`section-title Bebas-Neue text-3xl md:text-4xl lg:text-5xl  text-${value.color||"black"} text-center`}
         style={{

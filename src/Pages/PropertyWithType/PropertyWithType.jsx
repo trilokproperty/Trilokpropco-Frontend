@@ -32,7 +32,7 @@ const PropertyWithType = () => {
           setTypeId(type._id); // Assuming type has '_id' field
           setType(type); // Save the type details
         } else {
-          console.log('Type not found');
+          // console.log('Type not found');
         }
       } catch (error) {
         console.error('Error fetching types:', error);

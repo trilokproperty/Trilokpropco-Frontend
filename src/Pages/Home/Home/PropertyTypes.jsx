@@ -17,7 +17,7 @@ const PropertyTypes = () => {
   const [types, setTypes] = useState([]);
   const [typeCounts, setTypeCounts] = useState({});
 
-  console.log(types, typeCounts);
+  // console.log(types, typeCounts);
   useEffect(() => {
     const fetchTypesAndProperties = async () => {
       try {

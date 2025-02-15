@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { endPoint } from "./ForAll";
 import { toast, ToastContainer } from "react-toastify";
-
+import './Modal.css'
 const ContactModel = ({ toggleModal, property }) => {
   const [loading, setLoading] = useState(false);
   const [countryCodes, setCountryCodes] = useState([]);

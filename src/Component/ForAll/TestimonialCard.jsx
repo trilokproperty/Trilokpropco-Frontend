@@ -2,7 +2,7 @@ import { IoMdQuote } from "react-icons/io";
 import StarRatings from "react-star-ratings";
 
 const TestimonialCard = (testimonial) => {
-    console.log(testimonial?.testimonial)
+    // console.log(testimonial?.testimonial)
     const truncateText = (str, numWords) => {
         const words = str.split(" ");
         if (words.length > numWords) {

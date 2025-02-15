@@ -12,8 +12,8 @@ const About = () => {
     const [footer, setFooter] = useState();
     const [why, setWhy] = useState();
     const [partners, setPartners] = useState();
-    console.log(footer)
-    console.log(partners)
+    // console.log(footer)
+    // console.log(partners)
     useEffect(()=>{
         const fetchAbout = async()=>{
             try {
