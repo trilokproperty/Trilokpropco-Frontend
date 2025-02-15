@@ -2,7 +2,7 @@ import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const BlogCard = (blog) => {
-  console.log(blog?.blog);
+  // console.log(blog?.blog);
   const date = new Date(blog?.blog?.date);
 const locationNameSlug = blog?.blog?.title?.replace(/\s+/g, '_');
   // Convert the date to the desired format

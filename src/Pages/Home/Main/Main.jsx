@@ -30,7 +30,7 @@ const Main = () => {
         fetchMeta();
     }, []);
     
-    console.log(metaDatas);
+    // console.log(metaDatas);
     
     return (
         <div className="overflow-hidden">

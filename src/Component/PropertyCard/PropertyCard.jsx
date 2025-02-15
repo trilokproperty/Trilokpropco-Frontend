@@ -90,7 +90,7 @@ const nameSlug = property?.name.replace(/\s+/g, '-');
             // Add the property to the favorite list
             favList.push(property);
         }
-    console.log(favList)
+    // console.log(favList)
         // Update localStorage
         localStorage.setItem("favList", JSON.stringify(favList));
          

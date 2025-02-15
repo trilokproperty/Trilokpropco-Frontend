@@ -12,7 +12,7 @@ const PropertyListCard = (property) => {
     const [curentDeveloper, setCurentDeveloper] = useState(null);
     const [isInCompare, setIsInCompare] = useState(false);
     const [isInFav, setIsInFav] = useState(false);
-   console.log(property)
+//    console.log(property)
     const nameSlug = property?.property?.name.replace(/\s+/g, '-');
     useEffect(() => {
         const fetchLocation = async () => {
@@ -79,7 +79,7 @@ const PropertyListCard = (property) => {
             // Add the property to the compare list
             compareList.push(property?.property);
         }
-       console.log(compareList)
+    //    console.log(compareList)
         // Update localStorage
         localStorage.setItem("compareList", JSON.stringify(compareList));
     
@@ -100,7 +100,7 @@ const PropertyListCard = (property) => {
             favList.push(property?.property);
         }
     
-        console.log(favList)
+        // console.log(favList)
         // Update localStorage
         
         localStorage.setItem("favList", JSON.stringify(favList));

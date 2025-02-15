@@ -9,7 +9,7 @@ import SectionTitle from '../../../Component/ForAll/SectionTitle';
 
 const Partners = () => {
   const [partners, setPartners] = useState();
- console.log(partners)
+//  console.log(partners)
   useEffect(() =>{
     const fetchPartners = async () => {
       const response = await fetch(`${endPoint}/partner`);

@@ -44,7 +44,7 @@ const Services = () => {
     }
     fetchFooter()
   }, []);
-  console.log(sectionDes)
+  // console.log(sectionDes)
   return (
     <div className="overflow-hidden">
       <FloatingIcons/>

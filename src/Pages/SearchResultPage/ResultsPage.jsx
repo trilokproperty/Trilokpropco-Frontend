@@ -19,7 +19,7 @@ const ResultsPage = () => {
             const city = queryParams.get('city');
             const status = queryParams.get('status');
 
-            console.log("Fetching with params:", { type, city, status });
+            // console.log("Fetching with params:", { type, city, status });
 
             const response = await fetch(`${endPoint}/property/search?type=${type}&city=${city}&status=${status}`);
 
@@ -28,7 +28,7 @@ const ResultsPage = () => {
             }
 
             const data = await response.json();
-            console.log("Fetched data:", data);
+            // console.log("Fetched data:", data);
             setResults(data);
         } catch (error) {
             console.error("Error fetching search results:", error);
