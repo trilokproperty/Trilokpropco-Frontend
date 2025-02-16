@@ -107,7 +107,7 @@ const ContactModel = ({ toggleModal, property }) => {
           </div>
 
           <div className="flex gap-3">
-            <div>
+            <div className="w-full">
               <div className="label mt-3">
                 <span className="label-text text-black ">Your Name</span>
               </div>
@@ -123,7 +123,7 @@ const ContactModel = ({ toggleModal, property }) => {
           
           <div className="flex gap-3">
 
-            <div>
+            <div className="w-full">
               <div className="label mt-3">
                 <span className="label-text text-black ">Your Email</span>
               </div>
