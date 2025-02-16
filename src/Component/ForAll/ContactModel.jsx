@@ -81,7 +81,7 @@ const ContactModel = ({ toggleModal, property }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50" id="contactPropertyForm">
       <div className="bg-white rounded-xl p-8 shadow-lg relative max-w-md w-full text-black">
         <ToastContainer />
         {/* Close Button */}
@@ -109,26 +109,29 @@ const ContactModel = ({ toggleModal, property }) => {
           <div className="flex gap-3">
             <div>
               <div className="label mt-3">
-                <span className="label-text text-black ">Your name</span>
+                <span className="label-text text-black ">Your Name</span>
               </div>
               <input
                 type="text"
                 required
                 name="name"
-                placeholder="Type name here"
+                placeholder="Type here"
                 className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black"
               />
             </div>
+          {/* </div>
+          
+          <div className="flex gap-3"> */}
 
             <div>
               <div className="label mt-3">
-                <span className="label-text text-black ">Your email</span>
+                <span className="label-text text-black ">Your Email</span>
               </div>
               <input
                 type="email"
                 required
                 name="email"
-                placeholder="Type email here"
+                placeholder="Type here"
                 className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black"
               />
             </div>
@@ -140,9 +143,10 @@ const ContactModel = ({ toggleModal, property }) => {
             </div>
             <div className="flex w-full">
               {/* Custom Country Code Dropdown */}
-              <div className="relative w-1/4">
+              <div className="relative w-1/4 phoneArea">
                 <button
                   type="button"
+                  id="countryDropdown"
                   onClick={() =>
                     setIsCountryListVisible(!isCountryListVisible)
                   } // Toggle list visibility
@@ -157,7 +161,8 @@ const ContactModel = ({ toggleModal, property }) => {
                 </button>
 
                 {isCountryListVisible && (
-                  <div className="absolute top-full left-0 text-black bg-white w-full max-h-60 overflow-y-auto z-10">
+                  <div className="absolute top-full left-0 text-black bg-white w-full max-h-60 overflow-y-auto z-10" 
+                  id="countryDropdownSelect">
                     {/* Search Input */}
                     <input
                       type="text"
@@ -191,14 +196,14 @@ const ContactModel = ({ toggleModal, property }) => {
               <input
                 type="text"
                 name="phone"
-                placeholder="Your phone number"
+                placeholder="Enter phone no."
                 className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4 focus:text-black"
               />
             </div>
           </div>
           <div>
             <div className="label mt-3">
-              <span className="label-text text-black ">Your message</span>
+              <span className="label-text text-black ">Message</span>
             </div>
             <textarea
               className="border-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] text-area w-full mt-3 rounded-xl focus:text-black"
