@@ -96,7 +96,7 @@ const ContactModel = ({ toggleModal, property }) => {
         {/* Example form */}
         <form
           onSubmit={handleSubmit}
-          className="shadow-xl p-10 rounded-[30px] w-full  bg-white "
+          className="shadow-xl p-2 rounded-[30px] w-full  bg-white "
         >
           <div className="label text-black">
             <img
@@ -115,13 +115,13 @@ const ContactModel = ({ toggleModal, property }) => {
                 type="text"
                 required
                 name="name"
-                placeholder="Type here"
+                placeholder="Type name here"
                 className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black"
               />
             </div>
-          {/* </div>
+          </div>
           
-          <div className="flex gap-3"> */}
+          <div className="flex gap-3">
 
             <div>
               <div className="label mt-3">
@@ -131,7 +131,7 @@ const ContactModel = ({ toggleModal, property }) => {
                 type="email"
                 required
                 name="email"
-                placeholder="Type here"
+                placeholder="Type email here"
                 className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black"
               />
             </div>
@@ -158,6 +158,21 @@ const ContactModel = ({ toggleModal, property }) => {
                     className="w-6 h-6 mr-2"
                   />
                   {selectedCountry.code}
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className={`w-8 h-8 transition-transform ${
+                      isCountryListVisible ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12 15.75a.75.75 0 0 1-.53-.22l-5.5-5.5a.75.75 0 1 1 1.06-1.06L12 13.94l4.97-4.97a.75.75 0 0 1 1.06 1.06l-5.5 5.5a.75.75 0 0 1-.53.22Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
                 </button>
 
                 {isCountryListVisible && (
