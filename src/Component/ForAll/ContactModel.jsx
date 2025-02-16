@@ -125,7 +125,7 @@ const ContactModel = ({ toggleModal, property }) => {
 
             <div className="w-full">
               <div className="label mt-3">
-                <span className="label-text text-black ">Your Email</span>
+                <span className="label-text text-black ">Your Email </span>
               </div>
               <input
                 type="email"
