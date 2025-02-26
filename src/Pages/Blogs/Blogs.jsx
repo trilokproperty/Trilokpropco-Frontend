@@ -46,7 +46,20 @@ const Blogs = () => {
   const filteredBlogs = selectedCategory
     ? blogs?.filter(blog => blog.category === selectedCategory)
     : blogs; // If no category is selected, show all blogs
-
+    const [metaDatas, setMetaDatas] = useState();
+    useEffect(() => {
+        const fetchMeta = async () => {
+            try {
+                const response = await fetch(`${endPoint}/meta/slug/blog`);
+                const data = await response.json(); // Await the JSON parsing
+                
+                setMetaDatas(data);
+            } catch (error) {
+                console.error('Error fetching metadata:', error);
+            }
+        };
+        fetchMeta();
+    }, []);
   return (
     <div>
       <FloatingIcons/>
@@ -61,8 +74,17 @@ const Blogs = () => {
       >
         <Header />
         <Helmet>
-          <meta charSet="utf-8" />
-          <title>Explore Blogs - Trilokpropco</title>
+          <meta charSet="utf-8" />         
+          
+          <title>{ metaDatas? metaDatas?.metaTitle :'Explore Blogs - Trilokpropco'}</title>
+              <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+              <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+              <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+              <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+              <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+              <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
         </Helmet>
         <SectionTitle value="Explore Blogs" color="white" />
       </div>

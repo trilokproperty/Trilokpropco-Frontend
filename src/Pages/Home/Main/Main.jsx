@@ -20,8 +20,9 @@ const Main = () => {
     useEffect(() => {
         const fetchMeta = async () => {
             try {
-                const response = await fetch(`${endPoint}/meta`);
+                const response = await fetch(`${endPoint}/meta/slug/home`);
                 const data = await response.json(); // Await the JSON parsing
+               
                 setMetaDatas(data);
             } catch (error) {
                 console.error('Error fetching metadata:', error);
@@ -37,15 +38,15 @@ const Main = () => {
             <FloatingIcons />
             <Helmet>
                 
-    <title>Trilok Propco - Real Estate Consultant</title>
-        <meta name="description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
-        <meta name="og:title" content={ metaDatas? metaDatas[0]?.metaTitle : 'Default Title'} />
-        <meta name="og:description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
-        <meta name="og:image" content={ metaDatas? metaDatas[0]?.FeaturedImage : 'default-image-url.jpg'} />
+    <title>{ metaDatas? metaDatas?.metaTitle :'Trilok Propco - Real Estate Consultant'}</title>
+        <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+        <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+        <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+        <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={ metaDatas? metaDatas[0]?.metaTitle : 'Default Title'} />
-        <meta name="twitter:description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
-        <meta name="twitter:image" content={ metaDatas? metaDatas[0]?.FeaturedImage : 'default-image-url.jpg'} />
+        <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+        <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+        <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
       </Helmet>
             <Home />
             <SearchBar />
