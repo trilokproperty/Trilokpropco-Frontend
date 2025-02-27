@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from '../../Component/Navigation/Header';
 import Footer from '../../Component/Navigation/Footer';
 import SectionTitle from '../../Component/ForAll/SectionTitle';
@@ -88,6 +88,7 @@ const AllProperties = () => {
       fetchMeta();
   }, []);
   return (
+        <HelmetProvider>
     <div className='overflow-hidden'>
       <FloatingIcons/>
       <div
@@ -112,6 +113,9 @@ const AllProperties = () => {
               <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
               <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
               <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content="https://trilokpropco.com/properties" />
+              <link rel="canonical" href="https://trilokpropco.com/properties" />
             </Helmet>
                   
         <SectionTitle value="Explore Properties" color="white" />
@@ -158,6 +162,7 @@ const AllProperties = () => {
       {/* Ensure Footer is outside of grid */}
       <Footer />
     </div>
+      </HelmetProvider>
   );
 };
 

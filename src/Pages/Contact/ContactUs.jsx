@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../Component/Navigation/Header";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import Contact from "../Home/Home/Contact";
@@ -25,6 +25,8 @@ const ContactUs = () => {
       fetchMeta();
   }, []);
     return (
+        <HelmetProvider>
+
     <div>
         <FloatingIcons/>
        <div
@@ -49,12 +51,16 @@ const ContactUs = () => {
                 <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
                 <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
                 <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://trilokpropco.com/contact" />
+                <link rel="canonical" href="https://trilokpropco.com/contact" />
                 </Helmet>
                 <SectionTitle value="Contact Us" color="white" />
           </div>
           <Contact />
           <Footer />      
     </div>
+    </HelmetProvider>
     );
 };
 

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../Component/Navigation/Header";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import { useState } from "react";
@@ -61,6 +61,8 @@ const Services = () => {
   }, []);
   // console.log(sectionDes)
   return (
+    <HelmetProvider>
+
     <div className="overflow-hidden">
       <FloatingIcons/>
       <div
@@ -86,6 +88,10 @@ const Services = () => {
           <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
           <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
           <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://trilokpropco.com/services" />
+          <link rel="canonical" href="https://trilokpropco.com/services" />
+          
         </Helmet>
         <SectionTitle value="Services" color="white" />
       </div>
@@ -165,6 +171,7 @@ const Services = () => {
         </div>
       <Footer />
     </div>
+    </HelmetProvider>
   );
 };
 
