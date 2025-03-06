@@ -1,13 +1,32 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../Component/Navigation/Header";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import Contact from "../Home/Home/Contact";
 import Footer from "../../Component/Navigation/Footer";
 import FloatingIcons from '../../Component/ForAll/FloatingIcons';
-
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { endPoint } from "../../Component/ForAll/ForAll";
 
 const ContactUs = () => {
+    
+  const [metaDatas, setMetaDatas] = useState();
+  useEffect(() => {
+      const fetchMeta = async () => {
+          try {
+              const response = await fetch(`${endPoint}/meta/slug/contact`);
+              const data = await response.json(); // Await the JSON parsing
+              
+              setMetaDatas(data);
+          } catch (error) {
+              console.error('Error fetching metadata:', error);
+          }
+      };
+      fetchMeta();
+  }, []);
     return (
+        <HelmetProvider>
+
     <div>
         <FloatingIcons/>
        <div
@@ -21,14 +40,27 @@ const ContactUs = () => {
             >
                 <Header />
                 <Helmet>
-                <meta charSet="utf-8" />
-                <title>Contact Us - Trilokpropco</title>
+                <meta charSet="utf-8" />                
+          
+                <title>{ metaDatas? metaDatas?.metaTitle :'Contact Us - Trilokpropco'}</title>
+                <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+                <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+                <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+                <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+                <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+                <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://trilokpropco.com/contact" />
+                <link rel="canonical" href="https://trilokpropco.com/contact" />
                 </Helmet>
                 <SectionTitle value="Contact Us" color="white" />
           </div>
           <Contact />
           <Footer />      
     </div>
+    </HelmetProvider>
     );
 };
 
