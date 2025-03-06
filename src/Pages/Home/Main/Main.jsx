@@ -1,5 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Footer from "../../../Component/Navigation/Footer";
 import Contact from "../Home/Contact";
 import ExploreCities from "../Home/ExploreCities";
@@ -11,24 +12,28 @@ import Partners from "../Home/Partners";
 import PropertyTypes from "../Home/PropertyTypes";
 import SearchBar from "../Home/SearchBar";
 import Testimonial from "../Home/Testimonial";
-import { endPoint } from "../../../Component/ForAll/ForAll";
 import FloatingIcons from '../../../Component/ForAll/FloatingIcons';
 
 const Main = () => {
+    const location = useLocation();
     const [metaDatas, setMetaDatas] = useState(null);
 
     useEffect(() => {
-        const fetchMeta = async () => {
+        const fetchSEO = async () => {
+            const filename = location.pathname === "/" ? "home" : location.pathname.replace(/\//g, "_");
             try {
-                const response = await fetch(`${endPoint}/meta/slug/home`);
-                const data = await response.json();
-                setMetaDatas(data);
+                const response = await fetch(`/seo${filename}.json`);
+                if (response.ok) {
+                    const data = await response.json();
+                    setMetaDatas(data);
+                }
             } catch (error) {
-                console.error('Error fetching metadata:', error);
+                console.error("SEO data not found:", error);
             }
         };
-        fetchMeta();
-    }, []);
+
+        fetchSEO();
+    }, [location.pathname]);
 
     return (
         <HelmetProvider>
