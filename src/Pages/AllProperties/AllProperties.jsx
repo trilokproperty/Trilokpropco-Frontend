@@ -20,6 +20,7 @@ const AllProperties = () => {
     status: '',
     for: ''
   });
+  
 
   // Fetch properties
   useEffect(() => {
@@ -73,19 +74,23 @@ const AllProperties = () => {
     }));
   };
 
-  const [metaDatas, setMetaDatas] = useState();
+  const location = useLocation();
+  const [metaDatas, setMetaDatas] = useState(null);
+
   useEffect(() => {
-      const fetchMeta = async () => {
+      const fetchSEO = async () => {
           try {
-              const response = await fetch(`${endPoint}/meta/slug/properties`);
-              const data = await response.json(); // Await the JSON parsing
-              
-              setMetaDatas(data);
+              const response = await fetch(`/seoproperties.json`);
+              if (response.ok) {
+                  const data = await response.json();
+                  setMetaDatas(data);
+              }
           } catch (error) {
-              console.error('Error fetching metadata:', error);
+              console.error("SEO data not found:", error);
           }
       };
-      fetchMeta();
+
+      fetchSEO();
   }, []);
   return (
         <HelmetProvider>

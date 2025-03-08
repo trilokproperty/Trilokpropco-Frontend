@@ -1,7 +1,7 @@
 import fs from "fs";
 import { endPoint } from "./src/Component/ForAll/ForAll.js";
 
-const PAGES = ["/"]; // List of pages
+const PAGES = ["/","properties","services","blog","about","contact"]; // List of pages
 
 async function fetchSEOData() {
   try {
