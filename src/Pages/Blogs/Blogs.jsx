@@ -46,20 +46,25 @@ const Blogs = () => {
   const filteredBlogs = selectedCategory
     ? blogs?.filter(blog => blog.category === selectedCategory)
     : blogs; // If no category is selected, show all blogs
-    const [metaDatas, setMetaDatas] = useState();
-    useEffect(() => {
-        const fetchMeta = async () => {
-            try {
-                const response = await fetch(`${endPoint}/meta/slug/blog`);
-                const data = await response.json(); // Await the JSON parsing
-                
-                setMetaDatas(data);
-            } catch (error) {
-                console.error('Error fetching metadata:', error);
-            }
-        };
-        fetchMeta();
-    }, []);
+    
+    
+  const [metaDatas, setMetaDatas] = useState(null);
+
+  useEffect(() => {
+      const fetchSEO = async () => {
+          try {
+              const response = await fetch(`/seoblog.json`);
+              if (response.ok) {
+                  const data = await response.json();
+                  setMetaDatas(data);
+              }
+          } catch (error) {
+              console.error("SEO data not found:", error);
+          }
+      };
+
+      fetchSEO();
+  }, []);
   return (
     <HelmetProvider>
 

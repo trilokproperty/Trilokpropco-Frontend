@@ -45,19 +45,24 @@ const Services = () => {
     fetchFooter()
   }, []);
   
-  const [metaDatas, setMetaDatas] = useState();
+
+
+  const [metaDatas, setMetaDatas] = useState(null);
+
   useEffect(() => {
-      const fetchMeta = async () => {
+      const fetchSEO = async () => {
           try {
-              const response = await fetch(`${endPoint}/meta/slug/services`);
-              const data = await response.json(); // Await the JSON parsing
-              
-              setMetaDatas(data);
+              const response = await fetch(`/seoservices.json`);
+              if (response.ok) {
+                  const data = await response.json();
+                  setMetaDatas(data);
+              }
           } catch (error) {
-              console.error('Error fetching metadata:', error);
+              console.error("SEO data not found:", error);
           }
       };
-      fetchMeta();
+
+      fetchSEO();
   }, []);
   // console.log(sectionDes)
   return (
