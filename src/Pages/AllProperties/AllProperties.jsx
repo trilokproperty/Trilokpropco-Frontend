@@ -74,7 +74,6 @@ const AllProperties = () => {
     }));
   };
 
-  const location = useLocation();
   const [metaDatas, setMetaDatas] = useState(null);
 
   useEffect(() => {
