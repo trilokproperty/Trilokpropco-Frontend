@@ -1,6 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import Footer from "../../../Component/Navigation/Footer";
 import Contact from "../Home/Contact";
 import ExploreCities from "../Home/ExploreCities";
@@ -15,14 +14,12 @@ import Testimonial from "../Home/Testimonial";
 import FloatingIcons from '../../../Component/ForAll/FloatingIcons';
 
 const Main = () => {
-    const location = useLocation();
     const [metaDatas, setMetaDatas] = useState(null);
 
     useEffect(() => {
         const fetchSEO = async () => {
-            const filename = location.pathname === "/" ? "home" : location.pathname.replace(/\//g, "_");
             try {
-                const response = await fetch(`/seo${filename}.json`);
+                const response = await fetch(`/seohome.json`);
                 if (response.ok) {
                     const data = await response.json();
                     setMetaDatas(data);
@@ -33,7 +30,7 @@ const Main = () => {
         };
 
         fetchSEO();
-    }, [location.pathname]);
+    }, []);
 
     return (
         <HelmetProvider>

@@ -15,6 +15,7 @@ Thumbs.db
 # Build output
 /dist
 /build
+/public/seo*.json
 
 # Dependency directories
 jspm_packages/
