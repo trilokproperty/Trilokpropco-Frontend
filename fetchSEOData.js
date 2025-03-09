@@ -1,17 +1,20 @@
+import fetch from "node-fetch";
 import fs from "fs";
 import { endPoint } from "./src/Component/ForAll/ForAll.js";
+import https from "https";
 
-const PAGES = ["/","properties","services","blog","about","contact"]; // List of pages
+const PAGES = ["/", "properties", "services", "blog", "about", "contact"];
+
+const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
 async function fetchSEOData() {
   try {
     for (const page of PAGES) {
-        const url = `${endPoint}/meta/slug/${page === "/" ? "home" : page}`;
+      const url = `${endPoint}/meta/slug/${page === "/" ? "home" : page}`;
 
-      const response = await fetch(url);
-      const text = await response.text(); // Read response as text to check for errors
+      const response = await fetch(url, { agent: httpsAgent });
+      const text = await response.text();
 
-      // Try parsing only if response is valid JSON
       let data;
       try {
         data = JSON.parse(text);
