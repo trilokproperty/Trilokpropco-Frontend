@@ -12,6 +12,7 @@ import PropertyTypes from "../Home/PropertyTypes";
 import SearchBar from "../Home/SearchBar";
 import Testimonial from "../Home/Testimonial";
 import FloatingIcons from '../../../Component/ForAll/FloatingIcons';
+import useStaticSEO from "../../../hooks/useStaticSEO";
 
 const Main = () => {
     const [metaDatas, setMetaDatas] = useState(null);
@@ -31,6 +32,14 @@ const Main = () => {
 
     //     fetchSEO();
     // }, []);
+
+
+    useStaticSEO({
+        title: "Trilok Propco | Best Real Estate Agent in Kolkata",
+        description: "Trilok Propco specializes in buying and selling Luxury Villas, Flats, and Commercial Properties in Kolkata.",
+        image: "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp",
+        url: "https://trilokpropco.com"
+    });
 
     return (
         <HelmetProvider>
