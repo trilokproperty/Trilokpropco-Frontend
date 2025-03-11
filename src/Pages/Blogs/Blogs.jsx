@@ -50,21 +50,21 @@ const Blogs = () => {
     
   const [metaDatas, setMetaDatas] = useState(null);
 
-  useEffect(() => {
-      const fetchSEO = async () => {
-          try {
-              const response = await fetch(`/seoblog.json`);
-              if (response.ok) {
-                  const data = await response.json();
-                  setMetaDatas(data);
-              }
-          } catch (error) {
-              console.error("SEO data not found:", error);
-          }
-      };
+  // useEffect(() => {
+  //     const fetchSEO = async () => {
+  //         try {
+  //             const response = await fetch(`/seoblog.json`);
+  //             if (response.ok) {
+  //                 const data = await response.json();
+  //                 setMetaDatas(data);
+  //             }
+  //         } catch (error) {
+  //             console.error("SEO data not found:", error);
+  //         }
+  //     };
 
-      fetchSEO();
-  }, []);
+  //     fetchSEO();
+  // }, []);
   return (
     <HelmetProvider>
 

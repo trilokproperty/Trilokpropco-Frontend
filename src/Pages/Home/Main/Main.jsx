@@ -16,21 +16,21 @@ import FloatingIcons from '../../../Component/ForAll/FloatingIcons';
 const Main = () => {
     const [metaDatas, setMetaDatas] = useState(null);
 
-    useEffect(() => {
-        const fetchSEO = async () => {
-            try {
-                const response = await fetch(`/seohome.json`);
-                if (response.ok) {
-                    const data = await response.json();
-                    setMetaDatas(data);
-                }
-            } catch (error) {
-                console.error("SEO data not found:", error);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchSEO = async () => {
+    //         try {
+    //             const response = await fetch(`/seohome.json`);
+    //             if (response.ok) {
+    //                 const data = await response.json();
+    //                 setMetaDatas(data);
+    //             }
+    //         } catch (error) {
+    //             console.error("SEO data not found:", error);
+    //         }
+    //     };
 
-        fetchSEO();
-    }, []);
+    //     fetchSEO();
+    // }, []);
 
     return (
         <HelmetProvider>
@@ -41,7 +41,7 @@ const Main = () => {
                     <meta name="description" content={metaDatas?.metaDescription || "Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties."} />
                     <meta property="og:title" content={metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"} />
                     <meta property="og:description" content={metaDatas?.metaDescription || "Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties."} />
-                    <meta property="og:image" content={metaDatas?.FeaturedImage || "default-image-url.jpg"} />
+                    <meta property="og:image" content={metaDatas?.FeaturedImage || "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp"} />
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:title" content={metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"} />
                     <meta name="twitter:description" content={metaDatas?.metaDescription || "Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties."} />
