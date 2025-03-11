@@ -33,8 +33,10 @@ const Main = () => {
     // }, []);
 
     return (
+        <HelmetProvider>
             <div className="overflow-hidden">
                 <FloatingIcons />
+                <Helmet>
                     <title>{metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"}</title>
                     <meta name="description" content={metaDatas?.metaDescription || "Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties."} />
                     <meta property="og:title" content={metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"} />
@@ -47,6 +49,7 @@ const Main = () => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://trilokpropco.com" />
                     <link rel="canonical" href="https://trilokpropco.com" />
+                </Helmet>
                 <Home />
                 <SearchBar />
                 <Partners />
@@ -59,6 +62,7 @@ const Main = () => {
                 <Contact />
                 <Footer />
             </div>
+        </HelmetProvider>
     );
 };
 
