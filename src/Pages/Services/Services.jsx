@@ -84,13 +84,13 @@ const Services = () => {
           <meta charSet="utf-8" />
 
           
-          <title>{ metaDatas? metaDatas?.metaTitle :'Services - Trilokpropco'}</title>
-          <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
-          <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+          <title>{ metaDatas? metaDatas?.metaTitle :'Trilok Propco | Expert in Real Estate Services in Kolkata'}</title>
+          <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'From buying and selling, Trilok Propco offers the best real estate solutions in Kolkata. Find the perfect villa, home, or commercial space with us.'} />
+          <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco | Expert in Real Estate Services in Kolkata'} />
           <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
           <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
+          <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco | Expert in Real Estate Services in Kolkata'} />
           <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
           <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
           <meta property="og:type" content="website" />

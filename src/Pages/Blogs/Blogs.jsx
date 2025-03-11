@@ -83,14 +83,14 @@ const Blogs = () => {
         <Helmet>
           <meta charSet="utf-8" />         
           
-          <title>{ metaDatas? metaDatas?.metaTitle :'Explore Blogs - Trilokpropco'}</title>
-              <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
-              <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
-              <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+          <title>{ metaDatas? metaDatas?.metaTitle :'Trilok Propco Blog | Insights on Real Estate Investment in Kolkata'}</title>
+              <meta name="description" content={ metaDatas? metaDatas?.metaDescription : "Stay updated with Trilok Propco's blog for the latest news, trends, and expert advice on buying, and  selling properties in Kolkata."} />
+              <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco Blog | Insights on Real Estate Investment in Kolkata'} />
+              <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : "Stay updated with Trilok Propco's blog for the latest news, trends, and expert advice on buying, and  selling properties in Kolkata."} />
               <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
-              <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+              <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco Blog | Insights on Real Estate Investment in Kolkata'} />
+              <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : "Stay updated with Trilok Propco's blog for the latest news, trends, and expert advice on buying, and  selling properties in Kolkata."} />
               <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
               <meta property="og:type" content="website" />
               <meta property="og:url" content="https://trilokpropco.com/blog" />

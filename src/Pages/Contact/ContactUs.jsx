@@ -45,14 +45,14 @@ const ContactUs = () => {
                 <Helmet>
                 <meta charSet="utf-8" />                
           
-                <title>{ metaDatas? metaDatas?.metaTitle :'Contact Us - Trilokpropco'}</title>
-                <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
-                <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
-                <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+                <title>{ metaDatas? metaDatas?.metaTitle :"Contact Trilok Propco | Connect with Kolkata's Premier Real Estate Consultant"}</title>
+                <meta name="description" content={ metaDatas? metaDatas?.metaDescription : "Reach out to us at +91-9831775758 for personalized assistance in buying and selling villas and luxury residential and commercial properties in Kolkata."} />
+                <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : "Contact Trilok Propco | Connect with Kolkata's Premier Real Estate Consultant"} />
+                <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : "Reach out to us at +91-9831775758 for personalized assistance in buying and selling villas and luxury residential and commercial properties in Kolkata."} />
                 <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Default Title'} />
-                <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+                <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : "Contact Trilok Propco | Connect with Kolkata's Premier Real Estate Consultant"} />
+                <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : "Reach out to us at +91-9831775758 for personalized assistance in buying and selling villas and luxury residential and commercial properties in Kolkata."} />
                 <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://trilokpropco.com/contact" />
