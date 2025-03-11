@@ -12,7 +12,6 @@ import PropertyTypes from "../Home/PropertyTypes";
 import SearchBar from "../Home/SearchBar";
 import Testimonial from "../Home/Testimonial";
 import FloatingIcons from '../../../Component/ForAll/FloatingIcons';
-import useStaticSEO from "../../../hooks/useStaticSEO";
 
 const Main = () => {
     const [metaDatas, setMetaDatas] = useState(null);
@@ -33,19 +32,9 @@ const Main = () => {
     //     fetchSEO();
     // }, []);
 
-
-    useStaticSEO({
-        title: "Trilok Propco | Best Real Estate Agent in Kolkata",
-        description: "Trilok Propco specializes in buying and selling Luxury Villas, Flats, and Commercial Properties in Kolkata.",
-        image: "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp",
-        url: "https://trilokpropco.com"
-    });
-
     return (
-        <HelmetProvider>
             <div className="overflow-hidden">
                 <FloatingIcons />
-                <Helmet>
                     <title>{metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"}</title>
                     <meta name="description" content={metaDatas?.metaDescription || "Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties."} />
                     <meta property="og:title" content={metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"} />
@@ -58,7 +47,6 @@ const Main = () => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://trilokpropco.com" />
                     <link rel="canonical" href="https://trilokpropco.com" />
-                </Helmet>
                 <Home />
                 <SearchBar />
                 <Partners />
@@ -71,7 +59,6 @@ const Main = () => {
                 <Contact />
                 <Footer />
             </div>
-        </HelmetProvider>
     );
 };
 
