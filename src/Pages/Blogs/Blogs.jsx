@@ -80,7 +80,7 @@ const Blogs = () => {
         }}
       >
         <Header />
-        <Helmet>
+        {/* <Helmet>
           <meta charSet="utf-8" />         
           
           <title>{ metaDatas? metaDatas?.metaTitle :'Trilok Propco Blog | Insights on Real Estate Investment in Kolkata'}</title>
@@ -96,7 +96,7 @@ const Blogs = () => {
               <meta property="og:url" content="https://trilokpropco.com/blog" />
               <link rel="canonical" href="https://trilokpropco.com/blog" />
               
-        </Helmet>
+        </Helmet> */}
         <SectionTitle value="Explore Blogs" color="white" />
       </div>
 

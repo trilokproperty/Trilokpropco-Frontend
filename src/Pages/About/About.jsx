@@ -92,7 +92,7 @@ const About = () => {
             >
                 <Header />
               <FloatingIcons />
-                <Helmet>
+                {/* <Helmet>
                 <meta charSet="utf-8" />
                     
                 <title>{ metaDatas? metaDatas?.metaTitle :'About Us - Trilokpropco'}</title>
@@ -107,7 +107,7 @@ const About = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://trilokpropco.com/about" />
                 <link rel="canonical" href="https://trilokpropco.com/about" />
-                  </Helmet>
+                  </Helmet> */}
                 <SectionTitle value="About Us" color="white" />
           </div> 
 
