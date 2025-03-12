@@ -9,13 +9,12 @@
     <meta name="description" content="Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties.">
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://trilokpropco.com">
+    <!-- <meta property="og:url" content="https://trilokpropco.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Trilok Propco | Best Real Estate Agent in Kolkata">
     <meta property="og:description" content="Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties.">
     <meta property="og:image" content="https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp">
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="trilokpropco.com">
     <meta property="twitter:url" content="https://trilokpropco.com">
@@ -23,8 +22,67 @@
     <meta name="twitter:description" content="Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties.">
     <meta name="twitter:image" content="https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp">
 
-<!-- Meta Tags Generated via https://www.opengraph.xyz -->
-    <link rel="canonical" href="https://trilokpropco.com" />
+    <link rel="canonical" href="https://trilokpropco.com" /> -->
+
+    <title>Trilok Propco | Best Real Estate Agent in Kolkata</title>
+    <meta name="description" content="Find your dream property with Trilok Propco, the best real estate consultants in Kolkata.">
+    
+    <!-- Default Open Graph Tags -->
+    <meta property="og:title" content="Trilok Propco | Best Real Estate Agent in Kolkata">
+    <meta property="og:description" content="Helping you buy and sell luxury villas, flats, and commercial properties.">
+    <meta property="og:image" content="https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trilokpropco.com">
+
+    <script>
+        window.onload = function () {
+            const path = window.location.pathname;
+
+            const seoData = {
+                "/": {
+                    title: "Trilok Propco | Best Real Estate Agent in Kolkata",
+                    description: "Find your dream property with Trilok Propco, the best real estate consultants in Kolkata.",
+                    image: "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp",
+                    url: "https://trilokpropco.com"
+                },
+                "/properties": {
+                    title: "Trilok Propco | Top Property Dealer in Kolkata | Villas in Kolkata",
+                    description: "Find your perfect property with Trilok Propco, Kolkata’s Best property expert. Helping in buying & selling residential, luxury villas, & commercial properties.",
+                    image: "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/properties.webp",
+                    url: "https://trilokpropco.com/properties"
+                },
+                "/contact": {
+                    title: "Contact Trilok Propco | Reach Out for Real Estate Solutions",
+                    description: "Get in touch with Trilok Propco for expert guidance on buying and selling properties in Kolkata.",
+                    image: "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/contact.webp",
+                    url: "https://trilokpropco.com/contact"
+                }
+            };
+
+            const meta = seoData[path] || seoData["/"];
+
+            document.title = meta.title;
+
+            const setMetaTag = (name, content) => {
+                let tag = document.querySelector(`meta[${name.startsWith('og:') ? 'property' : 'name'}="${name}"]`);
+                if (!tag) {
+                    tag = document.createElement("meta");
+                    tag.setAttribute(name.startsWith('og:') ? "property" : "name", name);
+                    document.head.appendChild(tag);
+                }
+                tag.setAttribute("content", content);
+            };
+
+            setMetaTag("description", meta.description);
+            setMetaTag("og:title", meta.title);
+            setMetaTag("og:description", meta.description);
+            setMetaTag("og:image", meta.image);
+            setMetaTag("og:url", meta.url);
+            setMetaTag("twitter:title", meta.title);
+            setMetaTag("twitter:description", meta.description);
+            setMetaTag("twitter:image", meta.image);
+        };
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DS9X863M4S"></script>
     
