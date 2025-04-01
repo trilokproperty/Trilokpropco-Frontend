@@ -23,21 +23,21 @@ const AllProperties = () => {
   
 
   // Fetch properties
-  // useEffect(() => {
-  //   const fetchProperties = async () => {
-  //     try {
-  //       const response = await fetch(`${endPoint}/property`);
-  //       const data = await response.json();
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const response = await fetch(`${endPoint}/property`);
+        const data = await response.json();
 
-  //       // Sort by date and set properties
-  //       const sortedProperties = data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-  //       setProperties(sortedProperties);
-  //     } catch (error) {
-  //       console.error('Error fetching properties:', error);
-  //     }
-  //   };
-  //   fetchProperties();
-  // }, []);
+        // Sort by date and set properties
+        const sortedProperties = data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+        setProperties(sortedProperties);
+      } catch (error) {
+        console.error('Error fetching properties:', error);
+      }
+    };
+    fetchProperties();
+  }, []);
 
   // Filter properties based on selectedCategory and other filters
   useEffect(() => {
@@ -74,23 +74,23 @@ const AllProperties = () => {
     }));
   };
 
-  const [metaDatas, setMetaDatas] = useState(null);
+  // const [metaDatas, setMetaDatas] = useState(null);
 
-  useEffect(() => {
-      const fetchSEO = async () => {
-          try {
-              const response = await fetch(`/seoproperties.json`);
-              if (response.ok) {
-                  const data = await response.json();
-                  setMetaDatas(data);
-              }
-          } catch (error) {
-              console.error("SEO data not found:", error);
-          }
-      };
+  // useEffect(() => {
+  //     const fetchSEO = async () => {
+  //         try {
+  //             const response = await fetch(`/seoproperties.json`);
+  //             if (response.ok) {
+  //                 const data = await response.json();
+  //                 setMetaDatas(data);
+  //             }
+  //         } catch (error) {
+  //             console.error("SEO data not found:", error);
+  //         }
+  //     };
 
-      fetchSEO();
-  }, []);
+  //     fetchSEO();
+  // }, []);
   return (
         <HelmetProvider>
     <div className='overflow-hidden'>
