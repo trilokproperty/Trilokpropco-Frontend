@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from '../../Component/Navigation/Header';
 import Footer from '../../Component/Navigation/Footer';
 import SectionTitle from '../../Component/ForAll/SectionTitle';
@@ -20,6 +20,7 @@ const AllProperties = () => {
     status: '',
     for: ''
   });
+  
 
   // Fetch properties
   useEffect(() => {
@@ -73,7 +74,25 @@ const AllProperties = () => {
     }));
   };
 
+  // const [metaDatas, setMetaDatas] = useState(null);
+
+  // useEffect(() => {
+  //     const fetchSEO = async () => {
+  //         try {
+  //             const response = await fetch(`/seoproperties.json`);
+  //             if (response.ok) {
+  //                 const data = await response.json();
+  //                 setMetaDatas(data);
+  //             }
+  //         } catch (error) {
+  //             console.error("SEO data not found:", error);
+  //         }
+  //     };
+
+  //     fetchSEO();
+  // }, []);
   return (
+        <HelmetProvider>
     <div className='overflow-hidden'>
       <FloatingIcons/>
       <div
@@ -86,10 +105,23 @@ const AllProperties = () => {
         className="pt-5 lg:h-96 h-40 md:h-56"
       >
         <Header />
-        <Helmet>
+        {/* <Helmet>
           <meta charSet="utf-8" />
-          <title>Explore Properties Lists - Trilokpropco</title>
-        </Helmet>
+          
+        <title>{ metaDatas? metaDatas?.metaTitle :'Trilok Propco | Top Property Dealer in Kolkata | Villas in Kolkata'}</title>
+            <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'Find your perfect property with Trilok Propco, Kolkata’s Best property expert. Helping in buying & selling residential, luxury villas, & commercial properties.'} />
+            <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco | Top Property Dealer in Kolkata | Villas in Kolkata'} />
+            <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Find your perfect property with Trilok Propco, Kolkata’s Best property expert. Helping in buying & selling residential, luxury villas, & commercial properties.'} />
+            <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco | Top Property Dealer in Kolkata | Villas in Kolkata'} />
+            <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Find your perfect property with Trilok Propco, Kolkata’s Best property expert. Helping in buying & selling residential, luxury villas, & commercial properties.'} />
+            <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://trilokpropco.com/properties" />
+            <link rel="canonical" href="https://trilokpropco.com/properties" />
+          </Helmet> */}
+                  
         <SectionTitle value="Explore Properties" color="white" />
       </div>
 
@@ -134,6 +166,7 @@ const AllProperties = () => {
       {/* Ensure Footer is outside of grid */}
       <Footer />
     </div>
+      </HelmetProvider>
   );
 };
 

@@ -1,5 +1,6 @@
-
-import { Helmet } from "react-helmet";
+import { HeadProvider } from "react-head";
+// import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useEffect, useState } from "react";
 import Footer from "../../../Component/Navigation/Footer";
 import Contact from "../Home/Contact";
 import ExploreCities from "../Home/ExploreCities";
@@ -11,55 +12,57 @@ import Partners from "../Home/Partners";
 import PropertyTypes from "../Home/PropertyTypes";
 import SearchBar from "../Home/SearchBar";
 import Testimonial from "../Home/Testimonial";
-import { useEffect, useState } from "react";
-import { endPoint } from "../../../Component/ForAll/ForAll";
 import FloatingIcons from '../../../Component/ForAll/FloatingIcons';
+import SEO from "../../../hooks/SEO";
 
 const Main = () => {
-    const [metaDatas, setMetaDatas] = useState();
-    useEffect(() => {
-        const fetchMeta = async () => {
-            try {
-                const response = await fetch(`${endPoint}/meta`);
-                const data = await response.json(); // Await the JSON parsing
-                setMetaDatas(data);
-            } catch (error) {
-                console.error('Error fetching metadata:', error);
-            }
-        };
-        fetchMeta();
-    }, []);
-    
-    // console.log(metaDatas);
-    
+    const [metaDatas, setMetaDatas] = useState(null);
+
+    // useEffect(() => {
+    //     const fetchSEO = async () => {
+    //         try {
+    //             const response = await fetch(`/seohome.json`);
+    //             if (response.ok) {
+    //                 const data = await response.json();
+    //                 setMetaDatas(data);
+    //             }
+    //         } catch (error) {
+    //             console.error("SEO data not found:", error);
+    //         }
+    //     };
+
+    //     fetchSEO();
+    // }, []);
+
     return (
-        <div className="overflow-hidden">
-            <FloatingIcons />
-            <Helmet>
-                
-    <title>Trilok Propco - Real Estate Consultant</title>
-        <meta name="description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
-        <meta name="og:title" content={ metaDatas? metaDatas[0]?.metaTitle : 'Default Title'} />
-        <meta name="og:description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
-        <meta name="og:image" content={ metaDatas? metaDatas[0]?.FeaturedImage : 'default-image-url.jpg'} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={ metaDatas? metaDatas[0]?.metaTitle : 'Default Title'} />
-        <meta name="twitter:description" content={ metaDatas? metaDatas[0]?.metaDescription : 'Default Description'} />
-        <meta name="twitter:image" content={ metaDatas? metaDatas[0]?.FeaturedImage : 'default-image-url.jpg'} />
-      </Helmet>
-            <Home />
-            <SearchBar />
-            <Partners />
-            <ExploreCities />
-            <PropertyTypes />
-            <LatestProperties />
-            <Info />
-            <LatestBlogs />
-            <Testimonial />
-            <Contact />
-            <Footer />
-        </div>
-    );
+        // <HelmetProvider>
+        <HeadProvider>
+
+            <div className="overflow-hidden">
+                <FloatingIcons />
+                {/* <HeadProvider> */}
+                <SEO
+                    title={metaDatas?.metaTitle || "Trilok Propco | Best Real Estate Agent in Kolkata for Buying & Selling Properties"}
+                    description={metaDatas?.metaDescription || "Trilok Propco, Kolkata’s Top Property Consultant, specializes in buying and selling Luxury Villas, Flats, and Commercial Properties."}
+                    image={metaDatas?.FeaturedImage || "https://res.cloudinary.com/dj8r5wv5l/image/upload/v1723039344/is0bcdkervpkc0eeahkm.webp"}
+                    url="https://trilokpropco.com"
+                />
+                {/* </HeadProvider> */}
+                <Home />
+                <SearchBar />
+                <Partners />
+                <ExploreCities />
+                <PropertyTypes />
+                <LatestProperties />
+                <Info />
+                <LatestBlogs />
+                <Testimonial />
+                <Contact />
+                <Footer />
+            </div>
+         {/* </HelmetProvider> */}
+                </HeadProvider>
+        );
 };
 
 export default Main;

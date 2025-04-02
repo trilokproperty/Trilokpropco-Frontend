@@ -22,7 +22,8 @@ const FloatingIcons = () => {
   return (
     <div style={styles.container}>
       <a
-        href={`https://wa.me/${footerData?.contact}`}
+       // href={`https://wa.me/${footerData?.contact}`}
+      href="https://api.whatsapp.com/send/?phone=919831775758&text&type=phone_number&app_absent=0"
         target="_blank"
         rel="noopener noreferrer"
         style={styles.icon}

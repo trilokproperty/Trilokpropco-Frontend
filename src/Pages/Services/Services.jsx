@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../../Component/Navigation/Header";
 import SectionTitle from "../../Component/ForAll/SectionTitle";
 import { useState } from "react";
@@ -44,8 +44,30 @@ const Services = () => {
     }
     fetchFooter()
   }, []);
+  
+
+
+  const [metaDatas, setMetaDatas] = useState(null);
+
+  // useEffect(() => {
+  //     const fetchSEO = async () => {
+  //         try {
+  //             const response = await fetch(`/seoservices.json`);
+  //             if (response.ok) {
+  //                 const data = await response.json();
+  //                 setMetaDatas(data);
+  //             }
+  //         } catch (error) {
+  //             console.error("SEO data not found:", error);
+  //         }
+  //     };
+
+  //     fetchSEO();
+  // }, []);
   // console.log(sectionDes)
   return (
+    <HelmetProvider>
+
     <div className="overflow-hidden">
       <FloatingIcons/>
       <div
@@ -60,7 +82,21 @@ const Services = () => {
         <Header />
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Services - Trilokpropco</title>
+
+          
+          <title>{ metaDatas? metaDatas?.metaTitle :'Trilok Propco | Expert in Real Estate Services in Kolkata'}</title>
+          <meta name="description" content={ metaDatas? metaDatas?.metaDescription : 'From buying and selling, Trilok Propco offers the best real estate solutions in Kolkata. Find the perfect villa, home, or commercial space with us.'} />
+          <meta name="og:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco | Expert in Real Estate Services in Kolkata'} />
+          <meta name="og:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+          <meta name="og:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={ metaDatas? metaDatas?.metaTitle : 'Trilok Propco | Expert in Real Estate Services in Kolkata'} />
+          <meta name="twitter:description" content={ metaDatas? metaDatas?.metaDescription : 'Default Description'} />
+          <meta name="twitter:image" content={ metaDatas? metaDatas?.FeaturedImage : 'default-image-url.jpg'} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://trilokpropco.com/services" />
+          <link rel="canonical" href="https://trilokpropco.com/services" />
+          
         </Helmet>
         <SectionTitle value="Services" color="white" />
       </div>
@@ -140,6 +176,7 @@ const Services = () => {
         </div>
       <Footer />
     </div>
+    </HelmetProvider>
   );
 };
 
