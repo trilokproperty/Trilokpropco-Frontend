@@ -943,34 +943,40 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               />
             </div>
 
-            <div className="flex w-full">
+            {/* Country and Phone field */}
+          <div className="label mt-4">
+            <span className="label-text border-b-[1px] w-full border-[#ffffff68]">
+              Your phone
+            </span>
+          </div>
+          <div className="flex w-full">
             {/* Custom Country Code Dropdown */}
-            <div className="relative w-1/4">
+            <div className="relative md:w-1/4 !w-full">
               <button
                 type="button"
                 onClick={() => setIsCountryListVisible(!isCountryListVisible)} // Toggle list visibility
-                className="flex items-center bg-white border-b-[3px] border-[#ffffff68] w-full focus:border-[#046307] p-3 text-black"
+                className="flex items-center border-b-[3px] border-[#ffffff68] w-full focus:border-[#046307] p-3"
               >
                 <img src={selectedCountry.flag} alt="flag" className="w-6 h-6 mr-2" />
                 {selectedCountry.code}
               </button>
               
               {isCountryListVisible && ( // Show country list only when visible
-                <div className="absolute top-full left-0 text-black bg-white md:w-full w-[200px] max-h-60 overflow-y-auto z-10">
+                <div className="absolute top-full left-0 md:w-full w-[200px] max-h-60 overflow-y-auto z-10">
                   {/* Search Input */}
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={handleSearchChange}
                     placeholder="Search country"
-                    className="w-full p-2 text-black focus:outline-none"
+                    className="w-full p-2 bg-gray-800 focus:outline-none text-white"
                   />
 
                   {filteredCountries.map((country, index) => (
                     <div
                       key={index}
                       onClick={() => handleCountrySelect(country)}
-                      className="flex items-center p-2 hover:bg-[#046307] bg-white cursor-pointer text-black"
+                      className="flex items-center p-2 hover:bg-[#046307] cursor-pointer text-white bg-black"
                     >
                       <img src={country.flag} alt={country.name} className="w-6 h-6 mr-2" />
                       <span>{country.name} ({country.code})</span>
@@ -985,7 +991,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               type="text"
               name="phone"
               placeholder="Your phone number"
-              className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4 focus:text-black  bg-white"
+              className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4"
             />
           </div>
 
