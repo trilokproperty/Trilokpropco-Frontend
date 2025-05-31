@@ -2,7 +2,7 @@ import { IoMdQuote } from "react-icons/io";
 import StarRatings from "react-star-ratings";
 
 const TestimonialCard = (testimonial) => {
-    // console.log(testimonial?.testimonial)
+    // console.log(testimonial?.testimonial,1454)
     const truncateText = (str, numWords) => {
         const words = str.split(" ");
         if (words.length > numWords) {
@@ -27,7 +27,7 @@ const TestimonialCard = (testimonial) => {
                 <StarRatings
                         rating={testimonial?.testimonial?.rating}
                         starRatedColor="gold"
-                        numberOfStars={5}
+                        numberOfStars={testimonial?.testimonial?.rating || 5}
                         starDimension="20px"
                         starSpacing="2px"
                         name='rating'

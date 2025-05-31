@@ -907,9 +907,9 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
         <div className="lg:w-[35%] my-10 relative mx-5 lg:mx-0">
           <form
             onSubmit={handleSubmit}
-            className="shadow-xl p-10 rounded-[30px] w-full  bg-white "
+            className="shadow-xl p-10 rounded-[30px] w-full  bg-black "
           >
-            <div className="label text-black">
+            <div className="label text-white">
               <img
                 src="https://i.ibb.co/f1L99L9/18a006575c097b8b99494b75da063caf-removebg-preview-2.webp"
                 alt="Trilokpropco"
@@ -919,37 +919,37 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
 
             <div>
               <div className="label mt-4">
-                <span className="label-text text-black ">Your name</span>
+                <span className="label-text text-white ">Your name</span>
               </div>
               <input
                 type="text"
                 required
                 name="name"
                 placeholder="Type name here"
-                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black bg-white"
+                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-white bg-black"
               />
             </div>
 
             <div>
               <div className="label mt-4">
-                <span className="label-text text-black ">Your email</span>
+                <span className="label-text text-white ">Your email</span>
               </div>
               <input
                 type="email"
                 required
                 name="email"
                 placeholder="Type email here"
-                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-black  bg-white"
+                className="border-b-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] w-full focus:text-white  bg-black"
               />
             </div>
 
             {/* Country and Phone field */}
           <div className="label mt-4">
-            <span className="label-text border-b-[1px] w-full border-[#ffffff68]">
+            <span className="label-text border-b-[1px] w-full border-[#ffffff68] text-white">
               Your phone
             </span>
           </div>
-          <div className="flex w-full">
+          <div className="flex w-full text-white bg-black">
             {/* Custom Country Code Dropdown */}
             <div className="relative md:w-1/4 !w-full">
               <button
@@ -991,16 +991,16 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               type="text"
               name="phone"
               placeholder="Your phone number"
-              className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4"
+              className="border-b-[3px] p-3 focus:border-[#046307] border-[#ffffff68] w-3/4 text-white bg-black"
             />
           </div>
 
             <div>
               <div className="label mt-4">
-                <span className="label-text text-black ">Your message</span>
+                <span className="label-text text-white ">Your message</span>
               </div>
               <textarea
-                className="border-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] text-area w-full mt-4 rounded-xl focus:text-black bg-white"
+                className="border-[2px]  p-3 focus:border-[#046307] border-[#b4b4b468] text-area w-full mt-4 rounded-xl focus:text-white bg-black"
                 placeholder="What is in your mind?"
                 rows={3}
                 name="message"

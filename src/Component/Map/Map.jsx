@@ -63,7 +63,8 @@ const Map = ({ properties }) => {
         const markerPosition = coordinates
           ? [coordinates.latitude, coordinates.longitude]
           : [22.4933742, 88.3990239]; // Fallback to default position if no coordinates found
-
+    const nameSlug = item?.name.replace(/\s+/g, '-');
+        
         return (
           <Marker
             position={markerPosition}
@@ -74,7 +75,7 @@ const Map = ({ properties }) => {
               <div className="flex gap-2 bg-white items-center w-[280px] p-2">
                 <img src={item.galleryImages[0]} alt={item.name} className="w-[60px] h-[40px]" />
                 <div className="pr-2">
-                  <Link className="font-semibold" to={`/${item._id}`}>
+                  <Link className="font-semibold" to={`/${item?.category}/${nameSlug}`}>
                     {item.name}
                   </Link>
                   <span>
