@@ -364,7 +364,10 @@ const chartData = [
 // Get the current URL using useLocation
 const locationUrl = useLocation(); // Correctly use useLocation
 const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use window.locations
-
+const arrowClass = isCountryListVisible
+  ? "after:content-['▲']"
+  : "after:content-['▼']";
+  
   return (
     <div className="overflow-hidden">
       <Header isDefault={false} />
@@ -955,7 +958,7 @@ const currentUrl = `${window.location.origin}${locationUrl.pathname}`; // Use wi
               <button
                 type="button"
                 onClick={() => setIsCountryListVisible(!isCountryListVisible)} // Toggle list visibility
-                className="flex items-center border-b-[3px] border-[#ffffff68] w-full focus:border-[#046307] p-3"
+                className={`flex items-center border-b-[3px] border-[#ffffff68] w-full focus:border-[#046307] p-3  justify-between ${arrowClass}`}
               >
                 <img src={selectedCountry.flag} alt="flag" className="w-6 h-6 mr-2" />
                 {selectedCountry.code}

@@ -50,6 +50,9 @@ const Contact = () => {
     country.name.toLowerCase().includes(searchQuery.toLowerCase())
   ); // Filter countries based on search
 
+  const arrowClass = isCountryListVisible
+  ? "after:content-['▲']"
+  : "after:content-['▼']";
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -186,7 +189,7 @@ const Contact = () => {
               <button
                 type="button"
                 onClick={() => setIsCountryListVisible(!isCountryListVisible)} // Toggle list visibility
-                className="flex items-center bg-black border-b-[3px] border-[#ffffff68] w-full focus:border-[#046307] p-3 text-white"
+                className={`flex items-center bg-black border-b-[3px] border-[#ffffff68] w-full focus:border-[#046307] p-3 text-white justify-between ${arrowClass}`}
               >
                 <img src={selectedCountry.flag} alt="flag" className="w-6 h-6 mr-2" />
                 {selectedCountry.code}
