@@ -29,6 +29,7 @@ jspm_packages/
 
 # Environment files
 .env
+ForAll.js
 
 # npm package-lock files (optional if you use npm)
 #package-lock.json

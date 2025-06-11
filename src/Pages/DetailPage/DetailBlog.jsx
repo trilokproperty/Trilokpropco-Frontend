@@ -17,7 +17,8 @@ const cleanUrl = (url) => {
         const fetchBlogDetails = async () => {
              const cleanedName = cleanUrl(title);
             try {
-                const response = await fetch(`${endPoint}/blog/${cleanedName}`);
+                console.log(encodeURIComponent(cleanedName));
+                const response = await fetch(`${endPoint}/blog/${encodeURIComponent(cleanedName)}`);
                 const data = await response.json();
                 setBlog(data);
             } catch (error) {
@@ -26,6 +27,7 @@ const cleanUrl = (url) => {
         };
 
         fetchBlogDetails();
+                console.log(title);
     }, [title]);
 
     return (
