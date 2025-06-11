@@ -1,44 +1,44 @@
-name: Build and Deploy to S3
+# name: Build and Deploy to S3
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      # Checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v4
+#     steps:
+#       # Checkout the code
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18 # Specify your Node.js version
+#       # Set up Node.js
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18 # Specify your Node.js version
 
-      # Install dependencies and build the project
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm update
-          npm run build
+#       # Install dependencies and build the project
+#       - name: Install dependencies and build
+#         run: |
+#           npm install
+#           npm update
+#           npm run build
 
-      # Configure AWS credentials
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v3
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+#       # Configure AWS credentials
+#       - name: Configure AWS credentials
+#         uses: aws-actions/configure-aws-credentials@v3
+#         with:
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           aws-region: ${{ secrets.AWS_REGION }}
 
-      # Deploy to S3
-      - name: Deploy to S3
-        run: |
-          # delete exiting objects from bucket
-          aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }} --recursive
-          # push new build to bucket
-          aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }}
+#       # Deploy to S3
+#       - name: Deploy to S3
+#         run: |
+#           # delete exiting objects from bucket
+#           aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }} --recursive
+#           # push new build to bucket
+#           aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }}
