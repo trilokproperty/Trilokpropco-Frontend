@@ -43,7 +43,7 @@ const locationNameSlug = blog?.blog?.title?.replace(/\s+/g, '_');
         <h3 className="md:text-2xl text-[20px] font-medium blog-title text-black mb-2">{blog?.blog?.title}</h3>
             <p>{truncateText(stripHtmlTags(blog?.blog?.description), 10)}</p>
       </div>
-      <Link to={`/blog/${locationNameSlug}`} > <div className="dark-mode-btn text-2xl w-[100px] bg-black text-white flex justify-center items-center rounded-full mt-8 ml-auto">
+      <Link to={`/blog/${encodeURIComponent(locationNameSlug)}`} > <div className="dark-mode-btn text-2xl w-[100px] bg-black text-white flex justify-center items-center rounded-full mt-8 ml-auto">
       <small className="text-[12px]">Explore</small><FiArrowRight />
       </div></Link>
       </div>
