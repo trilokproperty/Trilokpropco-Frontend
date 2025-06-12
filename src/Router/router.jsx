@@ -72,8 +72,8 @@ export const router = createBrowserRouter([
         path: '/blog/:title',
         element:(
             <>
-                <ScrollToTop />  <DetailBlog /> </>),
-        loader: ({ params }) => fetch(`${endPoint}/blog/${params.title}`)
+            <ScrollToTop />  <DetailBlog /> </>),
+        // loader: ({ params }) => fetch(`${endPoint}/blog/${params.title}`)
       },
       
       {
