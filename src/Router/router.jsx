@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
         element: (
             <>
                 <ScrollToTop /> <DetailProperty /> </>),
-        loader: ({ params }) => fetch(`${endPoint}/${params.category}/${params.name}`),  // Fetch property by names
+        // loader: ({ params }) => fetch(`${endPoint}/${params.category}/${params.name}`),  // Fetch property by names
       },
       
       {

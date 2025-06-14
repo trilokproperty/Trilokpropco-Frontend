@@ -112,7 +112,7 @@ const DetailProperty = () => {
     const fetchProperty = async () => {
       // Fetch property by its name
       const cleanedName = cleanUrl(name);
-      const response = await fetch(`${endPoint}/property/name/${cleanedName}`);
+      const response = await fetch(`${endPoint}/property/name/${encodeURIComponent(cleanedName)}`);
       const propertyData = await response.json();
       setProperty(propertyData);
 
