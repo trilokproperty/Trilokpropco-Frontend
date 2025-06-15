@@ -284,19 +284,19 @@ const DetailProperty = () => {
   };
  
 
-  // useEffect(() => {
-  //   fetch("https://restcountries.com/v3.1/all")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const codes = data.map((country) => ({
-  //         name: country.name.common,
-  //         code: country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : ""),
-  //         flag: country.flags.svg, // Add flag URL from API data
-  //       })).filter(c => c.code); // Filter out countries without a code
-  //       setCountryCodes(codes);
-  //     })
-  //     .catch((error) => console.error("Error fetching country codes:", error));
-  // }, []);
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then((response) => response.json())
+      .then((data) => {
+        const codes = data.map((country) => ({
+          name: country.name.common,
+          code: country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : ""),
+          flag: country.flags.svg, // Add flag URL from API data
+        })).filter(c => c.code); // Filter out countries without a code
+        setCountryCodes(codes);
+      })
+      .catch((error) => console.error("Error fetching country codes:", error));
+  }, []);
 
   const handleCountrySelect = (country) => {
     setSelectedCountry(country);
