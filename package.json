@@ -8,7 +8,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prebuild": "node fetchSEOData.js",
     "postbuild": "react-snap --source=dist"
   },
   "dependencies": {
