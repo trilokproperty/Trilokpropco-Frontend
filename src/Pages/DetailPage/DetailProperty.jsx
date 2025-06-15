@@ -109,67 +109,86 @@ const DetailProperty = () => {
 };
   
   useEffect(() => {
-    const fetchProperty = async () => {
-      // Fetch property by its name
-      const cleanedName = cleanUrl(name);
-      const response = await fetch(`${endPoint}/property/name/${encodeURIComponent(cleanedName)}`);
-      const propertyData = await response.json();
-      setProperty(propertyData);
+    const fetchData = async () => {
+      try {
+        // Fetch main property
+        const cleanedName = cleanUrl(name);
+        const response = await fetch(`${endPoint}/property/name/${encodeURIComponent(cleanedName)}`);
+        const propertyData = await response.json();
+        setProperty(propertyData);
 
-      if (propertyData.developer) {
-        const developerResponse = await fetch(`${endPoint}/developer`);
-        const developerData = await developerResponse.json();
-        const foundDeveloper = developerData.find(
-          (d) => d._id === propertyData.developer
-        );
-        setDeveloper(foundDeveloper);
-      }
-      if (propertyData.type) {
-        const typeResponse = await fetch(`${endPoint}/type`);
-        const typeData = await typeResponse.json();
-        const foundType = typeData.find((d) => d._id === propertyData.type);
-        setType(foundType);
-      }
-      if (propertyData.location) {
-        const locationResponse = await fetch(`${endPoint}/city`);
-        const locationData = await locationResponse.json();
-        const foundLocation = locationData.find(
-          (d) => d._id === propertyData.location
-        );
-        setLocation(foundLocation);
-      }
-      if (propertyData.status) {
-        const statusResponse = await fetch(`${endPoint}/status`);
-        const statusData = await statusResponse.json();
-        const foundStatus = statusData.find(
-          (d) => d._id === propertyData.status
-        );
-        setStatus(foundStatus);
-      }
-      if(propertyData.amenities){
-        const amenityResponse = await fetch(`${endPoint}/amenity`);
-        const amenityData = await amenityResponse.json();
-        // Map through the propertyData amenities and match with fetched amenityData
-      const matchedAmenities = propertyData.amenities.map((amenityId) => {
-        // Find the amenity in amenityData by matching the ID
-        return amenityData.find((amenity) => amenity._id === amenityId);
-      });
-      setAmenities(matchedAmenities)
+        // Fetch developer
+        if (propertyData.developer) {
+          const developerResponse = await fetch(`${endPoint}/developer`);
+          const developerData = await developerResponse.json();
+          const foundDeveloper = developerData.find((d) => d._id === propertyData.developer);
+          setDeveloper(foundDeveloper);
+        }
+
+        // Fetch type
+        if (propertyData.type) {
+          const typeResponse = await fetch(`${endPoint}/type`);
+          const typeData = await typeResponse.json();
+          const foundType = typeData.find((d) => d._id === propertyData.type);
+          setType(foundType);
+        }
+
+        // Fetch location
+        if (propertyData.location) {
+          const locationResponse = await fetch(`${endPoint}/city`);
+          const locationData = await locationResponse.json();
+          const foundLocation = locationData.find((d) => d._id === propertyData.location);
+          setLocation(foundLocation);
+        }
+
+        // Fetch status
+        if (propertyData.status) {
+          const statusResponse = await fetch(`${endPoint}/status`);
+          const statusData = await response.json();
+          const foundStatus = statusData.find((d) => d._id === propertyData.status);
+          setStatus(foundStatus);
+        }
+
+        // Fetch amenities
+        if (propertyData.amenities) {
+          const amenityResponse = await fetch(`${endPoint}/amenity`);
+          const amenityData = await amenityResponse.json();
+          const matchedAmenities = propertyData.amenities.map((amenityId) =>
+            amenityData.find((amenity) => amenity._id === amenityId)
+          );
+          setAmenities(matchedAmenities);
+        }
+
+        // Set default plan
+        if (propertyData.plans?.length > 0 && !selectedPlan) {
+          setSelectedPlan(propertyData.plans[0]);
+        }
+
+        // Check favorite
+        const favList = JSON.parse(localStorage.getItem("favList")) || [];
+        const isFavorite = favList.some((item) => item._id === propertyData._id);
+        setIsInFav(isFavorite);
+
+      } catch (error) {
+        console.error("Error fetching property data:", error);
       }
     };
-    fetchProperty();
 
-    const fetchFooter = async()=>{
+    const fetchFooter = async () => {
       try {
-          const response = await fetch(`${endPoint}/footer`);
-          const data = await response.json();
-          setFooter(data);
+        const response = await fetch(`${endPoint}/footer`);
+        const data = await response.json();
+        setFooter(data);
       } catch (error) {
-          console.error('Error fetching properties:', error);
+        console.error("Error fetching footer:", error);
       }
-  }
-  fetchFooter()
-  }, [name, property]);
+    };
+
+    fetchData();
+    fetchFooter();
+
+  }, [name]); // ✅ Only depend on `name`, NOT `property`
+
 
   useEffect(() => {
     if (swiperInstance) {
@@ -265,19 +284,19 @@ const DetailProperty = () => {
   };
  
 
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
-      .then((response) => response.json())
-      .then((data) => {
-        const codes = data.map((country) => ({
-          name: country.name.common,
-          code: country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : ""),
-          flag: country.flags.svg, // Add flag URL from API data
-        })).filter(c => c.code); // Filter out countries without a code
-        setCountryCodes(codes);
-      })
-      .catch((error) => console.error("Error fetching country codes:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://restcountries.com/v3.1/all")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const codes = data.map((country) => ({
+  //         name: country.name.common,
+  //         code: country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : ""),
+  //         flag: country.flags.svg, // Add flag URL from API data
+  //       })).filter(c => c.code); // Filter out countries without a code
+  //       setCountryCodes(codes);
+  //     })
+  //     .catch((error) => console.error("Error fetching country codes:", error));
+  // }, []);
 
   const handleCountrySelect = (country) => {
     setSelectedCountry(country);
