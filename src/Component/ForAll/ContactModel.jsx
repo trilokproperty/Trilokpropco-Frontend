@@ -14,7 +14,7 @@ const ContactModel = ({ toggleModal, property }) => {
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
+    fetch("https://restcountries.com/v3.1/all?fields=flags,idd,name")
       .then((response) => response.json())
       .then((data) => {
         const codes = data

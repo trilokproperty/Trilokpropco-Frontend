@@ -112,6 +112,7 @@ const DetailProperty = () => {
     const fetchData = async () => {
       try {
         // Fetch main property
+        
         const cleanedName = cleanUrl(name);
         const response = await fetch(`${endPoint}/property/name/${encodeURIComponent(cleanedName)}`);
         const propertyData = await response.json();
@@ -136,6 +137,7 @@ const DetailProperty = () => {
         // Fetch location
         if (propertyData.location) {
           const locationResponse = await fetch(`${endPoint}/city`);
+            // console.log(locationResponse,3333);
           const locationData = await locationResponse.json();
           const foundLocation = locationData.find((d) => d._id === propertyData.location);
           setLocation(foundLocation);
@@ -144,13 +146,15 @@ const DetailProperty = () => {
         // Fetch status
         if (propertyData.status) {
           const statusResponse = await fetch(`${endPoint}/status`);
-          const statusData = await response.json();
-          const foundStatus = statusData.find((d) => d._id === propertyData.status);
+          const statusData = await statusResponse.json();
+
+          const foundStatus = await statusData.find((d) => d._id === propertyData.status);
           setStatus(foundStatus);
         }
 
         // Fetch amenities
         if (propertyData.amenities) {
+          
           const amenityResponse = await fetch(`${endPoint}/amenity`);
           const amenityData = await amenityResponse.json();
           const matchedAmenities = propertyData.amenities.map((amenityId) =>
@@ -285,7 +289,7 @@ const DetailProperty = () => {
  
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
+    fetch("https://restcountries.com/v3.1/all?fields=flags,idd,name")
       .then((response) => response.json())
       .then((data) => {
         const codes = data.map((country) => ({
@@ -915,7 +919,7 @@ const arrowClass = isCountryListVisible
             </h2>
             <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-3">
               {
-                property?.bankImages?.map((bImg) =><img key={bImg._id} src={bImg} className="border w-full h-[80px] rounded-xl"
+                property?.bankImages?.map((bImg,index) =><img key={index} src={bImg} className="border w-full h-[80px] rounded-xl"
                 style={{
                   objectFit:'cover'
                 }}/>)
