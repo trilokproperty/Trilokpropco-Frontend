@@ -439,13 +439,13 @@ const arrowClass = isCountryListVisible
             )}
             <IoShareSocial onClick={toggleModalOpen} className="z-20"/>
              {/* Full image modal */}
-             {activeIndex && 
+             {activeIndex ? 
         <Modal
         isOpen={fullImageOpen}
         onClose={() => setFullImageOpen(false)}
         images={property?.galleryImages}   
         initialIndex={activeIndex}        
-      />}
+      />:''}
             
             {/* Modal */}
       {modelOpen && (
